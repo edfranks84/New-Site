@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>New Site</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/assets/css/New Site.css' />
+
+    <script src="/assets/js/vendor/modernizr.js"></script>
+  </head>
+  <body>
+    <h1>New Site</h1>
+    <p>Welcome to New Site</p>
+    <!-- get coding b*tches! -->
+    
+    <script src="/assets/js/vendor/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="/assets/js/New Site.js"></script>
+    
+    <!-- triggers the measurement plugin for screen sizes -->
+    <!-- can be removed for main build unless otherwise needed -->
+    <script>
+    $.getScript( "/assets/js/helpers/measurethisshiz.js", function( data, textStatus, jqxhr ) {
+        console.log( textStatus ); // Success
+        console.log( jqxhr.status ); // 200
+        console.log( "Measurethisshiz - Load was performed." );
+      });
+    // trigger measurement
+    $("body").MeasureThisShiz();
+    </script>
+  </body>
+</html>
