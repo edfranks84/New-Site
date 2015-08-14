@@ -1,0 +1,135 @@
+.hero{
+	height: 100%;
+	height: 100vh;
+	width: 100%;
+	padding: 0;
+	position: relative;
+	background:{
+		image: url("/assets/images/home-hero.jpg");
+		size: cover;
+		repeat: no-repeat;
+		color: #111;
+	}
+}
+
+.hero-content{
+	padding-top: 5em;
+	text-align: center;
+	max-width: 50em;
+	margin: auto;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	h1,h6{
+		color: #fff;
+	}
+	.button{
+		margin-top: 4em;
+	}
+}
+.hero-title{ 
+	h1{
+		font-size: ms(17);
+		line-height: 1;
+		margin: 0;
+		padding-top: 0;
+	}
+	.divider{
+		&:after{
+			margin: 0.15em auto;
+		}
+	}
+}
+
+section{
+	padding: 5em 0;
+}
+
+.about-us{
+	text-align: center;
+	background:{
+		image: url("/assets/images/what-we-do.jpg");
+		size: cover;
+		repeat: no-repeat;
+		color: #111;
+	}
+	.content-wrap{
+		max-width: 55em;
+		margin: auto;
+	}
+	h2,p{
+		color: #fff;
+	}
+	p{
+		font-family: $body-font-light;
+	}
+}
+.bespoke-design{
+	padding: 0;
+}
+.bespoke-image{
+	@include span(6 of 12 last 0);
+	padding-bottom: 50%;
+	height: 0;
+	z-index: 1;
+	background:{
+		image: url("/assets/images/bespoke-design.jpg");
+		size: cover;
+		repeat: no-repeat;
+		color: #111;
+	}
+}
+.bespoke-copy{
+	@include span(6 of 12 0);
+	position: relative;
+	padding-bottom: 50%;
+	height: 0;
+	z-index: 5;
+	&__inner{
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 100%;
+	}
+	.content-wrap{
+		max-width: 75%;
+		margin: auto;
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	&:after{
+		border: 25px transparent solid;
+		border-left-color: #fff;
+		position: absolute;
+		top: 50%;
+		right: -50px;
+		display: block;
+		content: "";
+		transform: translateY(-50%);
+	}
+}
+
+.projects{
+	padding: 0;
+	.project-item{
+		height: 0;
+		background-repeat: no-repeat;
+		background-size: cover;
+		float: left;
+		&:nth-child(1){
+			width: 50%;
+			padding-bottom: 50%;
+		}
+		&:nth-child(2),&:nth-child(3){
+			width: 50%;
+			padding-bottom: 25%;
+		}
+		&:nth-child(4),&:nth-child(5),&:nth-child(6),&:nth-child(7){
+			width: 25%;
+			padding-bottom: 25%;
+		}
+	}
+}

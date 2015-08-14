@@ -21,7 +21,7 @@ $monaco: Monaco, Consolas, "Lucida Console", monospace;
 
 
 // overwrite defaults for modular scale
-$ms-base: 1em;
+$ms-base: 0.9375em;
 $ms-ratio: 1.125;
 
 // Base font attributes ---- //
@@ -31,14 +31,23 @@ $base-font-size: 16;
 $base-line-height: 1.6;
 $blockquote: #e3e3e3;
 
+$heading-font-light: brandon_grotesque_regular, Arial, "Helvetica Neue", Helvetica, sans-serif; 
+$heading-font: brandon_grotesque_medium, Arial, "Helvetica Neue", Helvetica, sans-serif;
+$heading-font-bold: brandon_grotesque_bold, Arial, "Helvetica Neue", Helvetica, sans-serif;
+$body-font-light: brandon_text_light, Arial, "Helvetica Neue", Helvetica, sans-serif;
+$body-font: brandon_text_regular, Arial, "Helvetica Neue", Helvetica, sans-serif;
+$body-font-bold: brandon_text_bold, Arial, "Helvetica Neue", Helvetica, sans-serif;
+
 // Base colours ---- //
 
 $white: #FFFFFF;
-$black: #2f2f2f;
-$base-color: #61459b;
-$comp-color: #326e50;
+$black: #141414;
+$base-color: #018dc2;
+$base-color-light: saturate(lighten(#018dc2, 10), 1);
+$base-color-dark: saturate(darken(#018dc2, 10), 1);
+$comp-color: #e5408e;
 $lightGrey: #CCCCCC;
 
-$link: blue;
-$link-hover: green;
-$link-focus: purple;
+$link: #018dc2;
+$link-hover: saturate(lighten(#018dc2, 10), 1);
+$link-focus: saturate(lighten(#018dc2, 10), 1);

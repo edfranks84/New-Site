@@ -23,7 +23,7 @@
 		margin: 0;	
 	}
 
-	html, body{ height: 100%; min-height: 100%; }
+	html, body, .page-wrapper{ height: 100%; min-height: 100%; }
 
 	small {
 		font-size: 0.85em;
@@ -35,6 +35,12 @@
 	
 	ol li {
 		list-style: none;
+	}
+	ul.disc{
+		li{
+			list-style-type: disc;
+			margin-bottom: 0.75em;
+		}
 	}
 	
 	img, object, embed {
@@ -54,6 +60,12 @@
 				margin-bottom: 0;
 			}
 		}
+	}
+
+	button{
+	   -webkit-appearance: none;
+	   -moz-appearance:    none;
+	   appearance:         none;
 	}
 	
 	
@@ -105,6 +117,34 @@
 		display: none;
 	}
 	
-	.center-align {
+	.tac {
 		text-align: center;
+	}
+
+	.divider{
+		margin-bottom: 0.4em;
+		&:after{
+			width: 5rem;
+			height: 2px;
+			background-color: $base-color-light;
+			display: block;
+			content: "";
+			margin: 0.4em 0;
+		}
+	}
+	.divider-center{
+		&:after{
+			margin: 0.4em auto;
+		}
+	}
+
+
+	.dots{
+		background: url("/assets/images/dot-pattern.jpg") repeat;
+	}
+	.light-dots{
+		background: url("/assets/images/white-dot.png") repeat;
+	}
+	.dark-bg{
+		background: url("/assets/images/dark-pattern.jpg") repeat;
 	}

@@ -1,0 +1,44 @@
+header{
+	z-index: 100;
+	width: 100%;
+	background-color: rgba(0,0,0,0.2);
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-bottom: 1px solid rgba(255,255,255,0.1);
+	height: 5.875rem;
+	transition: all 200ms cubic-bezier(.13,.68,.69,.3);
+	&.fixed{
+		position: fixed;
+		height: 4rem;
+	}
+}
+.header-wrap{
+	@include clearfix;
+	//display: flex;
+	height: 100%;
+}
+.logo{
+	width: 25%;
+	@include span(3 of 12);
+	padding: 1.5em 0 1.5em 1.5em;
+	max-width: 100%;
+	position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 0;
+	img{
+		max-width: 9em;
+	}
+}
+.main-nav{
+	width: 75%;
+	@include span(9 of 12 last);
+	//padding: 1.5em 1.5em 0 0;
+	padding-right: 1.5em;
+	height: 100%;
+}
+.nav{
+	float: right;
+	height: 100%;
+}
