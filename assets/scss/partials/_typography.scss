@@ -61,7 +61,7 @@
 
 
 h1, h2, h3, h4, h5, h6{
-	line-height: 1.4;
+	line-height: 1.3;
 	font-weight: normal;
 	font-style: normal;
 	color: #111;
@@ -103,4 +103,8 @@ p{
 	font-style: normal;
 	margin-bottom: 0.8em;
 	padding-top: 0.2em;
+}
+
+strong{
+	font-family: $heading-font-bold;
 }

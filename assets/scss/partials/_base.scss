@@ -17,7 +17,7 @@
 	
 	body {
 		color: $black;
-		font-family: $base-font-family;
+		font-family: $body-font;
 		font-size: $base-font-size+px;
 		line-height: $base-line-height;
 		margin: 0;	
@@ -39,7 +39,7 @@
 	ul.disc{
 		li{
 			list-style-type: disc;
-			margin-bottom: 0.75em;
+			margin-bottom: 0.5em;
 		}
 	}
 	
