@@ -1,44 +1,268 @@
+@keyframes slideUp{
+	100%{
+		transform: translateY(-100%);
+	}
+}
+
+@keyframes slideDown{
+	0%{
+		transform: translateY(-100%);
+	}
+	100%{
+		transform: translateY(0);
+	}
+}
+
 header{
 	z-index: 100;
 	width: 100%;
 	background-color: rgba(0,0,0,0.2);
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
+	right: 0;
 	border-bottom: 1px solid rgba(255,255,255,0.1);
 	height: 5.875rem;
-	transition: all 200ms cubic-bezier(.13,.68,.69,.3);
-	&.fixed{
+	transition: all 350ms cubic-bezier(.13,.68,.69,.3);
+	&.headroom--not-top{
 		position: fixed;
 		height: 4rem;
+		background-color: rgba(0,0,0,0.75);
+		.show-menu &{
+			height: 4rem;
+			//height: 5.875rem;
+		}
+	}
+	&.headroom--top{
+		.show-menu &{
+			height: 5.875rem;
+		}
 	}
 }
+
+.slideUp{
+	//animation: slideUp 350ms ease-in-out forwards;
+	transform: translateY(-100%);
+	.show-menu &{
+		animation: none;
+		transform: translateY(0);
+	}
+}
+.slideDown{
+	//animation: slideDown 350ms ease-in-out forwards;
+	transform: translateY(0);
+	transition: all 350ms cubic-bezier(.13,.68,.69,.3);
+	.show-menu &{
+		animation: none;
+		transform: translateY(0);
+	}
+}
+
 .header-wrap{
 	@include clearfix;
 	//display: flex;
 	height: 100%;
+	position: relative;
 }
 .logo{
-	width: 25%;
-	@include span(3 of 12);
+	width: 50%;
 	padding: 1.5em 0 1.5em 1.5em;
 	max-width: 100%;
 	position: relative;
     top: 50%;
+    float: left;
     transform: translateY(-50%);
     line-height: 0;
+    @include respond-to(960){
+    	@include span(2 of 12 0);
+    }
 	img{
 		max-width: 9em;
 	}
 }
 .main-nav{
-	width: 75%;
-	@include span(9 of 12 last);
+	width: 100%;
 	//padding: 1.5em 1.5em 0 0;
-	padding-right: 1.5em;
+	background: #243040;
 	height: 100%;
+	position: fixed;
+	transition: transform 500ms ease-in-out;
+	transform: translateX(150%);
+	.show-menu &{
+		transform: translateX(0);
+		height: 100vh;
+		overflow: hidden;
+	}
+	@include respond-to(960){
+		@include span(10 of 12 0 last);
+		padding-right: 1.5em;
+		background: transparent;
+		position: relative;
+		transform: none;
+	}
 }
 .nav{
-	float: right;
 	height: 100%;
+    width: 100%;
+    display: none;
+    .show-menu &{
+    	display: block;
+    }
+	@include respond-to(960){
+		float: right;
+		padding: 0;
+		width: auto;
+		display: block;
+	}
 }
+// .menu-btn{
+// 	@include span(2 of 12 0 last);
+// 	@include respond-to(960){
+// 		display: none;
+// 	}
+// }
+
+
+/*************************************
+**************************************
+Mobile Nav
+**************************************
+*************************************/
+
+.burger {
+    width: 4em;
+    height: 4em;
+    display: inline-block;
+    position: relative;
+    transition: all 300ms ease-in-out;
+    top: -2em;
+    right: 2em;
+    transition-timing-function: cubic-bezier(0.61, 0.04, 0.17, 1.32);
+    .middle {
+        left: -0.25em;
+        top: 50%;
+        width: 4.5em;
+        height: 0.5em;
+        position: absolute;
+        margin-top: -0.25em;
+        display: inline-block;
+        border-radius: 0.5em;
+        transition: all 300ms ease-in-out;
+        background: #fff;
+    }
+    &:after,
+    &:before {
+        content: "";
+        width: 4.5em;
+        height: 0.5em;
+        left: -0.25em;
+        position: absolute;
+        border-radius: 0.5em;
+        background: #fff;
+        transform-origin: 50%, 50%, 0;
+        transition: all 300ms ease-in-out;
+    }
+    &:after {
+        bottom: 0;
+    }
+    &:before {
+        top: 0;
+    }
+}
+
+.menu-btn {
+    font-size: 0.5em;
+    width: 4em;
+    height: 4em;
+    line-height: 1em;
+    padding: 4em;
+    margin: 0 auto 0.6em;
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: all 300ms ease-in-out;
+    right: 2em;
+    top: 50%;
+    transform: translateY(-50%);
+    // float: right;
+    @include respond-to(960){
+		display: none;
+ 	}
+    &.active,
+    .show-menu & {
+        cursor: pointer;
+        &:before {
+            animation: pointer-ball 300ms ease 1;
+            animation-timing-function: cubic-bezier(0.61, 0.04, 0.17, 1.32);
+        }
+        .burger {
+            transform: rotateZ(360deg);
+            &.arrow {
+                .middle, &:after, &:before {
+                    background: white;
+                }
+                .middle {
+                    opacity: 1;
+                }
+                &:after {
+                    bottom: 0.6em;
+                    width: 3em;
+                    transform: translateX(1.7em) rotate(135deg);
+                }
+                &:before {
+                    top: 0.6em;
+                    width: 3em;
+                    transform: translateX(1.7em) rotate(-135deg);
+                }
+                &.left {
+                    transform: rotateZ(-360deg);
+                    &:after {
+                        transform: translateX(-0.2em) rotate(45deg);
+                    }
+                    &:before {
+                        transform: translateX(-0.2em) rotate(-45deg);
+                    }
+                }
+            }  
+        }
+    }
+}
+
+@-webkit-keyframes pointer-ball {
+    0%, 100% {
+        @include transform(scale(1));
+    }
+    80% {
+        @include transform(scale(2));
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+@-moz-keyframes pointer-ball {
+    0%, 100% {
+        @include transform(scale(1));
+    }
+    80% {
+        @include transform(scale(2));
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes pointer-ball {
+    0%, 100% {
+        @include transform(scale(1));
+    }
+    80% {
+        @include transform(scale(2));
+    }
+    100% {
+        opacity: 0;
+    }
+}
+

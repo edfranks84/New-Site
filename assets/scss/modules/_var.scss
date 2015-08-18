@@ -19,6 +19,7 @@ $monaco: Monaco, Consolas, "Lucida Console", monospace;
 
 // User defined ------------------------------------------ //
 
+$site-width: 100em;
 
 // overwrite defaults for modular scale
 $ms-base: 0.9375em;
@@ -51,3 +52,15 @@ $lightGrey: #CCCCCC;
 $link: #018dc2;
 $link-hover: saturate(lighten(#018dc2, 10), 1);
 $link-focus: saturate(lighten(#018dc2, 10), 1);
+
+
+
+////*Brand-Colors*////
+
+$facebook: #3b5998;
+$twitter: #55acee;
+$linkedin: #0976b4;
+$google: #dd4b39;
+$instagram: #3f729b;
+$tumblr: #35465c;
+$youtube: #cd201f;

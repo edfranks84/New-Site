@@ -1,13 +1,106 @@
 footer{
-	padding-top: 4em;
-	background-color: #fdfdfd;
+	padding-top: 5em;
+	padding-bottom: 28em;
+	background:{
+		image: url('/assets/images/footer-bg.jpg');
+		color: #fdfdfd;
+		position: bottom center;
+		repeat: no-repeat;
+	}
 	.footer-top{
 		text-align: center;
 	}
-	svg{
-		display: none;
-	}
 	.button{
 		//margin: 2em auto;
+	}
+}
+.footer-info{
+	max-width: $site-width;
+	width: 90%;
+	padding: 0 2.5em;
+	margin: 2.5em auto 1.95em;
+	padding-bottom: 1.95em;
+	border-bottom: 1px solid #c7c7c7;
+	@include clearfix;
+	p{
+		font-size: ms(1);
+		font-family: $body-font-bold;
+		margin-bottom: 0;
+	}
+}
+.footer-contact{
+	@include span(4 of 12);
+}
+.footer-social{
+	@include span(4 of 12);	
+	text-align: center;
+}
+.footer-address{
+	@include span(4 of 12 last);
+	text-align: right;
+}
+@keyframes spring{
+		25%{
+			transform: scale(0.8);
+		}
+		50%{
+			transform: scale(1.1);
+		}
+		75%{
+			transform: scale(0.9);
+		}
+		85%{
+			transform: scale(1.03);
+		}
+		95%{
+			transform: scale(0.95);
+		}
+		100%{
+			transform: scale(1);
+		}
+	}
+.social-icon{
+	height: 3em;
+	width: 3em;
+	display: inline-block;
+	margin: 0 .5em;
+	&.facebook{
+		fill: $facebook;
+		&:hover{
+			fill: saturate(lighten($facebook, 7%),10%);
+		}	
+	}
+	&.twitter{
+		fill: $twitter;	
+		&:hover{
+			fill: saturate(lighten($twitter, 7%),10%);
+		}		
+	}
+	&.google{
+		fill: $google;	
+		&:hover{
+			fill: saturate(lighten($google, 7%),10%);
+		}		
+	}
+	&.linkedin{
+		fill: $linkedin;	
+		&:hover{
+			fill: saturate(lighten($linkedin, 7%),10%);
+		}	
+	}
+	&:hover{
+		animation: spring 600ms ease forwards;
+	}
+	
+
+}
+.footer-copy{
+	max-width: $site-width;
+	width: 90%;
+	margin: auto;
+	padding: 0 2.5em;
+	text-align: center;
+	p{
+		font-size: ms(0);
 	}
 }

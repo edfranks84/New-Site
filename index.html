@@ -11,7 +11,7 @@
 
     <div class="page-wrapper">
         <section class="hero">
-            <header>
+            <header class="header">
                 <div class="header-wrap">
                     <div class="logo">
                         <img src="/assets/images/svg/logo.svg">
@@ -22,7 +22,7 @@
                             <ul id="nav" class="menu">
                                 <li class="nodiv liLinkActive" id="nav0"><a class="linkActive" href="/" title="Home">Home</a></li>
                                 <li class="nodiv" id="nav1"><a href="/about-us/" title="About Us">About Us</a></li>
-                                <li id="nav2"><a href="/web-design/" title="Web Design">Web Design</a>
+                                <li id="nav2"><a href="#" title="Web Design">Web Design</a>
                                     <ul>
                                         <li><a href="/web-design/lite-web-design/" title="Lite">Lite</a></li>
                                         <li><a href="/web-design/pro-web-design/" title="Pro">Pro</a></li>
@@ -71,6 +71,9 @@
                         </div>
 
                     </nav>
+                    <a class="menu-btn">
+                        <span class="burger arrow"><span class="middle"></span></span>
+                    </a>
                 </div>
             </header>
 
@@ -435,7 +438,7 @@
                 <h2>WE HOPE TO HEAR FROM YOU SOON</h2>
                 <div class="button arrow-button">
                     <a href="#">
-                        <span class="button-text">Our CMS</span>
+                        <span class="button-text">Get in touch</span>
                         <i>
                             <svg class="arrow-icon" viewBox="0 0 32 32">
                                 <use xlink:href="/assets/images/svg-sprite/svgsprite.svg#chevron" ></use>
@@ -487,20 +490,59 @@
     <!-- can be removed for main build unless otherwise needed -->
     <script>
 
-        var  mn = $("header");
-        mns = "fixed";
-        hdr = $('.hero').height();
+        // var  mn = $("header");
+        // mns = "fixed";
+        // hdr = $('.hero').height();
+
+        // $(window).scroll(function() {
+        //     if( $(this).scrollTop() > hdr ) {
+        //         mn.addClass(mns);
+        //     } else {
+        //         mn.removeClass(mns);
+        //     }
+        // });
+
+        // $("header").headroom({
+        //   "offset": 205,
+        //   "tolerance": 5,
+        //   "classes": {
+        //     "initial": "animated",
+        //     "pinned": "slideDown",
+        //     "unpinned": "slideUp"
+        //   }
+        // });
+            var elem = document.querySelector("header");
+        // construct an instance of Headroom, passing the element
+        var headroom = new Headroom(elem, {
+          "offset": 205,
+          "tolerance": 5,
+          "classes": {
+            "initial": "animated",
+            "pinned": "slideDown",
+            "unpinned": "slideUp"
+          }
+        });
+        headroom.init();
+
 
         $(window).scroll(function() {
-            if( $(this).scrollTop() > hdr ) {
-                mn.addClass(mns);
+            if ($('.show-menu').length > 0) { 
+                $("header").headroom("destroy");
+            }
+        });
+
+        $(window).on("load resize", function(){
+            if (Modernizr.mq('(max-width: 960px)')) {
+                $(".hero").addClass("mobile-menu");
+                //$("nav").addClass("mobile-nav");
             } else {
-                mn.removeClass(mns);
+                $(".hero").removeClass("mobile-menu");
+                //$("nav").addClass("mobile-nav");
             }
         });
 
         var menuOpen = false;
-        $(".nav-button").on("click", function(){
+        $(".menu-btn").on("click", function(){
           
           if(menuOpen){
             $(document.body).removeClass("show-menu");
@@ -512,24 +554,38 @@
           
         });
 
-        $(".close-button").on("click", function(){
-            $(document.body).removeClass("show-menu");
-        });
+        // $(".close-button").on("click", function(){
+        //     $(document.body).removeClass("show-menu");
+        // });
 
-        var hasDropdown = $('.mobile-menu .nav li:has(ul)');
-        hasDropdown.addClass('parent');
-        $(".mobile-menu .nav li.parent > a").click(function(e){
-            e.preventDefault();
-            $('~ ul',this).slideToggle(200, function() {
+        $(window).on("load resize", function(){
+            var hasDropdown = $('.nav li:has(ul)');
+            hasDropdown.addClass('parent');
+            // $(".mobile-menu .nav li.parent > ul").slideUp();
+            // $(".mobile-menu .nav li.parent > a").click(function(e){
+            //     e.preventDefault();
+            //     $('~ ul',this).slideToggle(200, function() {
+            //         $(this).siblings('a').toggleClass('open');
+            //     });
+            // });
+            $(".mobile-menu .nav li.parent > a").click(function(e){
+                e.preventDefault();
+                $('~ ul',this).toggleClass('menu-down');
                 $(this).siblings('a').toggleClass('open');
+                
             });
-        });
+        
           
-        hasDropdown.each(function(){
-            var link = $(this).find('a').attr('href');
-            $('ul',this).prepend("<li><a href='#'>Overview</a></li>");
-            $('ul>li:first>a',this).attr('href', link); 
-        });
+            // hasDropdown.each(function(){
+            //     var link = $(this).find('a').attr('href');
+            //     $('ul',this).prepend("<li><a href='#'>Overview</a></li>");
+            //     $('ul>li:first>a',this).attr('href', link); 
+            // });
+        });       
+
+        
+
+
 
         $(function() {
             $('.package-item__info').matchHeight();

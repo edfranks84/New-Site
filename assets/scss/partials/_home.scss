@@ -15,28 +15,45 @@
 .hero-content{
 	padding-top: 5em;
 	text-align: center;
+	width: 85%;
 	max-width: 50em;
 	margin: auto;
 	position: relative;
 	top: 50%;
 	transform: translateY(-50%);
+	font-size: 14px;
 	h1,h6{
 		color: #fff;
 	}
 	.button{
 		margin-top: 4em;
 	}
+	@include respond-to(960){
+		font-size: 16px;
+	}
 }
 .hero-title{ 
 	h1{
-		font-size: ms(17);
+		font-size: ms(10);
 		line-height: 1;
 		margin: 0;
 		padding-top: 0;
+		@include respond-to(480){
+			font-size: ms(12);
+		}
+		@include respond-to(768){
+			font-size: ms(15);
+		}
+		@include respond-to(960){
+			font-size: ms(17);
+		}
 	}
 	.divider{
 		&:after{
-			margin: 0.15em auto;
+			margin: 0.25em auto;
+			@include respond-to(768){
+				margin: 0.15em auto;
+			}
 		}
 	}
 }
@@ -47,16 +64,20 @@ section{
 }
 
 .about-us{
-	text-align: center;
+	
 	background:{
 		image: url("/assets/images/what-we-do.jpg");
 		size: cover;
 		repeat: no-repeat;
 		color: #111;
 	}
+	@include respond-to(480){
+		text-align: center;
+	}
 	.content-wrap{
 		max-width: 55em;
 		margin: auto;
+		width: 85%;
 	}
 	h2,p{
 		color: #fff;
@@ -64,13 +85,21 @@ section{
 	p{
 		font-family: $body-font-light;
 	}
+	.divider-center{
+		&:after{
+			margin: 0.4em 0;
+			@include respond-to(480){
+				margin: 0.4em auto;
+			}
+		}
+	}
 }
 .bespoke-design,.hosted{
 	padding: 0;
+	@include clearfix;
 }
 .bespoke-image{
-	@include span(6 of 12 last 0);
-	padding-bottom: 50%;
+	padding-bottom: 75%;
 	height: 0;
 	z-index: 1;
 	background:{
@@ -78,38 +107,69 @@ section{
 		size: cover;
 		repeat: no-repeat;
 		color: #111;
+		position: center ;
+	}
+	@include respond-to(800){
+		@include span(4 of 12 last 0);
+		background-position: center;
+		padding-bottom: 50%;
+	}
+	@include respond-to(920){
+		@include span(6 of 12 last 0);
 	}
 }
 .bespoke-copy{
-	@include span(6 of 12 0);
 	position: relative;
-	padding-bottom: 50%;
-	height: 0;
+	
 	z-index: 5;
-	&__inner{
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		height: 100%;
+	
+	@include respond-to(800){
+		@include span(8 of 12 0);
+		padding-bottom: 50%;
+		height: 0;
+		&__inner{
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 100%;
+		}
+	}
+	@include respond-to(920){
+		@include span(6 of 12 0);
 	}
 	.content-wrap{
-		max-width: 75%;
+		max-width: 85%;
 		margin: auto;
 		position: relative;
-		top: 50%;
-		transform: translateY(-50%);
+		padding: 2em 0;
+		@include respond-to(800){
+			top: 50%;
+			transform: translateY(-50%);
+		}
+		@include respond-to(920){
+			max-width: 75%;
+		}
 	}
 	&:after{
 		border: 25px transparent solid;
-		border-left-color: #fff;
+		border-bottom-color: #fff;
 		position: absolute;
-		top: 50%;
-		right: -50px;
+		top: -50px;
+		left: 50%;
 		display: block;
 		content: "";
-		transform: translateY(-50%);
+		transform: translateX(-50%);
+		@include respond-to(800){
+			transform: none;
+			border-bottom-color: transparent;
+			border-left-color: #fff;
+			left: auto;
+			top: 50%;
+			right: -50px;
+			transform: translateY(-50%);
+		}
 	}
 }
 
@@ -167,6 +227,10 @@ section{
 .projects{
 	padding: 0;
 	position: relative;
+	font-size: 14px;
+	@include respond-to(1160){
+		font-size: 16px;
+	}
 	.project-item{
 		//height: 0;
 		min-height: 0;

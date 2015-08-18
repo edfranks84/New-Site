@@ -21,6 +21,9 @@
 		font-size: $base-font-size+px;
 		line-height: $base-line-height;
 		margin: 0;	
+		@include respond-to(480){
+			font-size: 14px;
+		}
 	}
 
 	html, body, .page-wrapper{ height: 100%; min-height: 100%; }
