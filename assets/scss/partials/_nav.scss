@@ -7,118 +7,120 @@
 
 \* ---------------------------------------------- */
 
+.main-nav{
+	.menu{
 
-.menu{
-
-	display: block;
-	height: 100%;
-	width: calc(100% + 18px);
-	overflow-y: scroll;
-	padding: 5em 2em;
-	@include clearfix;
-	@include respond-to(960){
-		width: 100%;
-		height: auto;
-		padding: 0;
-		overflow: initial;
-	}
-	>li{
-		position: relative;
-		display: list-item;
-		margin: 0 0.25em;
-		font-size: 14px;
+		display: block;
+		//height: 100%;
+		//width: calc(100% + 18px);
+		//overflow-y: scroll;
+		//padding: 5em 2em;
+		@include clearfix;
 		@include respond-to(960){
-			text-align: center;
-			height: 100%;
+			width: 100%;
+			height: auto;
+			padding: 0;
+			overflow: initial;
+		}
+		>li{
+			position: relative;
 			display: inline-block;
-			&:hover{
-				>ul{
-					display: block;
-					height: auto;
-			    	opacity: 1;
-				}
-			}
-		}
-		@include respond-to(1160){
-			font-size: 16px;
-			margin: 0 0.5em
-		}
-
-		a{
-			color: #fff;
-			display: block;
-			font-size: ms(0);
-			font-family: $heading-font-bold;
-			text-transform: uppercase;
-			text-align: center;
-			padding: 0 0.25em;
-			line-height: 4;
-			text-align: right;
-			transition: line-height 350ms cubic-bezier(.13,.68,.69,.3);
-			&.liLinkActive, &:hover{
-				color: $base-color;
-				
-			}
-			.headroom--not-top &{
-				line-height: 4rem;
-			}
+			margin: 0 0.25em;
+			font-size: 14px;
 			@include respond-to(960){
-				line-height: 94px;
 				text-align: center;
-			}
-		}
-		&:last-child{
-			a{
-				padding: 0.45em 1em;
-				background-color: $base-color-light;
-				color: #fff;
+				height: 100%;
 				display: inline-block;
-				line-height: 2;
 				&:hover{
-					background-color: lighten(saturate($base-color-light, 10%),5%);
+					>ul{
+						display: block;
+						height: auto;
+				    	opacity: 1;
+					}
 				}
 			}
-		}
-		>ul{
-			display: none;
-			overflow: hidden;
-		    
-		    @include respond-to(960){
-				position: absolute;
-			    z-index: 100;
-			    top: 95%;
-			    left: 0;
-			    min-width: 250px;
-			    margin: 0;
-			    background-color: #000;
-			    height: 0;
-			    opacity: 0;
-			    transition: opacity .2s linear;
-		    }
-		    li{
-		    	border-bottom: 1px solid rgba(255,255,255,0.1);
-		    	padding: 0 0.5em;
-		    	font-size: 14px;
-		    	a{
-		    		text-align: left;
-		    		whitespace: no-wrap;
-		    		line-height: 3!important;
-		    		font-family: $heading-font;
-		    	}
-		    }
+			@include respond-to(1160){
+				font-size: 16px;
+				margin: 0 0.5em
+			}
 
-		}
-		
-		&.liLinkActive{
-			@include respond-to(960){
-				&:before{
-					content: "";
-					display: block;
+			a{
+				color: #fff;
+				display: block;
+				font-size: ms(0);
+				font-family: $heading-font-bold;
+				text-transform: uppercase;
+				text-align: center;
+				padding: 0 0.25em;
+				line-height: 4;
+				text-align: right;
+				transition: line-height 350ms cubic-bezier(.13,.68,.69,.3);
+				&.liLinkActive, &:hover{
+					color: $base-color;
+					
+				}
+				.headroom--not-top &{
+					line-height: 4rem;
+				}
+				@include respond-to(960){
+					line-height: 94px;
+					text-align: center;
+				}
+			}
+			&:last-child{
+				a{
+					padding: 0.45em 1em;
+					background-color: $base-color-light;
+					color: #fff;
+					display: inline-block;
+					line-height: 2;
+					&:hover{
+						background-color: lighten(saturate($base-color-light, 10%),5%);
+					}
+				}
+			}
+			>ul{
+				display: none;
+				overflow: hidden;
+			    
+			    @include respond-to(960){
 					position: absolute;
-					bottom: 3px;
-					height: 5px;
-					width: 100%;
-					background-color: #fff;
+				    z-index: 100;
+				    top: 95%;
+				    left: 0;
+				    min-width: 250px;
+				    margin: 0;
+				    background-color: #000;
+				    height: 0;
+				    opacity: 0;
+				    transition: opacity .2s linear;
+			    }
+			    li{
+			    	border-bottom: 1px solid rgba(255,255,255,0.1);
+			    	padding: 0 0.5em;
+			    	font-size: 14px;
+			    	a{
+			    		text-align: left;
+			    		whitespace: no-wrap;
+			    		line-height: 3!important;
+			    		font-family: $heading-font;
+			    		font-size: ms(0);
+			    	}
+			    }
+
+			}
+			
+			&.liLinkActive{
+				@include respond-to(960){
+					&:before{
+						content: "";
+						display: block;
+						position: absolute;
+						bottom: 3px;
+						height: 5px;
+						width: 100%;
+						background-color: #fff;
+					}
 				}
 			}
 		}
@@ -127,13 +129,27 @@
 
 
 .mobile-menu{
+
 	.nav{
+		 padding: 7.5em 0 2em;
+		 overflow: hidden;
+		 height: 100%;
+		 width: 95%;
 		>ul{
+			overflow-y: auto;
+		 	webkit-overflow-scrolling: touch;
+			font-size: 13px;
+			padding: 0 2em;
+			height: 100%;
+			width: calc(100% + 18px);
+			//padding: 0 2em;
 			>li{	
 				border-bottom: 1px solid rgba(255,255,255,0.15);
 				position: relative;
 				transform: translateY(3em);
 				transition: transform 400ms ease-out;
+				//text-align: right;
+				
 				&:nth-child(1){
 					transform: translateY(70em);
 				}
@@ -167,21 +183,41 @@
 				&.parent{
 					>a{
 						&:after{
-							content: url("/assets/images/svg/down.svg");
-							width: 0.75em;
-							height: 0.75em;
-							display: inline-block;
+							content: url("/assets/images/down.png");
+							// width: 0.75em;
+							// height: 0.75em;
+							// display: inline-block;
 							margin-left: 0.5em;
 							margin-top: 0.2em;
 							position: relative;
-							top: 1px;
+							//top: 1px;
+							display: inline-block;
+							transition: transform 150ms cubic-bezier(.13,.68,.69,.3);
+							transform-origin: 50 50;
+						}
+					}
+					&.open{
+						>a{
+							color: $base-color;
+							&:after{
+								transform: rotate(180deg);
+							}
 						}
 					}
 				}
 				a{
 					line-height: 4;
+					display: block;
+					text-transform: uppercase;
+					color: #fff;
+					padding: 0 0.5em;
+
+					font-family: $heading-font-bold;
 					&.open{
 						color: $base-color;
+						&:after{
+							transform: rotate(180deg);
+						}
 					}
 				}
 				&:hover{
@@ -190,19 +226,35 @@
 				&:last-child{
 					border-bottom: none;;
 					margin-top: 1em;
-					float: right;
+					//float: right;
 					a{
 						line-height: 2;
-						padding: 0.45em 2em;
+						padding: 0.45em 3em;
 						color: #fff;
+						background-color: $base-color-light;
+						text-align: center;
+						@include respond-to(480){
+							display: inline-block;
+						}
+						&:hover{
+							background-color: lighten(saturate($base-color-light, 10%),5%);
+						}
 					}
 				}
 				ul{
-					background-color: darken($base-color,30%);
+					background-color: darken(#243040,5%);
+					padding: 0.5em 1em;
+					display: none;
 					li{
 						a{
-							text-align: right;
+							//text-align: right;
 							padding: 0.1em 0.5em;
+							font-size: ms(0);
+							line-height: 2.5;
+							font-family: $heading-font;
+							&:hover{
+								color: $base-color-light;
+							}
 						}
 					}
 					&.menu-down{
@@ -220,34 +272,34 @@
 				li{
 					transform: translateY(0);
 					&:nth-child(1){
-						transition-delay: 1s;	
+						transition-delay: 0.6s;	
 					}
 					&:nth-child(2){
-						transition-delay: 0.15s;
+						transition-delay: 0.65s;
 					}
 					&:nth-child(3){
-						transition-delay: 0.2s;
+						transition-delay: 0.7s;
 					}
 					&:nth-child(4){
-						transition-delay: 0.25s;
+						transition-delay: 0.75s;
 					}
 					&:nth-child(5){
-						transition-delay: 0.3s;
+						transition-delay: 0.8s;
 					}
 					&:nth-child(6){
-						transition-delay: 0.35s;
+						transition-delay: 0.85s;
 					}
 					&:nth-child(7){
-						transition-delay: 0.4s;
+						transition-delay: 0.9s;
 					}
 					&:nth-child(8){
-						transition-delay: 0.45s;
+						transition-delay: 0.95s;
 					}
 					&:nth-child(9){
-						transition-delay: 0.5s;
+						transition-delay: 1s;
 					}
 					&:nth-child(10){
-						transition-delay: 0.55s;
+						transition-delay: 1.05s;
 					}
 				}
 			}

@@ -59,7 +59,7 @@
 }
 
 section{
-	padding: 5em 0;
+	padding: 5em 1em;
 	@include clearfix;
 }
 
@@ -182,48 +182,6 @@ section{
 **********************************************
 *********************************************/
 
-// .projects{
-// 	padding: 0;
-// 	position: relative;
-// 	.project-item{
-// 		//height: 0;
-// 		background-repeat: no-repeat;
-// 		background-size: cover;
-// 		background-position: center;
-// 		float: left;
-// 		&:nth-child(1){
-// 			width: 50%;
-// 			.hover-wrap{
-// 				padding-top: 100%;
-// 			}
-// 		}
-// 		&:nth-child(2),&:nth-child(3){
-// 			width: 50%;
-// 			.hover-wrap{
-// 				padding-top: 50%;
-// 			}
-// 		}
-// 		&:nth-child(4),&:nth-child(5),&:nth-child(6),&:nth-child(7){
-// 			width: 25%;
-// 			.hover-wrap, .project-link__wrap{
-// 				padding-top: 100%;
-// 			}
-// 		}
-// 		.hover-wrap, .project-link__wrap{
-// 			height: 0;
-// 			position: relative;
-// 			overflow: hidden;
-// 		}
-// 	}
-// }
-// .hover-content{
-// 	position: absolute;
-// 	top: 1em;
-// 	right: 1em;
-// 	left: 1em;
-// 	bottom: 1em;
-// }
-
 .projects{
 	padding: 0;
 	position: relative;
@@ -242,28 +200,71 @@ section{
 		margin: 0;
 		display: table;
 		&:nth-child(1){
-			width: 50%;
+			width: 100%;
 			.project-item__inner{
 				padding-top: 100%;
+			}
+			@include respond-to(480){
+				width: 50%;
 			}
 		}
 		&:nth-child(2),&:nth-child(3){
-			width: 50%;
+			width: 100%;
 			.project-item__inner{
-				padding-top: 50%;
+				padding-top: 100%;
+			}
+			@include respond-to(480){
+				width: 50%;
+			}
+			@include respond-to(960){
+				.project-item__inner{
+					padding-top: 50%;
+				}
+				h3{
+					font-size: ms(6);
+				}
 			}
 		}
 		&:nth-child(4),&:nth-child(5),&:nth-child(6),&:nth-child(7){
-			width: 25%;
+			width: 100%;
 			.project-item__inner, .project-link__wrap{
 				padding-top: 100%;
 			}
-			p{
-				display: none;
+			@include respond-to(480){
+				width: 50%;
 			}
-			h3{
-				font-size: ms(6);
+			@include respond-to(640){
+				h3{
+					font-size: ms(6);
+				}
 			}
+			@include respond-to(960){
+				width: 25%;
+				h3{
+					&:after{
+						margin-top: 0.7em;
+					}
+				}
+				p{
+					display: none;
+				}
+			}
+		}
+		&:nth-child(7){
+			width:100%;
+			.project-link__wrap{
+				padding-top: 25%;
+			}
+			@include respond-to(960){
+				width: 25%;
+				.project-link__wrap{
+					padding-top: 100%;
+				}
+			}
+		}
+		&.dark-bg{
+			background-size: auto;
+			background-repeat: repeat;
 		}
 		.project-item__inner, .project-link__wrap{
 			height: 0;
@@ -290,11 +291,16 @@ section{
 	transition: opacity 700ms ease;
 }
 .link-content-wrap{
-	margin: 2em;
-	border: 4px solid rgba(255,255,255,0.6);
+	// margin: 2em;
 	text-align: center;
-	h4{
+	h4,h5{
 		color: #fff;
+	}
+	@include respond-to(640){
+		margin: 2em;
+	}
+	@include respond-to(960){
+		border: 4px solid rgba(255,255,255,0.6);
 	}
 }
 .project-item{
@@ -314,13 +320,17 @@ section{
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	width: 80%;
+	width: 98%;
+	@include respond-to(640){
+		width: 85%;
+	}
 	.arrow-button{
 		font-size: 12px;
-		margin-top: 2.5em;
+		margin-top: 1.5em;
 		transform: translateY(100%);
 		opacity: 0;
 		transition: all 300ms ease 500ms;
+		margin-bottom: 0;
 	}
 	h3{
 		color: #fff;
@@ -328,21 +338,82 @@ section{
 		transform: translateY(-100%);
 		opacity: 0;
 		transition: all 300ms ease 400ms;
+		padding-top: 0;
+		font-size: ms(5);
+		@include respond-to(480){
+			&:after{
+				margin-top: 0.75em;
+			}
+		}
+		@include respond-to(640){
+			font-size: ms(6);
+			&:after{
+				margin-top: 0.4em;
+			}
+		}
 	}
 	p{
 		color: #fff;
 		transform: translateY(-100%);
 		opacity: 0;
 		transition: all 300ms ease-in-out 300ms;
+		margin-bottom: 0;
+		padding-top: 0;
+		@include respond-to(480){
+			display: none;
+		}
+		@include respond-to(640){
+			display: block;
+		}
+	}
+}
+.link-content{
+	a{
+		display: inline-block;
+		&:hover{
+			i{
+				background: #fff;
+			}
+			svg{
+				fill: #111;
+			}
+			h5{
+				background: #fff;
+				color: #111;
+				@include respond-to(960){
+					background: transparent;
+					color: #fff;
+				}
+			}
+		}
+	}
+	h5{
+		@include respond-to(0to960){
+			position: relative;
+		    height: 3em;
+		    float: left;
+		    display: inline-block;
+		    font-family: brandon_grotesque_bold, Arial, "Helvetica Neue", Helvetica, sans-serif;
+		    font-size: 1.18652em;
+		    color: #fff;
+		    text-transform: uppercase;
+		    line-height: 3em;
+		    padding: 0 2em;
+		    border: 3px solid #fff;
+		    margin-bottom: 0;
+		    transition: all 500ms cubic-bezier(0.23, 1, 0.32, 1);
+		}
 	}
 }
 .link-arrow{
+	float: left;
 	i{
 		display: inline-block;
 	    border: 3px solid #fff;
+	   	border-left: 0;
 	    background: transparent;
-	    height: 3.2em;
-	    width: 3.2em;
+	    height: 3em;
+	    width: 3em;
 	    font-size: 1.18652em;
 	    transition: all 500ms cubic-bezier(0.23, 1, 0.32, 1);
 	}
@@ -355,6 +426,12 @@ section{
 	    -webkit-transform: translateY(-50%);
 	    -ms-transform: translateY(-50%);
 	    transform: translateY(-50%);
+	}
+	@include respond-to(960){
+		float: none;
+		i{
+			border-left: 3px solid #fff;
+		}
 	}
 }
 
@@ -375,17 +452,28 @@ section{
 }
 .process-wrap{
 	@include clearfix;
-	padding: 1.5em 0;
+	padding: 1.5em;
 	svg{
 		//display: none;
 	}
 }
 .process-step{
-	padding: 6em 0;
+	padding: 4em 0;
 	position: relative;
 	transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
 	//background-color: red;
-	@include span(2 of 12 split);
+	background-position: center;
+	@include span(6 of 12 split);
+	@include respond-to(480){
+		@include span(4 of 12 split);
+	}
+	@include respond-to(640){
+		padding: 5em 0;
+	}
+	@include respond-to(960){
+		@include span(2 of 12 split);
+		padding: 6em 0;
+	}
 	svg{
 		margin: auto;
 		width: 5em;
@@ -480,16 +568,30 @@ section{
 }
 .packages-wrap{
 	padding: 2.5em 0 1.5em;
-	width: 85%;
+	width: 98%;
 	max-width: 66em;
 	margin: auto;
+	@include clearfix;
+	@include respond-to(960){
+		width: 85%;
+	}
 }
 .package-item{
-	@include span(3 of 12 split 0.1);
+	//@include span(3 of 12 split 0.1);
 	background: rgba(0,0,0,0.2);
 	padding: 3em 1em;
 	box-shadow: inset 0 0 0 3px rgba(255,255,255,0.5);
 	transition: all 200ms ease;
+	margin-bottom: 6px;
+	@include respond-to(400){
+		@include span(6 of 12 split 0.2);	
+		margin-bottom: 6px;
+	}
+	@include respond-to(860){
+		@include span(3 of 12 split 0.1);
+		margin-bottom: 0;
+		margin-bottom: 0.75%;
+	}
 	&:hover{
 		background: rgba(0,0,0,0.85);
 		box-shadow: inset 0 0 0 5px rgba($base-color-light,1);
@@ -559,8 +661,8 @@ section{
 *********************************************/
 
 .hosted-image{
-	@include span(6 of 12 0);
-	padding-bottom: 50%;
+	//@include span(5 of 12 0);
+	padding-bottom: 70%;
 	height: 0;
 	z-index: 1;
 	background:{
@@ -568,35 +670,62 @@ section{
 		size: cover;
 		repeat: no-repeat;
 		color: #111;
+		position: center;
+	}
+	@include respond-to(860){
+		@include span(5 of 12 0);
+		padding-bottom: 60%;
+	}
+	@include respond-to(1000){
+		@include span(6 of 12 0);
+		padding-bottom: 50%;
 	}
 }
 .hosted-content{
-	@include span(6 of 12 last 0);
+	//@include span(7 of 12 last 0);
 	position: relative;
-	padding-bottom: 50%;
 	background-color: $base-color;
-	height: 0;
 	z-index: 5;
+	@include respond-to(860){
+		@include span(7 of 12 last 0);
+		padding-bottom: 60%;
+		height: 0;
+	}
+	@include respond-to(1000){
+		@include span(6 of 12 last 0);
+		padding-bottom: 50%;
+	}
 	&__inner{
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		height: 100%;
+		@include respond-to(860){
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 100%;
+		}
 	}
 	.content-wrap{
-		max-width: 75%;
+		max-width: 85%;
 		margin: auto;
 		position: relative;
-		top: 50%;
-		transform: translateY(-50%);
+		padding: 3em 0;
+		@include respond-to(860){
+			top: 50%;
+			transform: translateY(-50%);
+		}
+		@include respond-to(1160){
+			max-width: 75%;
+		}
 	}
 	h2,p,li{
 		color: #fff;
 	}
+	h2{
+		padding-top: 0;
+	}
 	ul{
-		margin-top: 2em;
+		margin-top: 1em;
 	}
 	li{
 		font-family: $body-font-bold;
@@ -609,13 +738,22 @@ section{
 	}
 	&:after{
 		border: 25px transparent solid;
-		border-right-color: $base-color;
+		border-bottom-color: $base-color;
 		position: absolute;
-		top: 50%;
-		left: -50px;
+		top: -50px;
+		left: 50%;
 		display: block;
 		content: "";
-		transform: translateY(-50%);
+		transform: translateX(-50%);
+		@include respond-to(800){
+			transform: none;
+			border-bottom-color: transparent;
+			border-right-color: $base-color;
+			right: auto;
+			top: 50%;
+			left: -50px;
+			transform: translateY(-50%);
+		}
 	}
 }
 
@@ -633,15 +771,25 @@ section{
 	background-size: cover;
 	background-repeat: no-repeat;
 	text-align: center;
+	padding: 2em 1em;
+	@include respond-to(768){
+		padding: 5em 1em;
+	}
 	h6.sub-title{
 		text-transform: none;
 		max-width: 30em;
 		margin: auto;
+		padding-top: 0;
 	}
 	.play-icon{
-		height: 10em;
-		width: 10em;
-		margin: 10em 0;
+		height: 7em;
+		width: 7em;
+		margin: 10.5em 0;
+		@include respond-to(768){
+			margin: 10em 0;
+			height: 10em;
+			width: 10em;
+		}
 		&:hover{
 			fill: $base-color-light;
 			// box-shadow: 
@@ -667,18 +815,32 @@ section{
 	}
 }
 
+
+/*********************************************
+**********************************************
+
+	Testimonials
+
+**********************************************
+*********************************************/
+
+
 .testimonials{
-	padding: 2em;
+	padding: 1.5em;
 	position: relative;
 	background-image: url("/assets/images/testimonial-bg.jpg");
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
 	width: 100%;
-	height: 100%;
-	height: 80vh;
+	@include respond-to(640){
+		height: 100%;
+		height: 80vh;
+		padding: 2em;
+	}
 	h2{
 		color: #fff;
+		padding-top: 0;
 	}
 	.divider{
 		&:after{
@@ -690,28 +852,42 @@ section{
 	border: 3px solid rgba(255,255,255,0.5);
 	width: 100%;
 	height: 100%;
-	padding: 3em;
+	padding: 2.5em 2em;
 	text-align: center;
 	position: relative;
+	@include respond-to(640){
+		padding: 3em;
+	}
 }
 .testimonial-content{
 	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
+	@include respond-to(640){
+		top: 50%;
+		transform: translateY(-50%);
+	}
 }
 .testimonial-item{
 	max-width: 65em;
 	margin: auto;
 	p{
-		font-size: ms(5);
+		//font-size: ms(3);
 		color: #fff;
 		font-family: $body-font-light;
+		@include respond-to(480){
+			font-size: ms(3);
+		}
+		@include respond-to(640){
+			font-size: ms(5);
+		}
 	}
 	.client-name{
 		font-size: ms(3);
 		font-family: $body-font-bold;
 		color: #fff;
 		text-transform: uppercase;
-		margin-top: 2em;
+		margin-top: 1em;
+		@include respond-to(640){
+			margin-top: 2em;
+		}
 	}
 }

@@ -50,16 +50,21 @@ $grid-width: $max-width;
 @include bkpt-set('no query fallbacks', true);
 
 // set basics followed by customs 
+
 $BREAKPOINTS: (
-  tiny: 320px,
+  0to960: (0px 960px),
+  320: 320px,
+  400: 400px,
   480: 480px,
   640: 640px,
   700: 700px,
   768: 768px,
   768to920: (768px 920px),
   800: 800px,
+  860: 860px,
   920: 920px,
   960: 960px,
+  1000: 1000px,
   1160: 1160px,
   1200: 1200px,
   1250: 1250px,

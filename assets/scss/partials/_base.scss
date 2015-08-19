@@ -18,11 +18,11 @@
 	body {
 		color: $black;
 		font-family: $body-font;
-		font-size: $base-font-size+px;
+		font-size: 14px;
 		line-height: $base-line-height;
 		margin: 0;	
 		@include respond-to(480){
-			font-size: 14px;
+			font-size: 16px;
 		}
 	}
 
@@ -123,7 +123,9 @@
 	.tac {
 		text-align: center;
 	}
-
+	.page-wrapper{
+		//overflow-x: hidden;
+	}
 	.divider{
 		margin-bottom: 0.4em;
 		&:after{

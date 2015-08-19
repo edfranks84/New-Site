@@ -72,7 +72,7 @@
 
                     </nav>
                     <a class="menu-btn">
-                        <span class="burger arrow"><span class="middle"></span></span>
+                        <span class="burger arrow left"><span class="middle"></span></span>
                     </a>
                 </div>
             </header>
@@ -243,7 +243,7 @@
                         <div class="link-content-wrap">
                            <div class="link-content">
                                 <a href="#">
-                                    <h4>View More<br/>Case Studies</h4>
+                                    <h5>View Case Studies</h5>
                                     <div class="link-arrow">
                                         <i>
                                             <svg class="arrow-icon" viewBox="0 0 32 32">
@@ -449,7 +449,8 @@
                 </div>
             <div class="footer-info">
                 <div class="footer-contact">
-                    <p>01454 800 487<br/>email@smarterwebcompany.co.uk</p>
+                    <!--p>01454 800 487<br/>email@smarterwebcompany.co.uk</p-->
+                    <p>01454 800 487</p><p>email@smarterwebcompany.co.uk</p>
                 </div>
                 <div class="footer-social">
                     <a href="#">
@@ -481,6 +482,60 @@
                  <p>© 2015 The Smarter Web Company Limited. All Rights Reserved. <a href="/terms-and-conditions/">Terms</a> | <a href="/privacy-policy/">Privacy</a> | <a href="/fair-use-policy/">Fair Use</a>. All prices exclude VAT. The Smarter Web Company Limited is registered in England and Wales. VAT number: 996749140. Company number: 7113945. By using our site you accept the terms of our Cookie &amp; Privacy Policy.</p>
             </div>
         </footer>
+        <nav class="mobile-menu">
+            <div class="nav" id="navInsnav">
+                <ul id="nav" class="menu">
+                    <li class="nodiv liLinkActive" id="nav0"><a class="linkActive" href="/" title="Home">Home</a></li>
+                    <li class="nodiv" id="nav1"><a href="/about-us/" title="About Us">About Us</a></li>
+                    <li id="nav2"><a href="#" title="Web Design">Web Design</a>
+                        <ul>
+                            <li><a href="/web-design/lite-web-design/" title="Lite">Lite</a></li>
+                            <li><a href="/web-design/pro-web-design/" title="Pro">Pro</a></li>
+                            <li><a href="/web-design/ecommerce-web-design/" title="Ecommerce">Ecommerce</a></li>
+                            <li><a href="/web-design/responsive-web-design/" title="Responsive">Responsive</a></li>
+                        </ul>
+                    </li>
+                    <li id="nav3"><a href="/extras/" title="Extras">Extras</a>
+                        <ul>
+                            <li><a href="/extras/logo-design/" title="Logo Design">Logo Design</a></li>
+                            <li><a href="/extras/seo/" title="SEO">SEO</a></li>
+                            <li><a href="/extras/pay-per-click/" title="Pay Per Click">Pay Per Click</a></li>
+                            <li><a href="/extras/social-marketing/" title="Social Marketing">Social Marketing</a></li>
+                            <li><a href="/extras/email-marketing/" title="Email Marketing">Email Marketing</a></li>
+                            <li><a href="/extras/business-email/" title="Business Email">Business Email</a></li>
+                            <li><a href="/extras/web-developer/" title="Web Developer">Web Developer</a></li>
+                        </ul>
+                    </li>
+                    <li class="nodiv" id="nav4"><a href="/cms/" title="CMS">CMS</a></li>
+                    <li id="nav5"><a href="/sectors/" title="Sectors">Sectors</a>
+                        <ul>
+                            <li><a href="/sectors/recruitment-website-design/" title="Recruitment">Recruitment</a></li>
+                            <li><a href="/sectors/property-website-design/" title="Property">Property</a></li>
+                            <li><a href="/sectors/fashion-website-design/" title="Fashion">Fashion</a></li>
+                            <li><a href="/sectors/sport-website-design/" title="Sport">Sport</a></li>
+                            <li><a href="/sectors/hospitality-website-design/" title="Hospitality">Hospitality</a></li>
+                            <li><a href="/sectors/retail-website-design/" title="Retail">Retail</a></li>
+                            <li><a href="/sectors/financial-and-legal-web-design/" title="Financial & Legal">Financial & Legal</a></li>
+                        </ul>
+                    </li>
+                    <li id="nav6"><a href="/case-studies/" title="Case Studies">Case Studies</a>
+                        <ul>
+                            <li><a href="/case-studies/vintage-jewellery-co/" title="Vintage Jewellery Co">Vintage Jewellery Co</a></li>
+                            <li><a href="/case-studies/william-foxx-pitt/" title="William Fox-Pitt">William Fox-Pitt</a></li>
+                            <li><a href="/case-studies/benson-browne/" title="Benson Browne">Benson Browne</a></li>
+                            <li><a href="/case-studies/greenfield-ewell/" title="Greenfield Ewell">Greenfield Ewell</a></li>
+                            <li><a href="/case-studies/stratology/" title="Stratology">Stratology</a></li>
+                            <li><a href="/case-studies/cctv-tek/" title="CCTV Tek">CCTV Tek</a></li>
+                            <li><a href="/case-studies/south-west-business/" title="South West Business">South West Business</a></li>
+                        </ul>
+                    </li>
+                    <li class="nodiv" id="nav7"><a href="/blog/" title="Blog">Blog</a></li>
+                    <li class="nodiv" id="nav8"><a href="/contact-us/" title="Contact Us">Contact Us</a></li>
+                    <li class="nodiv" id="nav9"><a href="/login/" title="Login">Login</a></li>
+                </ul>
+            </div>
+
+        </nav>
     </div>
     
     <script src="/assets/js/vendor/jquery-1.11.2.min.js"></script>
@@ -527,19 +582,19 @@
 
         $(window).scroll(function() {
             if ($('.show-menu').length > 0) { 
-                $("header").headroom("destroy");
+                // $("header").headroom("destroy");
             }
         });
 
-        $(window).on("load resize", function(){
-            if (Modernizr.mq('(max-width: 960px)')) {
-                $(".hero").addClass("mobile-menu");
-                //$("nav").addClass("mobile-nav");
-            } else {
-                $(".hero").removeClass("mobile-menu");
-                //$("nav").addClass("mobile-nav");
-            }
-        });
+        // $(window).on("load resize", function(){
+        //     if (Modernizr.mq('(max-width: 960px)')) {
+        //         $(".hero").addClass("mobile-menu");
+        //         //$("nav").addClass("mobile-nav");
+        //     } else {
+        //         $(".hero").removeClass("mobile-menu");
+        //         //$("nav").addClass("mobile-nav");
+        //     }
+        // });
 
         var menuOpen = false;
         $(".menu-btn").on("click", function(){
@@ -568,10 +623,16 @@
             //         $(this).siblings('a').toggleClass('open');
             //     });
             // });
+            // $(".mobile-menu .nav li.parent > a").click(function(e){
+            //     e.preventDefault();
+            //     $('~ ul',this).toggleClass('menu-down');
+            //     $(this).parent().toggleClass('open');
+                
+            // });
             $(".mobile-menu .nav li.parent > a").click(function(e){
                 e.preventDefault();
                 $('~ ul',this).toggleClass('menu-down');
-                $(this).siblings('a').toggleClass('open');
+                $(this).parent().toggleClass('open');
                 
             });
         
@@ -584,7 +645,14 @@
         });       
 
         
-
+		$('.popup-youtube, .popup-vimeo').magnificPopup({
+          disableOn: 0,
+          type: 'iframe',
+          mainClass: 'mfp-fade',
+          removalDelay: 160,
+          preloader: false,
+          fixedContentPos: false
+        });
 
 
         $(function() {
