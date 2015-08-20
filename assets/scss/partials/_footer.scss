@@ -5,8 +5,11 @@ footer{
 	background:{
 		image: url('/assets/images/footer-bg.jpg');
 		color: #fdfdfd;
-		position: bottom center;
-		repeat: no-repeat;
+		position: bottom left;
+		repeat: no-repeat;	
+	}
+	@include respond-to(480){
+		background-position: bottom center;
 	}
 	.footer-top{
 		text-align: center;
@@ -19,6 +22,17 @@ footer{
 		}
 		@include respond-to(960){
 			margin: 1em auto;
+		}
+	}
+	.cssanimations.csstransitions &{
+		h2{
+			transform:  scale(0.5);
+			opacity: 0;
+		}
+		&.visible{
+			h2{
+				animation: fadein 500ms ease-in forwards;
+			}
 		}
 	}
 }

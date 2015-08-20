@@ -9,19 +9,8 @@
 
 .main-nav{
 	.menu{
-
 		display: block;
-		//height: 100%;
-		//width: calc(100% + 18px);
-		//overflow-y: scroll;
-		//padding: 5em 2em;
 		@include clearfix;
-		@include respond-to(960){
-			width: 100%;
-			height: auto;
-			padding: 0;
-			overflow: initial;
-		}
 		>li{
 			position: relative;
 			display: inline-block;
@@ -42,6 +31,19 @@
 			@include respond-to(1160){
 				font-size: 16px;
 				margin: 0 0.5em
+			}
+			&.liLinkActive{
+				@include respond-to(960){
+					&:before{
+						content: "";
+						display: block;
+						position: absolute;
+						bottom: 1px;
+						height: 5px;
+						width: 100%;
+						background-color: #fff;
+					}
+				}
 			}
 
 			a{
@@ -69,11 +71,12 @@
 			}
 			&:last-child{
 				a{
-					padding: 0.45em 1em;
+					padding: 0.25em 1em;
 					background-color: $base-color-light;
 					color: #fff;
 					display: inline-block;
 					line-height: 2;
+					border-radius: 1px;
 					&:hover{
 						background-color: lighten(saturate($base-color-light, 10%),5%);
 					}
@@ -86,19 +89,22 @@
 			    @include respond-to(960){
 					position: absolute;
 				    z-index: 100;
-				    top: 95%;
+				    top: 98%;
 				    left: 0;
 				    min-width: 250px;
 				    margin: 0;
-				    background-color: #000;
+				    background-color: rgba(0,0,0,0.9);
 				    height: 0;
 				    opacity: 0;
 				    transition: opacity .2s linear;
 			    }
 			    li{
 			    	border-bottom: 1px solid rgba(255,255,255,0.1);
-			    	padding: 0 0.5em;
+			    	padding: 0 0.75em;
 			    	font-size: 14px;
+			    	&:hover{
+			    		background-color: #000;
+			    	}
 			    	a{
 			    		text-align: left;
 			    		whitespace: no-wrap;
@@ -107,21 +113,6 @@
 			    		font-size: ms(0);
 			    	}
 			    }
-
-			}
-			
-			&.liLinkActive{
-				@include respond-to(960){
-					&:before{
-						content: "";
-						display: block;
-						position: absolute;
-						bottom: 3px;
-						height: 5px;
-						width: 100%;
-						background-color: #fff;
-					}
-				}
 			}
 		}
 	}
@@ -129,9 +120,8 @@
 
 
 .mobile-menu{
-
 	.nav{
-		 padding: 7.5em 0 2em;
+		 padding: 7em 0 3em;
 		 overflow: hidden;
 		 height: 100%;
 		 width: 95%;
@@ -142,14 +132,10 @@
 			padding: 0 2em;
 			height: 100%;
 			width: calc(100% + 18px);
-			//padding: 0 2em;
 			>li{	
 				border-bottom: 1px solid rgba(255,255,255,0.15);
 				position: relative;
-				transform: translateY(3em);
 				transition: transform 400ms ease-out;
-				//text-align: right;
-				
 				&:nth-child(1){
 					transform: translateY(70em);
 				}
@@ -184,24 +170,23 @@
 					>a{
 						&:after{
 							content: url("/assets/images/down.png");
-							// width: 0.75em;
-							// height: 0.75em;
-							// display: inline-block;
 							margin-left: 0.5em;
-							margin-top: 0.2em;
 							position: relative;
-							//top: 1px;
 							display: inline-block;
 							transition: transform 150ms cubic-bezier(.13,.68,.69,.3);
 							transform-origin: 50 50;
 						}
 					}
 					&.open{
+						background-color: darken(#243040,6%); 
 						>a{
 							color: $base-color;
 							&:after{
 								transform: rotate(180deg);
 							}
+						}
+						>ul{
+							display: block;
 						}
 					}
 				}
@@ -210,8 +195,7 @@
 					display: block;
 					text-transform: uppercase;
 					color: #fff;
-					padding: 0 0.5em;
-
+					padding: 0 0 0 0.95em;
 					font-family: $heading-font-bold;
 					&.open{
 						color: $base-color;
@@ -226,7 +210,6 @@
 				&:last-child{
 					border-bottom: none;;
 					margin-top: 1em;
-					//float: right;
 					a{
 						line-height: 2;
 						padding: 0.45em 3em;
@@ -242,9 +225,11 @@
 					}
 				}
 				ul{
-					background-color: darken(#243040,5%);
-					padding: 0.5em 1em;
+					background-color: darken(#243040,3%);
+					padding: 0.5em 1em 0.75em;
 					display: none;
+					border-left: 1px solid darken(#243040,6%);
+					border-right: 1px solid darken(#243040,6%); 
 					li{
 						a{
 							//text-align: right;
@@ -257,9 +242,9 @@
 							}
 						}
 					}
-					&.menu-down{
-						display: block;
-					}
+					// &.menu-down{
+					// 	display: block;
+					// }
 				}
 			}
 		}

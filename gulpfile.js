@@ -22,13 +22,13 @@ var gulp = require('gulp'),
  
 gulp.task('connect', function() {
   connect.server({
-    root: './',
+    root: './index-case-studies.html',
     livereload: true
   });
 });
  
 gulp.task('html', function () {
-  gulp.src('index.html')
+  gulp.src('index-case-studies.html')
     .pipe(connect.reload());
 });
 

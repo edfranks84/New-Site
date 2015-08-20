@@ -216,12 +216,12 @@
 }
 .owl-dots{
   display: block;
-  margin: 1em auto 0;
+  margin: 1.5em auto 0;
   text-align: center;
   .owl-dot{
     span{
-      height: 1em;
-      width: 1em;
+      height: 0.75em;
+      width: 0.75em;
       display: block;
       background-color: rgba(255,255,255,0.2);
       border-radius: 50%;
@@ -235,7 +235,7 @@
 }
 .owl-dot{
   display: inline-block;
-  margin: 0 0.25em;
+  margin: 0 0.3em;
   &.active{
     span{
       background-color: $base-color-light;

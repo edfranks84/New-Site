@@ -153,3 +153,12 @@
 	.dark-bg{
 		background: url("/assets/images/dark-pattern.jpg") repeat;
 	}
+	.grid{
+		background: url("/assets/images/grid-pattern.png") repeat #fff;
+	}
+	.black{
+		background: #141414;
+		h1,h2,h3,h4,h5,h6,p{
+			color: #fff;
+		}
+	}

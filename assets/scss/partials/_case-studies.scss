@@ -1,0 +1,89 @@
+.sh{
+	.divider{
+		&:after{
+			background-color: #e2c8a2;
+		}
+	}
+}
+.cs-hero{
+	text-align: center;
+	text-transform: uppercase;
+	height: 100%;
+	height: 100vh;
+	width: 100%;
+	padding: 0;
+	position: relative;
+	background:{
+		size: cover;
+		repeat: no-repeat;
+	}
+	h1,h2,h3,h4,h5,h6,p{
+		color: #fff;
+		line-height: 1.1;
+	}
+	h3{
+		font-size: ms(12);
+		margin-bottom: 0;
+	}
+	h1{
+		font-size: ms(16);
+	}
+	.divider-center{
+		&:after{
+			margin: 0.2em auto;
+		}
+	}
+
+}
+.hero-content.cs-hero__content{
+	max-width: 60em;
+}
+
+.cs-about,.cs-brief{
+	padding: 6em 0;
+	.content-wrap{
+		width: span(8 of 12 0);
+		padding-right: span(1);
+		margin: auto;
+	}
+}
+.cs-brief{
+	p{
+		font-family: $body-font-light;
+	}
+}
+
+.cs-identity{
+	padding: 6em 0;
+	&__top,&__info{
+		width: span(10 of 12 0);
+		margin: 0 auto 6em;
+		@include clearfix;
+	}
+	&__intro, &__type{
+		@include span(6 of 12);
+	}
+	&__logo, &__colours{
+		@include span(6 of 12 last);
+		img{
+			box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+		}
+	}
+	&__images{
+		margin-bottom: 6em;
+		@include clearfix;
+		img{
+			width: 33.3%;
+			float: left;
+			height: auto;
+		}
+	}
+	&__info{
+		h2{
+			font-size: ms(6);
+		}
+	}
+	&__type{
+
+	}
+}
