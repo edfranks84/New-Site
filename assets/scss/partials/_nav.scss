@@ -121,7 +121,7 @@
 
 .mobile-menu{
 	.nav{
-		 padding: 7em 0 3em;
+		 padding: 7.5em 0 3em;
 		 overflow: hidden;
 		 height: 100%;
 		 width: 95%;
@@ -133,7 +133,7 @@
 			height: 100%;
 			width: calc(100% + 18px);
 			>li{	
-				border-bottom: 1px solid rgba(255,255,255,0.15);
+				border-bottom: 1px solid rgba(255,255,255,0.1);
 				position: relative;
 				transition: transform 400ms ease-out;
 				&:nth-child(1){
@@ -169,10 +169,13 @@
 				&.parent{
 					>a{
 						&:after{
-							content: url("/assets/images/down.png");
+							// content: url("/assets/images/down.png");
+							content: url("/assets/images/svg/down.svg");
+							width: 10px;
+							height: 10px;
 							margin-left: 0.5em;
 							position: relative;
-							display: inline-block;
+							display: inline-table;
 							transition: transform 150ms cubic-bezier(.13,.68,.69,.3);
 							transform-origin: 50 50;
 						}
@@ -197,6 +200,9 @@
 					color: #fff;
 					padding: 0 0 0 0.95em;
 					font-family: $heading-font-bold;
+					@include respond-to(768){
+						font-size: ms(1);
+					}
 					&.open{
 						color: $base-color;
 						&:after{

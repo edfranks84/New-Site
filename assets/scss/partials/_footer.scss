@@ -1,7 +1,7 @@
 footer{
-	padding: 5em 1em 28em;
-	padding-top: 5em;
-	padding-bottom: 28em;
+	padding: 3em 1em 24em;
+	// padding-top: 5em;
+	// padding-bottom: 28em;
 	background:{
 		image: url('/assets/images/footer-bg.jpg');
 		color: #fdfdfd;
@@ -9,6 +9,9 @@ footer{
 		repeat: no-repeat;	
 	}
 	@include respond-to(480){
+		padding: 5em 1em 28em;
+	}
+	@include respond-to(800){
 		background-position: bottom center;
 	}
 	.footer-top{
@@ -41,7 +44,7 @@ footer{
 	width: 94%;
 	margin: 2.5em auto 1.95em;
 	padding-bottom: 1.95em;
-	border-bottom: 1px solid #c7c7c7;
+	border-bottom: 1px solid #ddd;
 	text-align: center;
 	@include clearfix;
 	@include respond-to(320){

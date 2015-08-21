@@ -28,11 +28,12 @@
 		size: cover;
 		repeat: no-repeat;
 		color: #111;
+		position: center;
 	}
 }
 
 .hero-content{
-	padding-top: 5em;
+	padding-top: 4em;
 	text-align: center;
 	width: 85%;
 	max-width: 50em;
@@ -41,25 +42,29 @@
 	top: 50%;
 	transform: translateY(-50%);
 	font-size: 14px;
+	@include respond-to(960){
+		font-size: 16px;
+	}
 	h1,h6{
 		color: #fff;
 	}
 	.button{
-		margin-top: 4em;
+		margin-top: 1.5em;
+		@include respond-to(400){
+			margin-top: 3em;
+		}
 	}
-	@include respond-to(960){
-		font-size: 16px;
-	}
+
 	.cssanimations &{
 		h6{
 			transform: translateY(400%) scale(0.5);
 			opacity: 0;
-			animation: fadein 750ms ease-in 1.8s forwards;
+			animation: fadein 750ms ease-in 1.5s forwards;
 		}
 		.button{
 			transform: translateY(500%) scale(0.25);
 			opacity: 0;
-			animation: fadein 850ms ease-in 1.9s forwards;
+			animation: fadein 850ms ease-in 1.65s forwards;
 		}
 	}
 }
@@ -78,14 +83,17 @@
 		@include respond-to(768){
 			font-size: ms(15);
 		}
-		@include respond-to(1000){
+		@include respond-to(1060){
 			font-size: ms(17);
 		}
 		
 	}
 
 	.cssanimations.csstransitions &{
-		transform: translateY(-200%) scale(0.5);
+		//transform: translateY(-250%) scale(0.5);
+		//transform: scale(0.5);
+		transform: translateY(-20%);
+		opacity: 0;
 		animation: fadein 1s ease-in 500ms forwards;
 	}
 
@@ -97,7 +105,7 @@
 			}
 			.cssanimations.csstransitions &{
 				width: 0;
-				animation: expand 400ms ease-in 1.6s forwards;
+				animation: expand 400ms ease-in 1.3s forwards;
 			}
 		}
 	}
@@ -112,7 +120,6 @@ section{
 }
 
 .about-us{
-	
 	background:{
 		image: url("/assets/images/what-we-do.jpg");
 		size: cover;
@@ -125,7 +132,7 @@ section{
 	.content-wrap{
 		max-width: 55em;
 		margin: auto;
-		width: 85%;
+		width: 91%;
 	}
 	h2,p{
 		color: #fff;
@@ -158,10 +165,13 @@ section{
 		color: #111;
 		position: center ;
 	}
+	@include respond-to(700){
+		padding-bottom: 65%;
+	}
 	@include respond-to(800){
 		@include span(4 of 12 last 0);
 		background-position: center;
-		padding-bottom: 50%;
+		padding-bottom: 60%;
 	}
 	@include respond-to(920){
 		@include span(6 of 12 last 0);
@@ -174,7 +184,7 @@ section{
 	
 	@include respond-to(800){
 		@include span(8 of 12 0);
-		padding-bottom: 50%;
+		padding-bottom: 60%;
 		height: 0;
 		&__inner{
 			position: absolute;
@@ -284,12 +294,13 @@ section{
 		}
 		@include respond-to(640){
 			h3{
-				font-size: ms(6);
+				font-size: ms(5);
 			}
 		}
 		@include respond-to(960){
 			width: 25%;
 			h3{
+				//font-size: ms(6);
 				&:after{
 					margin-top: 0.7em;
 				}
@@ -377,7 +388,7 @@ section{
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	width: 98%;
+	width: 90%;
 	@include respond-to(640){
 		width: 85%;
 	}
@@ -558,6 +569,8 @@ section{
 	}
 	@include respond-to(960){
 		@include span(2 of 12 split);
+	}
+	@include respond-to(1060){
 		padding: 6em 0;
 	}
 	svg{
@@ -671,7 +684,7 @@ section{
 	margin-bottom: 6px;
 	@include respond-to(400){
 		@include span(6 of 12 split 0.2);	
-		margin-bottom: 6px;
+		margin-bottom: 1.2%;
 	}
 	@include respond-to(860){
 		@include span(3 of 12 split 0.1);
@@ -767,9 +780,9 @@ section{
 	}
 	@include respond-to(860){
 		@include span(5 of 12 0);
-		padding-bottom: 60%;
+		padding-bottom: 65%;
 	}
-	@include respond-to(1000){
+	@include respond-to(1160){
 		@include span(6 of 12 0);
 		padding-bottom: 50%;
 	}
@@ -781,10 +794,10 @@ section{
 	z-index: 5;
 	@include respond-to(860){
 		@include span(7 of 12 last 0);
-		padding-bottom: 60%;
+		padding-bottom: 65%;
 		height: 0;
 	}
-	@include respond-to(1000){
+	@include respond-to(1160){
 		@include span(6 of 12 last 0);
 		padding-bottom: 50%;
 	}
@@ -802,7 +815,7 @@ section{
 		max-width: 85%;
 		margin: auto;
 		position: relative;
-		padding: 3em 0;
+		padding: 3.5em 0;
 		@include respond-to(860){
 			top: 50%;
 			transform: translateY(-50%);

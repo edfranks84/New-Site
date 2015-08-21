@@ -43,7 +43,7 @@ gulp.task('sass', function() {
 });
 
 gulp.task('svgstore', function () {
-    return gulp.src('assets/images/svg-sprite/*.svg')
+    return gulp.src(['assets/images/svg-sprite/*.svg','!assets/images/svg-sprite/svgsprite.svg'])
       .pipe(cheerio({
             run: function ($) {
                 $('[fill]').removeAttr('fill');

@@ -16,17 +16,24 @@
 	background:{
 		size: cover;
 		repeat: no-repeat;
+		position: center;
 	}
 	h1,h2,h3,h4,h5,h6,p{
 		color: #fff;
-		line-height: 1.1;
+	}
+	h1,h2,h3{
+		line-height: 1;
 	}
 	h3{
-		font-size: ms(12);
 		margin-bottom: 0;
+		@include respond-to(1060){
+			font-size: ms(12);
+		}
 	}
 	h1{
-		font-size: ms(16);
+		@include respond-to(1000){
+			font-size: ms(15);
+		}
 	}
 	.divider-center{
 		&:after{
@@ -38,13 +45,73 @@
 .hero-content.cs-hero__content{
 	max-width: 60em;
 }
+.cs-hero__content{
+	padding-top: 4em;
+	.button{
+		margin-top: 1.5em;
+	}
+	@include respond-to(400){
+		padding-top: 6em;
+		.button{
+			margin-top: 3em;
+		}	
+	}
+}
 
-.cs-about,.cs-brief{
-	padding: 6em 0;
+.case-studies{
+	counter-reset: cs-section;
+	.cs-section{
+		counter-increment: cs-section;
+	}
+}
+
+.cs-about,.cs-brief,.client-quote{
+	padding: 3.5em 1em;
+	@include clearfix;
+	@include respond-to(480){
+		padding: 6em 0;
+	}
 	.content-wrap{
-		width: span(8 of 12 0);
-		padding-right: span(1);
+		width: span(10 of 12 0);
 		margin: auto;
+		@include respond-to(480){
+			width: span(9 of 12 0);
+		}
+		@include respond-to(640){
+			width: span(8 of 12 0);
+		}
+		@include respond-to(800){
+			padding-right: span(1);
+		}
+	}
+}
+//.cs-designs, .cs-identity, .cs-responsive,.cs-about,.cs-brief,.client-quote{
+.cs-section{
+	h1{
+		line-height: 1.1;
+		font-size: ms(6);
+		position: relative;
+		@include respond-to(480){
+			font-size: ms(8);
+		}
+		@include respond-to(1000){
+			font-size: ms(10);
+		}
+		&:before{
+			content: '0' counter(cs-section) ' / ';
+			font-size: 15px;
+			color: #9b9b9b;
+			font-family: $heading-font;
+			position: absolute;
+			top: -5px;
+			left: 0;
+			@include respond-to(480){
+				margin-left: -37px;
+				position: relative;
+				font-size: 21px;
+				top: auto;
+			}
+		}
 	}
 }
 .cs-brief{
@@ -57,25 +124,51 @@
 	padding: 6em 0;
 	&__top,&__info{
 		width: span(10 of 12 0);
-		margin: 0 auto 6em;
+		margin: 0 auto;
 		@include clearfix;
 	}
+	&__top{
+		margin-bottom: 3em;
+		@include respond-to(860){
+			margin-bottom: 6em;
+		}
+	}
 	&__intro, &__type{
-		@include span(6 of 12);
+		@include respond-to(860){
+			@include span(6 of 12 .75 );
+		}
 	}
 	&__logo, &__colours{
-		@include span(6 of 12 last);
+		@include respond-to(860){
+			@include span(6 of 12 .75 last);
+		}
 		img{
-			box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+			box-shadow: 0 2px 4px 0 rgba(0,0,0,0.15);
+		}
+	}
+	&__logo{
+		margin-top: 2em;
+		@include respond-to(860){
+			margin-top: 0;
+			padding-top: 1.2em;
 		}
 	}
 	&__images{
-		margin-bottom: 6em;
+		margin-bottom: 3em;
+		@include respond-to(860){
+			margin-bottom: 6em;
+		}
 		@include clearfix;
 		img{
-			width: 33.3%;
-			float: left;
-			height: auto;
+			display: block;
+			@include respond-to(400){
+				width: 50%;
+				float: left;
+				height: auto;
+			}
+			@include respond-to(860){
+				width: 33.33%;
+			}
 		}
 	}
 	&__info{
@@ -84,6 +177,209 @@
 		}
 	}
 	&__type{
+		h3{
+			color: #666;
+			font-size: ms(1);
+			margin-bottom: 0.3em;
+		}
+		.divider{
+			margin-bottom: 0.6em;
+			padding-top: 0.6em;
+		}
+		.upper{
+			text-transform: uppercase;
+		}
+		.lower{
+			text-transform: lowercase;
+		}
+		.webfont{
+			font-size: ms(5);
+			word-wrap: break-word;
+			line-height: 1.1;
+			margin-bottom: 0.25em;
+			@include respond-to(860){
+				font-size: ms(6);
+			}
+		}
+	}
+}
+.primary-font{
+	margin-bottom: 1.5em;
+	.sh &{
+
+		.font-name,.upper{
+			font-family: 'Montserrat-Bold';
+		}
+		.lower{
+			font-family: 'Montserrat-Regular';
+		}
 
 	}
 }
+.secondary-font{
+	.sh &{
+		.font-name,.upper{
+			font-family: 'droid_serifbold';
+		}
+		.lower{
+			font-family: 'droid_serifregular';
+		}
+	}
+}
+.cs-identity__colours{
+	margin-top: 2em;
+	@include respond-to(860){
+		margin-top: 1em;
+	}
+}
+.colour-blocks{
+	@include clearfix;
+	margin-top: 1.5em;
+	@include respond-to(860){
+		margin-top: 3em;
+	}
+	span{
+		width:20%;
+		float: left;
+		height: 0;
+		padding-bottom: 20%;
+	}
+	.cssanimations.csstransitions &{
+		span{
+			opacity: 0;
+			width: 0;
+		}
+		&.visible{
+			span{
+				animation: colourfade 400ms linear forwards;
+				&:nth-child(1){
+					animation-delay: 300ms;
+				}
+				&:nth-child(2){
+					animation-delay: 600ms;
+				}
+				&:nth-child(3){
+					animation-delay: 900ms;
+				}
+				&:nth-child(4){
+					animation-delay: 1200ms;
+				}
+				&:nth-child(5){
+					animation-delay: 1500ms;
+				}
+			}
+		}
+	}
+}
+
+@keyframes colourfade{
+	0%{
+		opacity: 0;
+		width: 0;
+	}
+	100%{
+		opacity: 1;
+		width: 20%;
+	}
+}
+
+.cs-designs__wrap{
+	width: span(10 of 12 0);
+	margin: 0 auto;
+}
+div[class^="concept"]{
+	margin-top: 2em;
+}
+.concept-small{
+	text-align: center;
+	display: block;
+	@include respond-to(700){
+		display: none;
+	}
+}
+.concept-large{
+	display: none;
+	@include respond-to(700){
+		display: block;
+	}
+}
+
+.cs-responsive{
+	background-color: #f6f6f6;
+}
+
+.cs-responsive__wrap{
+	width: span(10 of 12 0);
+	max-width: 85em;
+	margin: 0 auto;
+}
+
+.cs-responsive__img{
+	margin-top: 4em;
+	text-align: center;
+}
+.client-name{
+	font-family: $body-font-bold;
+	font-size: ms(3);
+}
+
+.cs-links{
+	padding: 0;
+	font-size: 14px;
+	@include respond-to(1000){
+		font-size: 16px;
+	}
+	>div{
+		//@include span(4 of 12 0);
+		@include respond-to(860){
+			@include span(4 of 12 0);
+		}
+	}
+}
+.project-link,.cs-link{
+	height: 19em;
+	position: relative;
+}
+.project-link{
+	position: relative;
+	background:{
+		size: cover;
+		position: center;
+	}
+	&:before{
+		position: absolute;
+		top: 0.75em;
+		left: 0.75em;
+		right: 0.75em;
+		bottom: 0.75em;
+		display: block;
+		background-color: rgba(0,0,0,0);
+		transition: background-color 300ms ease-in-out;
+		content: "";
+	}
+	&:hover{
+		&:before{
+			background-color: rgba(0,0,0,0.5);
+			//background-color: rgba($base-color,0.75);
+		}
+	}
+}
+.link-text{
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+		text-align: center;
+		a{
+			color: #fff;
+		}
+		&:hover{
+			text-decoration: underline;
+		}
+		h4,h5,p{
+			color: #fff;
+			text-transform: uppercase;
+			padding-top: 0;
+			margin-bottom: 0;
+			
+		}
+	}
