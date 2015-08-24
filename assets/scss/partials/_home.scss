@@ -24,11 +24,14 @@
 	padding: 0;
 	position: relative;
 	background:{
-		image: url("/assets/images/home-hero.jpg");
+		image: url("/smarter-web-company-co-uk/_img/images/home-hero.jpg");
 		size: cover;
 		repeat: no-repeat;
 		color: #111;
 		position: center;
+	}
+	.previewFrame &{
+		height: 700px;
 	}
 }
 
@@ -121,7 +124,7 @@ section{
 
 .about-us{
 	background:{
-		image: url("/assets/images/what-we-do.jpg");
+		image: url("/smarter-web-company-co-uk/_img/images/what-we-do.jpg");
 		size: cover;
 		repeat: no-repeat;
 		color: #111;
@@ -159,7 +162,7 @@ section{
 	height: 0;
 	z-index: 1;
 	background:{
-		image: url("/assets/images/bespoke-design.jpg");
+		image: url("/smarter-web-company-co-uk/_img/images/bespoke-design.jpg");
 		size: cover;
 		repeat: no-repeat;
 		color: #111;
@@ -175,6 +178,12 @@ section{
 	}
 	@include respond-to(920){
 		@include span(6 of 12 last 0);
+	}
+	@include respond-to(1200){
+		padding-bottom: 50%;
+	}
+	@include respond-to(1400){
+		padding-bottom: 40%;
 	}
 }
 .bespoke-copy{
@@ -197,6 +206,12 @@ section{
 	}
 	@include respond-to(920){
 		@include span(6 of 12 0);
+	}
+	@include respond-to(1200){
+		padding-bottom: 50%;
+	}
+	@include respond-to(1400){
+		padding-bottom: 40%;
 	}
 	.content-wrap{
 		max-width: 85%;
@@ -578,13 +593,13 @@ section{
 		width: 5em;
 		height: 5em;
 		fill: #111;
-		transition: all 900ms cubic-bezier(0.23, 1, 0.32, 1);
+		transition: all 500ms cubic-bezier(0.23, 1, 0.32, 1);
 	}
 	h6{
 		font-family: $heading-font-bold;
 		text-transform: uppercase;
 		margin-bottom: 0;
-		transition: all 900ms cubic-bezier(0.23, 1, 0.32, 1);
+		transition: all 500ms cubic-bezier(0.23, 1, 0.32, 1);
 	}
 	a{
 		display: block;
@@ -614,36 +629,36 @@ section{
 }
 .signup{
 	&:hover{
-		background-image: url("/assets/images/process-signup.jpg");
+		background-image: url("/smarter-web-company-co-uk/_img/images/process-signup.jpg");
 	}
 }
 
 .research{
 	&:hover{
-		background-image: url("/assets/images/process-research.jpg");
+		background-image: url("/smarter-web-company-co-uk/_img/images/process-research.jpg");
 	}
 }
 
 .design{
 	&:hover{
-		background-image: url("/assets/images/process-design.jpg");
+		background-image: url("/smarter-web-company-co-uk/_img/images/process-design.jpg");
 	}
 }
 .build{
 	&:hover{
-		background-image: url("/assets/images/process-build.jpg");
+		background-image: url("/smarter-web-company-co-uk/_img/images/process-build.jpg");
 	}
 }
 
 .launch{
 	&:hover{
-		background-image: url("/assets/images/process-launch.jpg");
+		background-image: url("/smarter-web-company-co-uk/_img/images/process-launch.jpg");
 	}
 }
 
 .support{
 	&:hover{
-		background-image: url("/assets/images/process-marketing.jpg");
+		background-image: url("/smarter-web-company-co-uk/_img/images/process-marketing.jpg");
 	}
 }
 
@@ -660,9 +675,11 @@ section{
 	h2,h6{
 		color: #fff;
 	}
-	h6.sub-title{
-		text-transform: none;
-		font-family: $body-font-light;
+	.sub-title{
+		h6{
+			text-transform: none;
+			font-family: $body-font-light;
+		}
 	}
 }
 .packages-wrap{
@@ -772,7 +789,7 @@ section{
 	height: 0;
 	z-index: 1;
 	background:{
-		image: url("/assets/images/hosted-solution.jpg");
+		image: url("/smarter-web-company-co-uk/_img/images/hosted-solution.jpg");
 		size: cover;
 		repeat: no-repeat;
 		color: #111;
@@ -785,6 +802,9 @@ section{
 	@include respond-to(1160){
 		@include span(6 of 12 0);
 		padding-bottom: 50%;
+	}
+	@include respond-to(1500){
+		padding-bottom: 40%;
 	}
 }
 .hosted-content{
@@ -800,6 +820,9 @@ section{
 	@include respond-to(1160){
 		@include span(6 of 12 last 0);
 		padding-bottom: 50%;
+	}
+	@include respond-to(1500){
+		padding-bottom: 40%;
 	}
 	&__inner{
 		@include respond-to(860){
@@ -872,7 +895,7 @@ section{
 *********************************************/
 
 .cms{
-	background-image: url("/assets/images/home-cms-bg.jpg");
+	background-image: url("/smarter-web-company-co-uk/_img/images/home-cms-bg.jpg");
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -881,11 +904,13 @@ section{
 	@include respond-to(768){
 		padding: 5em 1em;
 	}
-	h6.sub-title{
-		text-transform: none;
-		max-width: 30em;
-		margin: auto;
-		padding-top: 0;
+	.sub-title{
+		h6{
+			text-transform: none;
+			max-width: 30em;
+			margin: auto;
+			padding-top: 0;
+		}
 	}
 	.play-icon{
 		height: 7em;
@@ -945,15 +970,18 @@ section{
 .testimonials{
 	padding: 1.5em 1em;
 	position: relative;
-	background-image: url("/assets/images/testimonial-bg.jpg");
+	background-image: url("/smarter-web-company-co-uk/_img/images/testimonial-bg.jpg");
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
 	width: 100%;
 	@include respond-to(640){
-		height: 100%;
-		height: 80vh;
+		height: 75%;
+		height: 75vh;
 		padding: 2em;
+		.previewFrame &{
+			height: 500px;
+		}
 	}
 	h2{
 		color: #fff;

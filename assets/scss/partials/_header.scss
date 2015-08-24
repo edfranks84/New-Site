@@ -74,7 +74,7 @@ header{
     transform: translateY(-50%);
     line-height: 0;
     text-align: right;
-    @include respond-to(960){
+    @include respond-to(1060){
     	@include span(2 of 12 0);
     	text-align: left;
     	padding: 1.5em 0 1.5em 1.5em;
@@ -97,7 +97,7 @@ header{
 	// 	height: 100vh;
 	// 	overflow: hidden;
 	// }
-	@include respond-to(960){
+	@include respond-to(1060){
 		@include span(10 of 12 0 last);
 		padding-right: 1.5em;
 		background: transparent;
@@ -113,7 +113,7 @@ header{
  //    .show-menu &{
  //    	display: block;
  //    }
-	@include respond-to(960){
+	@include respond-to(1060){
 		float: right;
 		padding: 0;
 		width: auto;
@@ -191,7 +191,7 @@ Mobile Nav
     top: 50%;
     transform: translateY(-50%);
     // float: right;
-    @include respond-to(960){
+    @include respond-to(1060){
 		display: none;
  	}
     &.active,
@@ -282,11 +282,78 @@ Mobile Nav
     transition: transform 400ms cubic-bezier(.25,.56,1,.25);
     transform: translateX(-100%);
    	display: block;
-	@include respond-to(960){
+	@include respond-to(1060){
 		display: none;
 	}
     .show-menu &{
     	transform: translateX(0);
     }
 
+}
+
+
+/***************************************
+
+LOGIN STYLES
+
+***************************************/
+
+.modal{
+	background:{
+		//image: url("/smarter-web-company-co-uk/_img/images/login-bg.jpg");
+		//size: cover;
+		//position: center;
+		color: rgba(0,0,0,0.5);
+	}
+	.in{
+		.modal-dialog{
+			transform: translateY(50%);
+		}
+	}
+}
+.modal-content{
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+	border-radius: 1px;
+	background-color: rgba(0,0,0,0.5);
+	background-color: rgba(255,255,255,0.9);
+}
+.modal-body{
+	padding: 3em;
+	text-align: center;
+	h1{
+		//color: #fff;
+		margin-bottom: 0;
+	}
+	p{
+		//color: #fff;
+		text-transform: uppercase;
+	}
+}
+.close{
+	color: #fff;
+	font-size: 1.6em; 
+}
+#pnlLogin{
+	input{
+		padding: 1em 1.25em;
+		display: inline-block;
+		width: 100%;
+		appearance: none;
+		border: 1px solid #ccc;
+		&[type="submit"]{
+			background: transparent;
+			color: #111;
+			border: 3px solid #111;
+			&:hover{
+				background: $base-color;
+				color: #fff;
+				border: 3px solid $base-color;
+			}
+		}
+	}
+}
+.forgot-password{
+	margin-top: 2em;
+	padding-top: 2em;
+	border-top: 1px solid #ccc;
 }

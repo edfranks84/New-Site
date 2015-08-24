@@ -16,7 +16,7 @@
 			display: inline-block;
 			margin: 0 0.25em;
 			font-size: 14px;
-			@include respond-to(960){
+			@include respond-to(1060){
 				text-align: center;
 				height: 100%;
 				display: inline-block;
@@ -28,12 +28,12 @@
 					}
 				}
 			}
-			@include respond-to(1160){
+			@include respond-to(1250){
 				font-size: 16px;
 				margin: 0 0.5em
 			}
 			&.liLinkActive{
-				@include respond-to(960){
+				@include respond-to(1060){
 					&:before{
 						content: "";
 						display: block;
@@ -64,7 +64,7 @@
 				.headroom--not-top &{
 					line-height: 4rem;
 				}
-				@include respond-to(960){
+				@include respond-to(1060){
 					line-height: 94px;
 					text-align: center;
 				}
@@ -86,7 +86,7 @@
 				display: none;
 				overflow: hidden;
 			    
-			    @include respond-to(960){
+			    @include respond-to(1060){
 					position: absolute;
 				    z-index: 100;
 				    top: 98%;
@@ -170,7 +170,7 @@
 					>a{
 						&:after{
 							// content: url("/assets/images/down.png");
-							content: url("/assets/images/svg/down.svg");
+							content: url("/smarter-web-company-co-uk/_img/images/down.svg");
 							width: 10px;
 							height: 10px;
 							margin-left: 0.5em;

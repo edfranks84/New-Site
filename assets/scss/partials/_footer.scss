@@ -3,7 +3,7 @@ footer{
 	// padding-top: 5em;
 	// padding-bottom: 28em;
 	background:{
-		image: url('/assets/images/footer-bg.jpg');
+		image: url('/smarter-web-company-co-uk/_img/images/footer-bg.jpg');
 		color: #fdfdfd;
 		position: bottom left;
 		repeat: no-repeat;	
@@ -13,6 +13,9 @@ footer{
 	}
 	@include respond-to(800){
 		background-position: bottom center;
+	}
+	@include respond-to(1500){
+		background-size: 100% auto;
 	}
 	.footer-top{
 		text-align: center;

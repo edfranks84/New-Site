@@ -238,16 +238,16 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .h1 a, .h2 a, .h3 a, .h4 a, .h5 a, .h6 a {
   margin: 0.4em auto; }
 
 .dots {
-  background: url("/assets/images/dot-pattern.jpg") repeat; }
+  background: url("/smarter-web-company-co-uk/_img/images/dot-pattern.jpg") repeat; }
 
 .light-dots {
-  background: url("/assets/images/white-dot.png") repeat; }
+  background: url("/smarter-web-company-co-uk/_img/images/white-dot.png") repeat; }
 
 .dark-bg {
-  background: url("/assets/images/dark-pattern.jpg") repeat; }
+  background: url("/smarter-web-company-co-uk/_img/images/dark-pattern.jpg") repeat; }
 
 .grid {
-  background: url("/assets/images/grid-pattern.png") repeat #fff; }
+  background: url("/smarter-web-company-co-uk/_img/images/grid-pattern.png") repeat #fff; }
 
 .black {
   background: #141414; }
@@ -267,33 +267,27 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .h1 a, .h2 a, .h3 a, .h4 a, .h5 a, .h6 a {
 \* ---------------------------------------------- */
 @font-face {
   font-family: 'brandon_grotesque_bold';
-  src: url('/assets/fonts/brandon_grotesque_bold.eot');
-  src: url('/assets/fonts/brandon_grotesque_bold.eot?#iefix') format('embedded-opentype'), url('/assets/fonts/brandon_grotesque_bold.woff') format('woff'), url('/assets/fonts/brandon_grotesque_bold.ttf') format('truetype'), url('/assets/fonts/brandon_grotesque_bold.svg#brandongrotesquebold') format('svg'); }
+  src: url('/smarter-web-company-co-uk/_img/fonts/brandon_grotesque_bold.woff') format('woff'); }
 
 @font-face {
   font-family: 'brandon_grotesque_medium';
-  src: url('/assets/fonts/brandon_grotesque_medium.eot');
-  src: url('/assets/fonts/brandon_grotesque_medium.eot?#iefix') format('embedded-opentype'), url('/assets/fonts/brandon_grotesque_medium.woff') format('woff'), url('/assets/fonts/brandon_grotesque_medium.ttf') format('truetype'), url('/assets/fonts/brandon_grotesque_medium.svg#brandongrotesquemedium') format('svg'); }
+  src: url('/smarter-web-company-co-uk/_img/fonts/brandon_grotesque_medium.woff') format('woff'); }
 
 @font-face {
   font-family: 'brandon_grotesque_regular';
-  src: url('/assets/fonts/brandon_grotesque_regular.eot');
-  src: url('/assets/fonts/brandon_grotesque_regular.eot?#iefix') format('embedded-opentype'), url('/assets/fonts/brandon_grotesque_regular.woff') format('woff'), url('/assets/fonts/brandon_grotesque_regular.ttf') format('truetype'), url('/assets/fonts/brandon_grotesque_regular.svg#brandongrotesqueregular') format('svg'); }
+  src: url('/smarter-web-company-co-uk/_img/fonts/brandon_grotesque_regular.woff') format('woff'); }
 
 @font-face {
   font-family: 'brandon_text_regular';
-  src: url('/assets/fonts/brandon_text_regular.eot');
-  src: url('/assets/fonts/brandon_text_regular.eot?#iefix') format('embedded-opentype'), url('/assets/fonts/brandon_text_regular.woff') format('woff'), url('/assets/fonts/brandon_text_regular.ttf') format('truetype'), url('/assets/fonts/brandon_text_regular.svg#brandontextregular') format('svg'); }
+  src: url('/smarter-web-company-co-uk/_img/fonts/brandon_text_regular.woff') format('woff'); }
 
 @font-face {
   font-family: 'brandon_text_light';
-  src: url('/assets/fonts/brandon_text_light.eot');
-  src: url('/assets/fonts/brandon_text_light.eot?#iefix') format('embedded-opentype'), url('/assets/fonts/brandon_text_light.woff') format('woff'), url('/assets/fonts/brandon_text_light.ttf') format('truetype'), url('/assets/fonts/brandon_text_light.svg#brandontextlight') format('svg'); }
+  src: url('/smarter-web-company-co-uk/_img/fonts/brandon_text_light.woff') format('woff'); }
 
 @font-face {
   font-family: 'brandon_text_bold';
-  src: url('/assets/fonts/brandon_text_bold.eot');
-  src: url('/assets/fonts/brandon_text_bold.eot?#iefix') format('embedded-opentype'), url('/assets/fonts/brandon_text_bold.woff') format('woff'), url('/assets/fonts/brandon_text_bold.ttf') format('truetype'), url('/assets/fonts/brandon_text_bold.svg#brandontextbold') format('svg'); }
+  src: url('/smarter-web-company-co-uk/_img/fonts/brandon_text_bold.woff') format('woff'); }
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.3;
@@ -368,7 +362,7 @@ strong {
     display: inline-block;
     margin: 0 0.25em;
     font-size: 14px; }
-    @media  (min-width: 960px) {
+    @media  (min-width: 1060px) {
       .main-nav .menu > li {
         text-align: center;
         height: 100%;
@@ -377,11 +371,11 @@ strong {
           display: block;
           height: auto;
           opacity: 1; } }
-    @media  (min-width: 1160px) {
+    @media  (min-width: 1250px) {
       .main-nav .menu > li {
         font-size: 16px;
         margin: 0 0.5em; } }
-    @media  (min-width: 960px) {
+    @media  (min-width: 1060px) {
       .main-nav .menu > li.liLinkActive:before {
         content: "";
         display: block;
@@ -406,7 +400,7 @@ strong {
         color: #018dc2; }
       .headroom--not-top .main-nav .menu > li a {
         line-height: 4rem; }
-      @media  (min-width: 960px) {
+      @media  (min-width: 1060px) {
         .main-nav .menu > li a {
           line-height: 94px;
           text-align: center; } }
@@ -422,7 +416,7 @@ strong {
     .main-nav .menu > li > ul {
       display: none;
       overflow: hidden; }
-      @media  (min-width: 960px) {
+      @media  (min-width: 1060px) {
         .main-nav .menu > li > ul {
           position: absolute;
           z-index: 100;
@@ -506,7 +500,7 @@ strong {
             -ms-transform: translateY(115em);
                 transform: translateY(115em); }
       .mobile-menu .nav > ul > li.parent > a:after {
-        content: url("/assets/images/svg/down.svg");
+        content: url("/smarter-web-company-co-uk/_img/images/down.svg");
         width: 10px;
         height: 10px;
         margin-left: 0.5em;
@@ -704,7 +698,7 @@ header {
           transform: translateY(-50%);
   line-height: 0;
   text-align: right; }
-  @media  (min-width: 960px) {
+  @media  (min-width: 1060px) {
     .logo {
       width: 16.66667%;
       float: left;
@@ -719,7 +713,7 @@ header {
   display: none;
   -webkit-transition: -webkit-transform 500ms ease-in-out;
           transition: transform 500ms ease-in-out; }
-  @media  (min-width: 960px) {
+  @media  (min-width: 1060px) {
     .main-nav {
       width: 83.33333%;
       float: right;
@@ -732,7 +726,7 @@ header {
               transform: none;
       display: block; } }
 
-@media  (min-width: 960px) {
+@media  (min-width: 1060px) {
   .nav {
     float: right;
     padding: 0;
@@ -803,7 +797,7 @@ Mobile Nav
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
           transform: translateY(-50%); }
-  @media  (min-width: 960px) {
+  @media  (min-width: 1060px) {
     .menu-btn {
       display: none; } }
   .menu-btn.active, .show-menu .menu-btn {
@@ -886,13 +880,65 @@ Mobile Nav
       -ms-transform: translateX(-100%);
           transform: translateX(-100%);
   display: block; }
-  @media  (min-width: 960px) {
+  @media  (min-width: 1060px) {
     .mobile-menu {
       display: none; } }
   .show-menu .mobile-menu {
     -webkit-transform: translateX(0);
         -ms-transform: translateX(0);
             transform: translateX(0); }
+
+/***************************************
+
+LOGIN STYLES
+
+***************************************/
+.modal {
+  background-color: rgba(0, 0, 0, 0.5); }
+  .modal .in .modal-dialog {
+    -webkit-transform: translateY(50%);
+        -ms-transform: translateY(50%);
+            transform: translateY(50%); }
+
+.modal-content {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 1px;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.9); }
+
+.modal-body {
+  padding: 3em;
+  text-align: center; }
+  .modal-body h1 {
+    margin-bottom: 0; }
+  .modal-body p {
+    text-transform: uppercase; }
+
+.close {
+  color: #fff;
+  font-size: 1.6em; }
+
+#pnlLogin input {
+  padding: 1em 1.25em;
+  display: inline-block;
+  width: 100%;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 1px solid #ccc; }
+  #pnlLogin input[type="submit"] {
+    background: transparent;
+    color: #111;
+    border: 3px solid #111; }
+    #pnlLogin input[type="submit"]:hover {
+      background: #018dc2;
+      color: #fff;
+      border: 3px solid #018dc2; }
+
+.forgot-password {
+  margin-top: 2em;
+  padding-top: 2em;
+  border-top: 1px solid #ccc; }
 
 /* -----------------------------------------
 	12.0. Content
@@ -1495,6 +1541,189 @@ img.mfp-img {
   right: 0;
   padding-top: 0; }
 
+/**********************************
+
+Bootstrap Modal
+
+**********************************/
+.close {
+  float: right;
+  font-size: 21px;
+  font-weight: bold;
+  line-height: 1;
+  color: #000000;
+  text-shadow: 0 1px 0 #ffffff;
+  opacity: 0.2;
+  filter: alpha(opacity=20); }
+
+.close:hover, .close:focus {
+  color: #000000;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0.5;
+  filter: alpha(opacity=50); }
+
+button.close {
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  -webkit-appearance: none; }
+
+.modal-open {
+  overflow: hidden; }
+
+.modal {
+  display: none;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  -webkit-overflow-scrolling: touch;
+  outline: 0; }
+
+.modal.fade .modal-dialog {
+  -webkit-transform: translate(0, -25%);
+  -ms-transform: translate(0, -25%);
+  transform: translate(0, -25%);
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out; }
+
+.modal.in .modal-dialog {
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0); }
+
+.modal-open .modal {
+  overflow-x: hidden;
+  overflow-y: auto; }
+
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 10px; }
+
+.modal-content {
+  position: relative;
+  background-color: #ffffff;
+  border: 1px solid #999999;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  background-clip: padding-box;
+  outline: 0; }
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  background-color: #000000; }
+
+.modal-backdrop.fade {
+  opacity: 0;
+  filter: alpha(opacity=0); }
+
+.modal-backdrop.in {
+  opacity: 0.5;
+  filter: alpha(opacity=50); }
+
+.modal-header {
+  padding: 15px;
+  border-bottom: 1px solid #e5e5e5;
+  min-height: 16.42857px; }
+
+.modal-header .close {
+  margin-top: -2px; }
+
+.modal-title {
+  margin: 0;
+  line-height: 1.42857143; }
+
+.modal-body {
+  position: relative;
+  padding: 15px; }
+
+.modal-footer {
+  padding: 15px;
+  text-align: right;
+  border-top: 1px solid #e5e5e5; }
+
+.modal-footer .btn + .btn {
+  margin-left: 5px;
+  margin-bottom: 0; }
+
+.modal-footer .btn-group .btn + .btn {
+  margin-left: -1px; }
+
+.modal-footer .btn-block + .btn-block {
+  margin-left: 0; }
+
+.modal-scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll; }
+
+@media (min-width: 768px) {
+  .modal-dialog {
+    width: 600px;
+    margin: 30px auto; }
+  .modal-content {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); }
+  .modal-sm {
+    width: 300px; } }
+
+@media (min-width: 992px) {
+  .modal-lg {
+    width: 900px; } }
+
+.clearfix:before, .clearfix:after, .modal-footer:before, .modal-footer:after {
+  content: " ";
+  display: table; }
+
+.clearfix:after, .modal-footer:after {
+  clear: both; }
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+.pull-right {
+  float: right !important; }
+
+.pull-left {
+  float: left !important; }
+
+.hide {
+  display: none !important; }
+
+.show {
+  display: block !important; }
+
+.invisible {
+  visibility: hidden; }
+
+.text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0; }
+
+.hidden {
+  display: none !important; }
+
+.affix {
+  position: fixed; }
+
 /* ---------------------------------------------- *\
 
   Partial: buttons
@@ -1570,7 +1799,7 @@ img.mfp-img {
 ----------------------------------------- */
 footer {
   padding: 3em 1em 24em;
-  background-image: url('/assets/images/footer-bg.jpg');
+  background-image: url('/smarter-web-company-co-uk/_img/images/footer-bg.jpg');
   background-color: #fdfdfd;
   background-position: bottom left;
   background-repeat: no-repeat; }
@@ -1580,6 +1809,9 @@ footer {
   @media  (min-width: 800px) {
     footer {
       background-position: bottom center; } }
+  @media  (min-width: 1500px) {
+    footer {
+      background-size: 100% auto; } }
   footer .footer-top {
     text-align: center; }
   footer .button.arrow-button {
@@ -1787,11 +2019,13 @@ footer {
   width: 100%;
   padding: 0;
   position: relative;
-  background-image: url("/assets/images/home-hero.jpg");
+  background-image: url("/smarter-web-company-co-uk/_img/images/home-hero.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-color: #111;
   background-position: center; }
+  .previewFrame .hero {
+    height: 700px; }
 
 .hero-content {
   padding-top: 4em;
@@ -1873,7 +2107,7 @@ section {
       padding: 5em 1em; } }
 
 .about-us {
-  background-image: url("/assets/images/what-we-do.jpg");
+  background-image: url("/smarter-web-company-co-uk/_img/images/what-we-do.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-color: #111; }
@@ -1906,7 +2140,7 @@ section {
   padding-bottom: 75%;
   height: 0;
   z-index: 1;
-  background-image: url("/assets/images/bespoke-design.jpg");
+  background-image: url("/smarter-web-company-co-uk/_img/images/bespoke-design.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-color: #111;
@@ -1926,6 +2160,12 @@ section {
       width: 50%;
       float: right;
       margin-right: 0; } }
+  @media  (min-width: 1200px) {
+    .bespoke-image {
+      padding-bottom: 50%; } }
+  @media  (min-width: 1400px) {
+    .bespoke-image {
+      padding-bottom: 40%; } }
 
 .bespoke-copy {
   position: relative;
@@ -1947,6 +2187,12 @@ section {
     .bespoke-copy {
       width: 50%;
       float: left; } }
+  @media  (min-width: 1200px) {
+    .bespoke-copy {
+      padding-bottom: 50%; } }
+  @media  (min-width: 1400px) {
+    .bespoke-copy {
+      padding-bottom: 40%; } }
   .bespoke-copy .content-wrap {
     max-width: 85%;
     margin: auto;
@@ -2301,14 +2547,14 @@ section {
     width: 5em;
     height: 5em;
     fill: #111;
-    -webkit-transition: all 900ms cubic-bezier(0.23, 1, 0.32, 1);
-            transition: all 900ms cubic-bezier(0.23, 1, 0.32, 1); }
+    -webkit-transition: all 500ms cubic-bezier(0.23, 1, 0.32, 1);
+            transition: all 500ms cubic-bezier(0.23, 1, 0.32, 1); }
   .process-step h6 {
     font-family: brandon_grotesque_bold, Arial, "Helvetica Neue", Helvetica, sans-serif;
     text-transform: uppercase;
     margin-bottom: 0;
-    -webkit-transition: all 900ms cubic-bezier(0.23, 1, 0.32, 1);
-            transition: all 900ms cubic-bezier(0.23, 1, 0.32, 1); }
+    -webkit-transition: all 500ms cubic-bezier(0.23, 1, 0.32, 1);
+            transition: all 500ms cubic-bezier(0.23, 1, 0.32, 1); }
   .process-step a {
     display: block; }
   .process-step:after {
@@ -2330,22 +2576,22 @@ section {
     color: #fff; }
 
 .signup:hover {
-  background-image: url("/assets/images/process-signup.jpg"); }
+  background-image: url("/smarter-web-company-co-uk/_img/images/process-signup.jpg"); }
 
 .research:hover {
-  background-image: url("/assets/images/process-research.jpg"); }
+  background-image: url("/smarter-web-company-co-uk/_img/images/process-research.jpg"); }
 
 .design:hover {
-  background-image: url("/assets/images/process-design.jpg"); }
+  background-image: url("/smarter-web-company-co-uk/_img/images/process-design.jpg"); }
 
 .build:hover {
-  background-image: url("/assets/images/process-build.jpg"); }
+  background-image: url("/smarter-web-company-co-uk/_img/images/process-build.jpg"); }
 
 .launch:hover {
-  background-image: url("/assets/images/process-launch.jpg"); }
+  background-image: url("/smarter-web-company-co-uk/_img/images/process-launch.jpg"); }
 
 .support:hover {
-  background-image: url("/assets/images/process-marketing.jpg"); }
+  background-image: url("/smarter-web-company-co-uk/_img/images/process-marketing.jpg"); }
 
 /*********************************************
 **********************************************
@@ -2358,7 +2604,7 @@ section {
   text-align: center; }
   .packages h2, .packages h6 {
     color: #fff; }
-  .packages h6.sub-title {
+  .packages .sub-title h6 {
     text-transform: none;
     font-family: brandon_text_light, Arial, "Helvetica Neue", Helvetica, sans-serif; }
 
@@ -2457,7 +2703,7 @@ section {
   padding-bottom: 70%;
   height: 0;
   z-index: 1;
-  background-image: url("/assets/images/hosted-solution.jpg");
+  background-image: url("/smarter-web-company-co-uk/_img/images/hosted-solution.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-color: #111;
@@ -2472,6 +2718,9 @@ section {
       width: 50%;
       float: left;
       padding-bottom: 50%; } }
+  @media  (min-width: 1500px) {
+    .hosted-image {
+      padding-bottom: 40%; } }
 
 .hosted-content {
   position: relative;
@@ -2490,6 +2739,9 @@ section {
       float: right;
       margin-right: 0;
       padding-bottom: 50%; } }
+  @media  (min-width: 1500px) {
+    .hosted-content {
+      padding-bottom: 40%; } }
   @media  (min-width: 860px) {
     .hosted-content__inner {
       position: absolute;
@@ -2556,7 +2808,7 @@ section {
 **********************************************
 *********************************************/
 .cms {
-  background-image: url("/assets/images/home-cms-bg.jpg");
+  background-image: url("/smarter-web-company-co-uk/_img/images/home-cms-bg.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -2565,7 +2817,7 @@ section {
   @media  (min-width: 768px) {
     .cms {
       padding: 5em 1em; } }
-  .cms h6.sub-title {
+  .cms .sub-title h6 {
     text-transform: none;
     max-width: 30em;
     margin: auto;
@@ -2643,16 +2895,18 @@ section {
 .testimonials {
   padding: 1.5em 1em;
   position: relative;
-  background-image: url("/assets/images/testimonial-bg.jpg");
+  background-image: url("/smarter-web-company-co-uk/_img/images/testimonial-bg.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%; }
   @media  (min-width: 640px) {
     .testimonials {
-      height: 100%;
-      height: 80vh;
-      padding: 2em; } }
+      height: 75%;
+      height: 75vh;
+      padding: 2em; }
+      .previewFrame .testimonials {
+        height: 500px; } }
   .testimonials h2 {
     color: #fff;
     padding-top: 0;
