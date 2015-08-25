@@ -634,14 +634,13 @@ Bootstrap Modal
 **********************************/
 
 .close {
-  float: right;
+  //float: right;
   font-size: 21px;
   font-weight: bold;
   line-height: 1;
   color: #000000;
-  text-shadow: 0 1px 0 #ffffff;
+  //text-shadow: 0 1px 0 #ffffff;
   opacity: 0.2;
-  filter: alpha(opacity=20);
 }
 .close:hover,
 .close:focus {
@@ -649,7 +648,6 @@ Bootstrap Modal
   text-decoration: none;
   cursor: pointer;
   opacity: 0.5;
-  filter: alpha(opacity=50);
 }
 button.close {
   padding: 0;
@@ -660,6 +658,16 @@ button.close {
 }
 .modal-open {
   overflow: hidden;
+}
+@keyframes modalin{
+  0%{
+    transform: scale(0);
+    opaacity: 0;
+  }
+  100%{
+    transform: scale(1);
+    opaacity: 1;
+  }
 }
 .modal {
   display: none;
@@ -672,22 +680,16 @@ button.close {
   z-index: 1050;
   -webkit-overflow-scrolling: touch;
   outline: 0;
+
 }
-.modal.fade .modal-dialog {
-  -webkit-transform: translate(0, -25%);
-  -ms-transform: translate(0, -25%);
-  -o-transform: translate(0, -25%);
-  transform: translate(0, -25%);
-  -webkit-transition: -webkit-transform 0.3s ease-out;
-  -o-transition: -o-transform 0.3s ease-out;
-  transition: transform 0.3s ease-out;
-}
-.modal.in .modal-dialog {
-  -webkit-transform: translate(0, 0);
-  -ms-transform: translate(0, 0);
-  -o-transform: translate(0, 0);
-  transform: translate(0, 0);
-}
+// .modal.fade .modal-dialog {
+//   transform: translate(0, -25%);
+//   transition: transform 3s ease-out;
+// }
+// .modal.in .modal-dialog {
+//   transform: translate(0, 10%);
+//   transition: transform 3s ease-out;
+// }
 .modal-open .modal {
   overflow-x: hidden;
   overflow-y: auto;
@@ -699,10 +701,10 @@ button.close {
 }
 .modal-content {
   position: relative;
-  background-color: #ffffff;
-  border: 1px solid #999999;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 6px;
+  // background-color: #ffffff;
+  // border: 1px solid #999999;
+  // border: 1px solid rgba(0, 0, 0, 0.2);
+  // border-radius: 6px;
   -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
   box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
   -webkit-background-clip: padding-box;

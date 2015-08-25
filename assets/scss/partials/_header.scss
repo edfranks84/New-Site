@@ -66,18 +66,18 @@ header{
 }
 .logo{
 	width: 50%;
-	padding: 1.5em 1.5em 1.5em 0em;
+	padding: 1.5em 0 1.5em 1.5em;
 	max-width: 100%;
 	position: relative;
     top: 50%;
-    float: right;
+    float: left;
     transform: translateY(-50%);
     line-height: 0;
-    text-align: right;
+    text-align: left;
     @include respond-to(1060){
     	@include span(2 of 12 0);
-    	text-align: left;
-    	padding: 1.5em 0 1.5em 1.5em;
+    	// text-align: left;
+    	// padding: 1.5em 0 1.5em 1.5em;
     }
 	img{
 		max-width: 9em;
@@ -187,7 +187,7 @@ Mobile Nav
     border-radius: 50%;
     background-color: transparent;
     transition: all 300ms ease-in-out;
-    left: 2em;
+    right: 2em;
     top: 50%;
     transform: translateY(-50%);
     // float: right;
@@ -310,50 +310,108 @@ LOGIN STYLES
 			transform: translateY(50%);
 		}
 	}
+	form{
+		max-width: 28em;
+		margin: auto;
+	}
+}
+.modal-dialog{
+	margin-top: 1em;
+	@include respond-to(480){
+		margin-top: 3em;
+	}
+	.modal-open &{
+    	animation: modalin 400ms ease-in;
+	}
 }
 .modal-content{
 	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 	border-radius: 1px;
-	background-color: rgba(0,0,0,0.5);
-	background-color: rgba(255,255,255,0.9);
+	background-color: #fff;
+	border-bottom: 8px solid $base-color-light;
 }
 .modal-body{
-	padding: 3em;
+	padding: 1em 1.5em;
+	@include respond-to(480){
+		padding: 2em 2.5em;
+	}
 	text-align: center;
 	h1{
-		//color: #fff;
+		color: #111;
 		margin-bottom: 0;
+		line-height: 1.1;
+	}
+	h3{
+		color: #111;
+		margin-bottom: 0.5em;
+		line-height: 1.1;
 	}
 	p{
-		//color: #fff;
+		color: #888;
 		text-transform: uppercase;
+	}
+	a{
+		color: #888;
+		text-transform: none;
+		&:hover{
+			color: $base-color-light;
+		}
 	}
 }
 .close{
-	color: #fff;
-	font-size: 1.6em; 
+	color: #333;
+	font-size: 2em; 
+	position: absolute;
+	right: 0.5em;
+	top: 0.5em;
 }
 #pnlLogin{
+	margin-top: 1em;
+}
+.modal form{
 	input{
-		padding: 1em 1.25em;
+		padding: 1em;
+		margin: 0.5em 0;
 		display: inline-block;
 		width: 100%;
-		appearance: none;
+		-webkit-appearance: none;
+		-moz-appearance: none;
 		border: 1px solid #ccc;
+		outline: none;
+		font-family: $body-font;
+		font-size: ms(0);
+		background-color: #fff;
+		&:focus{
+			border-color: #999;
+			background-color: #f8f8f8;
+		}
 		&[type="submit"]{
-			background: transparent;
-			color: #111;
-			border: 3px solid #111;
+			cursor: pointer;
+			background: $base-color-light;
+			color: #fff;
+			font-size: ms(2);
+			text-transform: uppercase;
+			font-family: $heading-font-bold;
+			margin-top: 1em;
+			border: none;
 			&:hover{
-				background: $base-color;
+				background: lighten($base-color-light,10%);
 				color: #fff;
-				border: 3px solid $base-color;
 			}
 		}
 	}
 }
 .forgot-password{
-	margin-top: 2em;
-	padding-top: 2em;
+	margin-top: 1.7em;
+	padding-top: 1.7em;
 	border-top: 1px solid #ccc;
+}
+
+#myPasswordForm{
+	p{
+		font-size: ms(1);
+		text-transform: none;
+		margin-bottom: 1.25em;
+		line-height: 1.4;
+	}
 }

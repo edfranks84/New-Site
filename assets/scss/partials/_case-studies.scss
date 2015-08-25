@@ -1,8 +1,17 @@
-.sh{
-	.divider{
-		&:after{
-			background-color: #e2c8a2;
+
+.case-studies{
+	.previewFrame &{
+		header{
+			top: 40px;
 		}
+		.cs-styles{
+			width: 100%;
+			height: 40px;
+			display: block;
+		}
+	}
+	.cs-styles{
+		visibility: hidden;
 	}
 }
 .cs-hero{
@@ -18,6 +27,10 @@
 		repeat: no-repeat;
 		position: center;
 	}
+	.previewFrame &{
+		height: 700px;
+		margin-top: 30px;
+	}
 	h1,h2,h3,h4,h5,h6,p{
 		color: #fff;
 	}
@@ -26,6 +39,7 @@
 	}
 	h3{
 		margin-bottom: 0;
+		padding-top: 0;
 		@include respond-to(1060){
 			font-size: ms(12);
 		}
@@ -214,7 +228,7 @@
 			font-family: 'Montserrat-Regular';
 		}
 
-	}
+}
 }
 .secondary-font{
 	.sh &{
@@ -251,7 +265,7 @@
 		}
 		&.visible{
 			span{
-				animation: colourfade 400ms linear forwards;
+				animation: colourfade 300ms linear forwards;
 				&:nth-child(1){
 					animation-delay: 300ms;
 				}
@@ -295,6 +309,9 @@ div[class^="concept"]{
 	display: block;
 	@include respond-to(700){
 		display: none;
+	}
+	.previewFrame &{
+		display: block;
 	}
 }
 .concept-large{
@@ -365,21 +382,35 @@ div[class^="concept"]{
 	}
 }
 .link-text{
-		position: relative;
-		top: 50%;
-		transform: translateY(-50%);
-		text-align: center;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	text-align: center;
+	a{
+		color: #fff;
+	}
+	&:hover{
+		text-decoration: underline;
+	}
+	h4,h5,p{
+		color: #fff;
+		text-transform: uppercase;
+		padding-top: 0;
+		margin-bottom: 0;
+		
+	}
+}
+.link-image{
+	p{
+		display: none;
+	}
+}
+.cs-link{
+	.link-text{
 		a{
-			color: #fff;
-		}
-		&:hover{
-			text-decoration: underline;
-		}
-		h4,h5,p{
-			color: #fff;
-			text-transform: uppercase;
-			padding-top: 0;
-			margin-bottom: 0;
-			
+			&:hover{
+				text-decoration: none;
+			}	
 		}
 	}
+}

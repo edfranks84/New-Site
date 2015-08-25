@@ -1,0 +1,143 @@
+.hero{
+	#s485112 &{
+		background-image: url("/smarter-web-company-co-uk/_img/images/about-hero.jpg");
+	}
+	&.inner-hero{
+		height: 85%;
+		height: 85vh;
+		.previewFrame &{
+			height: 700px;
+		}
+	}
+}
+
+.inner-intro{
+	@include respond-to(480){
+		text-align: center;
+	}
+}
+
+.split-section{
+	padding: 0;
+	@include clearfix;
+}
+.split-image{
+	padding-bottom: 75%;
+	height: 0;
+	z-index: 1;
+	background:{
+		size: cover;
+		repeat: no-repeat;
+		color: #111;
+		position: center ;
+	}
+	@include respond-to(700){
+		padding-bottom: 65%;
+	}
+	@include respond-to(800){
+		background-position: center;
+		padding-bottom: 60%;
+		&.split-image__right{
+			@include span(4 of 12 last 0);
+		}
+		&.split-image__left{
+			@include span(4 of 12 0);
+		}
+		
+	}
+	@include respond-to(920){
+		&.split-image__right{
+			@include span(6 of 12 last 0);
+		}
+		&.split-image__left{
+			@include span(6 of 12 0);
+		}
+	}
+	@include respond-to(1200){
+		padding-bottom: 50%;
+	}
+	@include respond-to(1400){
+		padding-bottom: 40%;
+	}
+}
+.split-copy{
+	position: relative;
+	z-index: 5;
+	&.blue{
+		background: url("/smarter-web-company-co-uk/_img/images/white-dot.png") repeat $base-color;
+	}
+	@include respond-to(800){
+		padding-bottom: 60%;
+		height: 0;
+		&.split-copy__right{
+			@include span(8 of 12 last 0);
+		}
+		&.split-copy__left{
+			@include span(8 of 12 0);
+		}
+		&__inner{
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 100%;
+		}
+	}
+	@include respond-to(920){
+		&.split-copy__right{
+			@include span(6 of 12 last 0);
+		}
+		&.split-copy__left{
+			@include span(6 of 12 0);
+		}
+	}
+	@include respond-to(1200){
+		padding-bottom: 50%;
+	}
+	@include respond-to(1400){
+		padding-bottom: 40%;
+	}
+	.content-wrap{
+		max-width: 85%;
+		margin: auto;
+		position: relative;
+		padding: 2em 0;
+		@include respond-to(800){
+			top: 50%;
+			transform: translateY(-50%);
+		}
+		@include respond-to(920){
+			max-width: 75%;
+		}
+	}
+	&:after{
+		border: 25px transparent solid;
+		border-bottom-color: #fff;
+		position: absolute;
+		top: -50px;
+		left: 50%;
+		display: block;
+		content: "";
+		transform: translateX(-50%);
+		@include respond-to(800){
+			transform: none;
+			border-bottom-color: transparent;
+			border-left-color: #fff;
+			left: auto;
+			top: 50%;
+			right: -50px;
+			transform: translateY(-50%);
+		}
+	}
+	p{
+		font-size: ms(1);
+	}
+}
+
+.narrow-content-wrap{
+	max-width: 55em;
+	margin: auto;
+	width: 91%;
+}
+
