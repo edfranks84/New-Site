@@ -1,0 +1,28 @@
+.hero{
+	#s485112 &{
+		background:{ 
+			image: url("/smarter-web-company-co-uk/_img/images/backgrounds/about-hero.jpg");
+		}
+	}
+}
+
+
+.bg-cover{
+	background:{
+		size: cover;
+		repeat: no-repeat;
+		position: center ;
+	}
+}
+.about-value{
+	background:{ 
+		image: url("/smarter-web-company-co-uk/_img/images/backgrounds/about-value.jpg");
+		position: top center;
+	}
+}
+.design-bristol{
+	background:{ 
+		image: url("/smarter-web-company-co-uk/_img/images/backgrounds/design-bristol.jpg");
+		position: bottom center;
+	}
+}

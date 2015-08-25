@@ -363,14 +363,14 @@ section{
 	}
 }
 
-.hover-content, .link-content-wrap{
+.projects .hover-content, .link-content-wrap{
 	position: absolute;
 	top: 0;
 	right: 0;
 	left: 0;
 	bottom: 0;
 }
-.hover-content{
+.projects .hover-content{
 	margin: 1em;
 	padding: 1.5em;
 	background-color: rgba(0,0,0,0.8);

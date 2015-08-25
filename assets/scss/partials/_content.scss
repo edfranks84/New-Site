@@ -1,7 +1,4 @@
 .hero{
-	#s485112 &{
-		background-image: url("/smarter-web-company-co-uk/_img/images/about-hero.jpg");
-	}
 	&.inner-hero{
 		height: 85%;
 		height: 85vh;
@@ -14,6 +11,17 @@
 .inner-intro{
 	@include respond-to(480){
 		text-align: center;
+	}
+	.divider-center{
+		&:after{
+			margin: 0.4em 0;
+			@include respond-to(480){
+				margin: 0.4em auto;
+			}
+		}
+	}
+	h2{
+		padding-top: 0;
 	}
 }
 
@@ -111,6 +119,13 @@
 			max-width: 75%;
 		}
 	}
+	p{
+		font-size: ms(1);
+	}
+}
+
+
+.split-copy,.split-copy__cell{
 	&:after{
 		border: 25px transparent solid;
 		border-bottom-color: #fff;
@@ -120,6 +135,7 @@
 		display: block;
 		content: "";
 		transform: translateX(-50%);
+		
 		@include respond-to(800){
 			transform: none;
 			border-bottom-color: transparent;
@@ -130,10 +146,65 @@
 			transform: translateY(-50%);
 		}
 	}
+}
+.split-copy__right,.split-copy__cell{
+	&:after{
+		@include respond-to(800){
+			transform: none;
+			border-color: transparent;
+			border-right-color: #fff;
+			right: auto;
+			top: 50%;
+			left: -50px;
+			transform: translateY(-50%);
+		}
+	}
+}
+
+
+.split-copy__left.blue,.split-copy__cell.blue{
+	&:after{
+		border-bottom-color: $base-color;
+		@include respond-to(800){
+			border-color: transparent;
+			border-left-color: $base-color;
+		}
+	}
+}
+.split-copy__right.blue,.split-copy__cell.blue{
+	&:after{
+		border-bottom-color: $base-color;
+		@include respond-to(800){
+			border-bottom-color: transparent;
+			border-right-color: $base-color;
+		}
+	}
+}
+
+.split-copy__cell,.split-image__cell{
+	@include respond-to(800){
+		padding: 4.5em;
+		display: table-cell;
+		width: 50%;
+	}
 	p{
 		font-size: ms(1);
 	}
 }
+.split-image__cell{
+	height: 20em;
+	@include respond-to(800){
+		height: auto;
+	}
+}
+.split-copy__cell{
+	padding: 3em;
+	position: relative;
+	@include respond-to(1000){
+		padding: 4.5em;
+	}
+}
+
 
 .narrow-content-wrap{
 	max-width: 55em;
@@ -141,3 +212,127 @@
 	width: 91%;
 }
 
+
+/******************************************
+*******************************************
+
+TEAM LAYOUT
+
+*******************************************
+******************************************/
+.team{
+	padding: 0;
+}
+.team-members{
+	@include clearfix;
+}
+.team-item{
+	float: left;
+	width: 50%;
+	position: relative;
+	line-height: 0;
+	height: 0;
+	padding-bottom: 72.22222222222223%;
+	background:{
+		size: cover;
+		repeat: no-repeat;
+		position: center;
+	}
+	@include respond-to(640){
+		width: 33.333%;
+		padding-bottom: 48.147666666666666%;
+	}
+	@include respond-to(920){
+		width: 25%;
+		padding-bottom: 36.111111111111114%;
+	}
+	// @include respond-to(1900){
+	// 	width: 20%;
+	// 	padding-bottom: 28.88888888888889%;
+	// }
+	&:last-child{
+		background-color: darken($base-color, 25%);
+		svg{
+			display: none;
+		}
+		h5,p{
+			opacity: 1;
+			transform: none;
+			transition: none;
+		}
+		.hover-content{
+			background: transparent;
+			opacity: 1;
+		}
+		
+		display: none;
+		
+		@include respond-to(920){
+			width: 50%;	
+			display: block;
+		}
+	}
+	img{
+		line-height: 0;;
+	}
+	.hover-content{
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		background-color: rgba(0,0,0,0.8);
+		text-align: center;
+		transition: opacity 550ms ease;
+		opacity: 0;
+	}
+	&:hover{
+		.hover-content{
+			opacity: 1;
+		}
+		.team-border{
+			stroke-dashoffset: 0;
+			stroke-width: 2px;
+		}
+		h5,p{
+			transform: translateY(0%);
+			opacity: 1;
+		}
+	}
+}
+.team-border{
+	fill: transparent;
+    stroke-dasharray: 2100;
+    stroke: rgba(255,255,255,0.6);
+    stroke-dashoffset: 2100;
+    transition: stroke-dashoffset 750ms linear 100ms, stroke-width 750ms linear 100ms;
+    stroke-width: 8px;
+}
+.team-item__content{
+	text-align: center;
+	padding: 1em;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 90%;
+	transform: translate(-50%, -50%);
+	h5,p{
+		color: #fff;
+		opacity: 0;
+	}
+	h5{
+		transform: translateY(-50%);
+		transition: transform 250ms ease, opacity 400ms ease;
+		transition-delay: 100ms;
+		font-size: ms(3);
+		@include respond-to(480){
+			font-size: ms(5);
+		}
+	}
+	p{
+		transform: translateY(50%);
+		transition: transform 350ms ease, opacity 500ms ease;
+		transition-delay: 300ms;
+		line-height: 1.3;
+	}
+}

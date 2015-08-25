@@ -166,6 +166,9 @@
 				&:nth-child(10){
 					transform: translateY(115em);
 				}
+				&:nth-child(11){
+					transform: translateY(120em);
+				}
 				&.parent{
 					>a{
 						&:after{
@@ -263,34 +266,37 @@
 				li{
 					transform: translateY(0);
 					&:nth-child(1){
-						transition-delay: 0.6s;	
+						transition-delay: 0.75s;	
 					}
 					&:nth-child(2){
-						transition-delay: 0.65s;
+						transition-delay: 0.79s;
 					}
 					&:nth-child(3){
-						transition-delay: 0.7s;
+						transition-delay: 0.83s;
 					}
 					&:nth-child(4){
-						transition-delay: 0.75s;
+						transition-delay: 0.87s;
 					}
 					&:nth-child(5){
-						transition-delay: 0.8s;
+						transition-delay: 0.91s;
 					}
 					&:nth-child(6){
-						transition-delay: 0.85s;
-					}
-					&:nth-child(7){
-						transition-delay: 0.9s;
-					}
-					&:nth-child(8){
 						transition-delay: 0.95s;
 					}
+					&:nth-child(7){
+						transition-delay: 0.99s;
+					}
+					&:nth-child(8){
+						transition-delay: 1.03s;
+					}
 					&:nth-child(9){
-						transition-delay: 1s;
+						transition-delay: 1.07s;
 					}
 					&:nth-child(10){
-						transition-delay: 1.05s;
+						transition-delay: 1.11s;
+					}
+					&:nth-child(11){
+						transition-delay: 1.15s;
 					}
 				}
 			}
