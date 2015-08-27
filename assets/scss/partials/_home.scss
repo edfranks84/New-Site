@@ -40,9 +40,9 @@
 }
 
 .hero-content{
-	padding-top: 4em;
+	padding-top: 5em;
 	text-align: center;
-	width: 85%;
+	width: 90%;
 	max-width: 50em;
 	margin: auto;
 	position: relative;
@@ -66,6 +66,18 @@
 	}
 	.button{
 		animation: textin 650ms ease-in 1.2s both;
+	}
+	.divider{
+		&:after{
+			margin: 0.25em auto;
+			@include respond-to(768){
+				margin: 0.15em auto;
+			}
+			.cssanimations.csstransitions &{
+				width: 0;
+				animation: expand 400ms ease-in .75s forwards;
+			}
+		}
 	}
 }
 
@@ -106,18 +118,7 @@
 		animation: fadein 500ms ease-in 300ms forwards;
 	}
 
-	.divider{
-		&:after{
-			margin: 0.25em auto;
-			@include respond-to(768){
-				margin: 0.15em auto;
-			}
-			.cssanimations.csstransitions &{
-				width: 0;
-				animation: expand 400ms ease-in .75s forwards;
-			}
-		}
-	}
+	
 }
 
 section{
@@ -143,7 +144,7 @@ section{
 		margin: auto;
 		width: 91%;
 	}
-	h2,p{
+	h2,h3,h4,h5,h6,p{
 		color: #fff;
 	}
 	p{
@@ -790,6 +791,18 @@ section{
 		opacity: 0;
 		&.visible{
 			animation: fadein 500ms ease-in forwards;
+			&:nth-child(1){
+				animation-delay: 200ms;
+			}
+			&:nth-child(2){
+				animation-delay: 300ms;
+			}
+			&:nth-child(3){
+				animation-delay: 400ms;
+			}
+			&:nth-child(4){
+				animation-delay: 500ms;
+			}
 		}
 	}
 }

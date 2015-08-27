@@ -243,7 +243,7 @@
 .cs-identity__colours{
 	margin-top: 2em;
 	@include respond-to(860){
-		margin-top: 1em;
+		margin-top: 0;
 	}
 }
 .colour-blocks{
@@ -267,19 +267,34 @@
 			span{
 				animation: colourfade 300ms linear forwards;
 				&:nth-child(1){
-					animation-delay: 300ms;
+					animation-delay: 250ms;
 				}
 				&:nth-child(2){
-					animation-delay: 600ms;
+					animation-delay: 500ms;
 				}
 				&:nth-child(3){
-					animation-delay: 900ms;
+					animation-delay: 750ms;
 				}
 				&:nth-child(4){
-					animation-delay: 1200ms;
+					animation-delay: 1000ms;
 				}
 				&:nth-child(5){
+					animation-delay: 1250ms;
+				}
+				&:nth-child(6){
 					animation-delay: 1500ms;
+				}
+				&:nth-child(7){
+					animation-delay: 1750ms;
+				}
+				&:nth-child(8){
+					animation-delay: 2000ms;
+				}
+				&:nth-child(9){
+					animation-delay: 2250ms;
+				}
+				&:nth-child(10){
+					animation-delay: 2500ms;
 				}
 			}
 		}

@@ -125,15 +125,21 @@
 		 overflow: hidden;
 		 height: 100%;
 		 width: 95%;
+		 @include respond-to(640){
+		 	padding-top: 8.5em;
+		 }
 		>ul{
 			overflow-y: auto;
 		 	webkit-overflow-scrolling: touch;
 			font-size: 13px;
-			padding: 0 2em;
+			padding: 0 2em 0 2.5em;
 			height: 100%;
 			width: calc(100% + 18px);
+			@include respond-to(640){
+				padding: 0 17% 0 17%;
+			}
 			>li{	
-				border-bottom: 1px solid rgba(255,255,255,0.1);
+				//border-bottom: 1px solid rgba(255,255,255,0.1);
 				position: relative;
 				transition: transform 400ms ease-out;
 				&:nth-child(1){
@@ -180,13 +186,13 @@
 							position: relative;
 							display: inline-table;
 							transition: transform 150ms cubic-bezier(.13,.68,.69,.3);
-							transform-origin: 50 50;
+							transform-origin: 50% 50%;
 						}
 					}
 					&.open{
 						background-color: darken(#243040,6%); 
 						>a{
-							color: $base-color;
+							color: #fff;
 							&:after{
 								transform: rotate(180deg);
 							}
@@ -197,14 +203,19 @@
 					}
 				}
 				a{
-					line-height: 4;
+					//line-height: 4;
+					line-height: 2;
 					display: block;
 					text-transform: uppercase;
-					color: #fff;
+					//color: #fff;
+					color: rgba(255, 255, 255, 0.5);
 					padding: 0 0 0 0.95em;
-					font-family: $heading-font-bold;
-					@include respond-to(768){
-						font-size: ms(1);
+					font-family: $heading-font;
+					font-size: ms(2);
+					padding-top: 3px;
+					@include respond-to(640){
+						font-size: ms(4);
+						line-height: 2.2;
 					}
 					&.open{
 						color: $base-color;
@@ -212,21 +223,28 @@
 							transform: rotate(180deg);
 						}
 					}
+					&.linkActive{
+						color: #fff;
+					}
 				}
 				&:hover{
 					border-bottom-color: $base-color;
+					a{
+						color: rgba(255, 255, 255, 0.9);
+					}
 				}
 				&:last-child{
 					border-bottom: none;;
-					margin-top: 1em;
+					margin-top: 1.5em;
 					a{
-						line-height: 2;
+						line-height: 2.2;
 						padding: 0.45em 3em;
 						color: #fff;
 						background-color: $base-color-light;
 						text-align: center;
 						@include respond-to(480){
 							display: inline-block;
+							margin-left: 0.95em;
 						}
 						&:hover{
 							background-color: lighten(saturate($base-color-light, 10%),5%);
@@ -239,6 +257,7 @@
 					display: none;
 					border-left: 1px solid darken(#243040,6%);
 					border-right: 1px solid darken(#243040,6%); 
+					
 					li{
 						a{
 							//text-align: right;
