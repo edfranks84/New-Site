@@ -23,6 +23,23 @@
 	h2{
 		padding-top: 0;
 	}
+	p{
+		&:first-of-type{
+			&:first-line{
+				font-size: ms(3);
+				font-family: $body-font-bold;
+			}
+		}
+	}
+}
+
+.section-title{
+	text-align: center;
+	margin-bottom: 2em;
+	h6{
+		font-family: $body-font;
+		text-transform: none;
+	}
 }
 
 .split-section{
@@ -213,7 +230,7 @@
 }
 
 .main-content-wrap{
-	max-width: 70em;
+	max-width: 72em;
 	margin: auto;
 	width: 92%;
 }
@@ -397,17 +414,17 @@ Package Pages
 			font-size: ms(3);
 		}
 	}
-	.button.white-button{
+	.button.white-button, .solid-button.blue-button{
 		font-size: 13px;
-		margin: 0.5em 0 0.1em;
+		margin: 0.5em 0.2em 0.1em;
 		@include respond-to(480){
-			margin: 1.5em 0 1em;
+			margin: 1.5em 0.2em 1em;
 			font-size: 16px;
 		}
 	}
 }
 .package-details{
-	h2,h6,.button{
+	h2,h6,.button,.solid-button{
 		animation: textin 550ms ease-in both;
 	}
 	h2{
@@ -428,10 +445,10 @@ Package Pages
 	h6{
 		animation-delay: 1.3s;
 	}
-	.button{
-		margin: 0.5em 0 0.1em;
+	.button,.solid-button{
+		// margin: 0.5em 0 0.1em;
 		@include respond-to(480){
-			margin: 1.5em 0 1em;
+			// margin: 1.5em 0 1em;
 		}
 		&:nth-child(1){
 			animation-delay: 1.5s;
@@ -494,27 +511,41 @@ Package Pages
 }
 
 .feature-list{
+	text-align: center;
+	@include respond-to(640){
+		text-align: left;
+	}
 	li{
-		padding-left: 6em;
-		float: left;
-		width: 50%;
-		padding-right: 2em;
-		margin: 0.2em 0;
+		margin: 3em 0;
 		position: relative;
+		@include respond-to(640){
+			padding-left: 6em;
+		}
+		@include respond-to(768){
+			float: left;
+			width: 50%;
+			padding-right: 2em;
+			margin: 2em 0;
+		}
 		&:before{
 			content:"";
-			width: 4.5em;
-			height: 4.5em;
+			width: 3em;
+			height: 3em;
 			display: inline-block;
-			position: absolute;
-			left: 0;
-			top: 0;
+			margin-bottom: 0.5em;
 			background:{
 				position: center top;
 				repeat: no-repeat;
 
 			}
+			@include respond-to(640){
+				position: absolute;
+				left: 0.5em;
+				top: 0;
+				margin-bottom: 0;
+			}
 		}
+		
 		&.icon-responsive{
 			&:before{
 				background-image: url("/smarter-web-company-co-uk/_img/images/svg/responsive.svg");
@@ -545,13 +576,26 @@ Package Pages
 				background-image: url("/smarter-web-company-co-uk/_img/images/svg/form.svg");
 			}
 		}
+		&.icon-blog{
+			&:before{
+				background-image: url("/smarter-web-company-co-uk/_img/images/svg/blog.svg");
+			}
+		}
+		
 	}
 	h6{
 		margin-bottom: 0.25em;
 		font-family: $heading-font-bold;
+		padding-top: 0;
 	}
 	p{
 		font-size: ms(1);
+		margin-bottom: 0;
+		line-height: 1.4;
 	}
 	
+}
+
+.buy-buttons{
+	text-align: center;
 }

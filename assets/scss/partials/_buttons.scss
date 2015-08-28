@@ -7,7 +7,7 @@
 \* ---------------------------------------------- */
 
 .button{
-	margin: 1em 0;
+	margin: 1em 0.2em;
 	display: inline-block;
 	.button-text{
 		display: inline-block;
@@ -49,17 +49,6 @@
 			position: relative;
 			height: 3.2em;
 			float: left;
-			// &:after{
-			// 	content: url("/assets/images/chevron.png");
-			// 	//display: inline-block;
-			// 	border: 3px solid #111;
-			// 	border-left: none;
-			// 	padding: 1em;
-			// 	height: 3.2em;
-			// 	position: absolute;
-			// 	left: 100%;
-			// 	top: -3px;
-			// }
 		}
 		&.white-button{
 			i{
@@ -74,7 +63,6 @@
 			border: 3px solid #111;
 			background: transparent;
 			border-left: none;
-			//padding: 1em;
 			height: 3.2em;
 			width: 3.2em;
 			float: right;
@@ -101,6 +89,53 @@
 				svg{
 					fill: #fff;
 				}
+			}
+		}
+	}
+}
+.solid-button{
+	margin: 1em 0.2em;
+	display: inline-block;
+	.button-text{
+		display: inline-block;
+	    font-family: $heading-font-bold;
+	    font-size: ms(2);
+	    background: #333;
+	    border: 3px solid #333;
+	    color: #fff;
+	    text-transform: uppercase;
+	    line-height: 1;
+	    padding: 1em 2em;
+	    transition: all 500ms cubic-bezier(0.230,1.000,0.320,1.000);
+	    text-align: center;
+	}
+	&:hover{
+		.button-text{
+			background: #111;
+			border-color: #111;
+		}
+	}
+	&.white-button{
+		.button-text{
+			background-color: #fff;
+			color: #111;
+			border-color: #fff;
+			&:hover{
+				background-color: $base-color-light;
+				border-color: $base-color-light;
+				color: #fff;
+			}
+		}
+	}
+	&.blue-button{
+		.button-text{
+			background-color: $base-color-light;
+			color: #fff;
+			border-color: $base-color-light;
+			&:hover{
+				background-color: $base-color;
+				border-color: $base-color;
+				color: #fff;
 			}
 		}
 	}

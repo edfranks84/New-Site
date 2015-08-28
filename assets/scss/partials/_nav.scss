@@ -187,6 +187,7 @@
 							display: inline-table;
 							transition: transform 150ms cubic-bezier(.13,.68,.69,.3);
 							transform-origin: 50% 50%;
+							top: -2px;
 						}
 					}
 					&.open{
@@ -195,6 +196,7 @@
 							color: #fff;
 							&:after{
 								transform: rotate(180deg);
+								top: 3px;
 							}
 						}
 						>ul{

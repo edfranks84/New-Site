@@ -257,7 +257,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .h1 a, .h2 a, .h3 a, .h4 a, .h5 a, .h6 a {
     font-family: brandon_text_light, Arial, "Helvetica Neue", Helvetica, sans-serif; }
 
 .blue {
-  background: #018dc2; }
+  background-color: #018dc2; }
   .blue h1, .blue h2, .blue h3, .blue h4, .blue h5, .blue h6, .blue p {
     color: #fff; }
   .blue .divider:after {
@@ -528,7 +528,8 @@ strong {
                 transition: transform 150ms cubic-bezier(.13, .68, .69, .3);
         -webkit-transform-origin: 50% 50%;
             -ms-transform-origin: 50% 50%;
-                transform-origin: 50% 50%; }
+                transform-origin: 50% 50%;
+        top: -2px; }
       .mobile-menu .nav > ul > li.parent.open {
         background-color: #19212c; }
         .mobile-menu .nav > ul > li.parent.open > a {
@@ -536,7 +537,8 @@ strong {
           .mobile-menu .nav > ul > li.parent.open > a:after {
             -webkit-transform: rotate(180deg);
                 -ms-transform: rotate(180deg);
-                    transform: rotate(180deg); }
+                    transform: rotate(180deg);
+            top: 3px; }
         .mobile-menu .nav > ul > li.parent.open > ul {
           display: block; }
       .mobile-menu .nav > ul > li a {
@@ -1822,6 +1824,16 @@ LOGIN STYLES
       margin: 0.4em auto; } }
 .inner-intro h2 {
   padding-top: 0; }
+.inner-intro p:first-of-type:first-line {
+  font-size: 1.33484em;
+  font-family: brandon_text_bold, Arial, "Helvetica Neue", Helvetica, sans-serif; }
+
+.section-title {
+  text-align: center;
+  margin-bottom: 2em; }
+  .section-title h6 {
+    font-family: brandon_text_regular, Arial, "Helvetica Neue", Helvetica, sans-serif;
+    text-transform: none; }
 
 .split-section {
   padding: 0; }
@@ -2002,7 +2014,7 @@ LOGIN STYLES
   width: 91%; }
 
 .main-content-wrap {
-  max-width: 70em;
+  max-width: 72em;
   margin: auto;
   width: 92%; }
 
@@ -2178,15 +2190,15 @@ Package Pages
   @media  (min-width: 480px) {
     .package-hero h6 {
       font-size: 1.33484em; } }
-.package-hero .button.white-button {
+.package-hero .button.white-button, .package-hero .solid-button.blue-button {
   font-size: 13px;
-  margin: 0.5em 0 0.1em; }
+  margin: 0.5em 0.2em 0.1em; }
   @media  (min-width: 480px) {
-    .package-hero .button.white-button {
-      margin: 1.5em 0 1em;
+    .package-hero .button.white-button, .package-hero .solid-button.blue-button {
+      margin: 1.5em 0.2em 1em;
       font-size: 16px; } }
 
-.package-details h2, .package-details h6, .package-details .button {
+.package-details h2, .package-details h6, .package-details .button, .package-details .solid-button {
   -webkit-animation: textin 550ms ease-in both;
           animation: textin 550ms ease-in both; }
 .package-details h2 {
@@ -2207,17 +2219,12 @@ Package Pages
 .package-details h6 {
   -webkit-animation-delay: 1.3s;
           animation-delay: 1.3s; }
-.package-details .button {
-  margin: 0.5em 0 0.1em; }
-  @media  (min-width: 480px) {
-    .package-details .button {
-      margin: 1.5em 0 1em; } }
-  .package-details .button:nth-child(1) {
-    -webkit-animation-delay: 1.5s;
-            animation-delay: 1.5s; }
-  .package-details .button:nth-child(2) {
-    -webkit-animation-delay: 1.6s;
-            animation-delay: 1.6s; }
+.package-details .button:nth-child(1), .package-details .solid-button:nth-child(1) {
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s; }
+.package-details .button:nth-child(2), .package-details .solid-button:nth-child(2) {
+  -webkit-animation-delay: 1.6s;
+          animation-delay: 1.6s; }
 .package-details .button-text {
   padding: 0.65em 1em; }
   @media  (min-width: 480px) {
@@ -2253,40 +2260,62 @@ Package Pages
   .package-examples .project-item p {
     display: block; } }
 
-.feature-list li {
-  padding-left: 6em;
-  float: left;
-  width: 50%;
-  padding-right: 2em;
-  margin: 0.2em 0;
-  position: relative; }
-  .feature-list li:before {
-    content: "";
-    width: 4.5em;
-    height: 4.5em;
-    display: inline-block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    background-position: center top;
-    background-repeat: no-repeat; }
-  .feature-list li.icon-responsive:before {
-    background-image: url("/smarter-web-company-co-uk/_img/images/svg/responsive.svg"); }
-  .feature-list li.icon-pages:before {
-    background-image: url("/smarter-web-company-co-uk/_img/images/svg/pages.svg"); }
-  .feature-list li.icon-cms:before {
-    background-image: url("/smarter-web-company-co-uk/_img/images/svg/cms.svg"); }
-  .feature-list li.icon-domain:before {
-    background-image: url("/smarter-web-company-co-uk/_img/images/svg/domain.svg"); }
-  .feature-list li.icon-email:before {
-    background-image: url("/smarter-web-company-co-uk/_img/images/svg/email.svg"); }
-  .feature-list li.icon-form:before {
-    background-image: url("/smarter-web-company-co-uk/_img/images/svg/form.svg"); }
-.feature-list h6 {
-  margin-bottom: 0.25em;
-  font-family: brandon_grotesque_bold, Arial, "Helvetica Neue", Helvetica, sans-serif; }
-.feature-list p {
-  font-size: 1.05469em; }
+.feature-list {
+  text-align: center; }
+  @media  (min-width: 640px) {
+    .feature-list {
+      text-align: left; } }
+  .feature-list li {
+    margin: 3em 0;
+    position: relative; }
+    @media  (min-width: 640px) {
+      .feature-list li {
+        padding-left: 6em; } }
+    @media  (min-width: 768px) {
+      .feature-list li {
+        float: left;
+        width: 50%;
+        padding-right: 2em;
+        margin: 2em 0; } }
+    .feature-list li:before {
+      content: "";
+      width: 3em;
+      height: 3em;
+      display: inline-block;
+      margin-bottom: 0.5em;
+      background-position: center top;
+      background-repeat: no-repeat; }
+      @media  (min-width: 640px) {
+        .feature-list li:before {
+          position: absolute;
+          left: 0.5em;
+          top: 0;
+          margin-bottom: 0; } }
+    .feature-list li.icon-responsive:before {
+      background-image: url("/smarter-web-company-co-uk/_img/images/svg/responsive.svg"); }
+    .feature-list li.icon-pages:before {
+      background-image: url("/smarter-web-company-co-uk/_img/images/svg/pages.svg"); }
+    .feature-list li.icon-cms:before {
+      background-image: url("/smarter-web-company-co-uk/_img/images/svg/cms.svg"); }
+    .feature-list li.icon-domain:before {
+      background-image: url("/smarter-web-company-co-uk/_img/images/svg/domain.svg"); }
+    .feature-list li.icon-email:before {
+      background-image: url("/smarter-web-company-co-uk/_img/images/svg/email.svg"); }
+    .feature-list li.icon-form:before {
+      background-image: url("/smarter-web-company-co-uk/_img/images/svg/form.svg"); }
+    .feature-list li.icon-blog:before {
+      background-image: url("/smarter-web-company-co-uk/_img/images/svg/blog.svg"); }
+  .feature-list h6 {
+    margin-bottom: 0.25em;
+    font-family: brandon_grotesque_bold, Arial, "Helvetica Neue", Helvetica, sans-serif;
+    padding-top: 0; }
+  .feature-list p {
+    font-size: 1.05469em;
+    margin-bottom: 0;
+    line-height: 1.4; }
+
+.buy-buttons {
+  text-align: center; }
 
 /* ---------------------------------------------- *\
 
@@ -2296,7 +2325,7 @@ Package Pages
 
 \* ---------------------------------------------- */
 .button {
-  margin: 1em 0;
+  margin: 1em 0.2em;
   display: inline-block; }
   .button .button-text {
     display: inline-block;
@@ -2358,6 +2387,42 @@ Package Pages
     background-color: #111; }
     .button a:hover i svg {
       fill: #fff; }
+
+.solid-button {
+  margin: 1em 0.2em;
+  display: inline-block; }
+  .solid-button .button-text {
+    display: inline-block;
+    font-family: brandon_grotesque_bold, Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 1.18652em;
+    background: #333;
+    border: 3px solid #333;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 1;
+    padding: 1em 2em;
+    -webkit-transition: all 500ms cubic-bezier(0.23, 1, 0.32, 1);
+            transition: all 500ms cubic-bezier(0.23, 1, 0.32, 1);
+    text-align: center; }
+  .solid-button:hover .button-text {
+    background: #111;
+    border-color: #111; }
+  .solid-button.white-button .button-text {
+    background-color: #fff;
+    color: #111;
+    border-color: #fff; }
+    .solid-button.white-button .button-text:hover {
+      background-color: #00b2f6;
+      border-color: #00b2f6;
+      color: #fff; }
+  .solid-button.blue-button .button-text {
+    background-color: #00b2f6;
+    color: #fff;
+    border-color: #00b2f6; }
+    .solid-button.blue-button .button-text:hover {
+      background-color: #018dc2;
+      border-color: #018dc2;
+      color: #fff; }
 
 /* -----------------------------------------
 	13.0. Footer
@@ -2610,10 +2675,10 @@ footer {
       font-size: 16px; } }
   .hero-content h1, .hero-content h6 {
     color: #fff; }
-  .hero-content .button {
+  .hero-content .button, .hero-content .solid-button {
     margin-top: 1.5em; }
     @media  (min-width: 400px) {
-      .hero-content .button {
+      .hero-content .button, .hero-content .solid-button {
         margin-top: 3em; } }
   .hero-content h6 {
     -webkit-animation: textin 550ms ease-in 1s both;
@@ -3081,30 +3146,30 @@ section {
             transform: scale(0.1);
     opacity: 0; }
   .cssanimations.csstransitions .process-wrap.visible .process-step:nth-child(1) {
+    -webkit-animation: fadein 600ms ease-in 0.05s forwards;
+            animation: fadein 600ms ease-in 0.05s forwards; }
+  .cssanimations.csstransitions .process-wrap.visible .process-step:nth-child(2) {
     -webkit-animation: fadein 600ms ease-in 0.2s forwards;
             animation: fadein 600ms ease-in 0.2s forwards; }
-  .cssanimations.csstransitions .process-wrap.visible .process-step:nth-child(2) {
-    -webkit-animation: fadein 600ms ease-in 0.4s forwards;
-            animation: fadein 600ms ease-in 0.4s forwards; }
   .cssanimations.csstransitions .process-wrap.visible .process-step:nth-child(3) {
-    -webkit-animation: fadein 600ms ease-in 0.6s forwards;
-            animation: fadein 600ms ease-in 0.6s forwards; }
+    -webkit-animation: fadein 600ms ease-in 0.35s forwards;
+            animation: fadein 600ms ease-in 0.35s forwards; }
   .cssanimations.csstransitions .process-wrap.visible .process-step:nth-child(4) {
+    -webkit-animation: fadein 600ms ease-in 0.5s forwards;
+            animation: fadein 600ms ease-in 0.5s forwards; }
+  .cssanimations.csstransitions .process-wrap.visible .process-step:nth-child(5) {
+    -webkit-animation: fadein 600ms ease-in 0.65s forwards;
+            animation: fadein 600ms ease-in 0.65s forwards; }
+  .cssanimations.csstransitions .process-wrap.visible .process-step:nth-child(6) {
     -webkit-animation: fadein 600ms ease-in 0.8s forwards;
             animation: fadein 600ms ease-in 0.8s forwards; }
-  .cssanimations.csstransitions .process-wrap.visible .process-step:nth-child(5) {
-    -webkit-animation: fadein 600ms ease-in 1s forwards;
-            animation: fadein 600ms ease-in 1s forwards; }
-  .cssanimations.csstransitions .process-wrap.visible .process-step:nth-child(6) {
-    -webkit-animation: fadein 600ms ease-in 1.2s forwards;
-            animation: fadein 600ms ease-in 1.2s forwards; }
 
 .process-step {
-  padding: 4em 0;
+  padding: 3.5em 0;
   position: relative;
   -webkit-transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
           transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
-  background-position: center;
+  background-position: center top;
   width: 47.22222%;
   float: left;
   margin-left: 1.38889%;
@@ -3117,7 +3182,7 @@ section {
       margin-right: 1.38889%; } }
   @media  (min-width: 640px) {
     .process-step {
-      padding: 5em 0; } }
+      padding: 4em 0; } }
   @media  (min-width: 960px) {
     .process-step {
       width: 13.88889%;
@@ -3126,20 +3191,28 @@ section {
       margin-right: 1.38889%; } }
   @media  (min-width: 1060px) {
     .process-step {
-      padding: 6em 0; } }
+      padding: 5.5em 0; } }
   .process-step svg {
     margin: auto;
     width: 5em;
     height: 5em;
     fill: #111;
-    -webkit-transition: all 500ms cubic-bezier(0.23, 1, 0.32, 1);
-            transition: all 500ms cubic-bezier(0.23, 1, 0.32, 1); }
+    -webkit-transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1);
+            transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1); }
+    @media  (min-width: 960px) {
+      .process-step svg {
+        width: 4em;
+        height: 4em; } }
+    @media  (min-width: 1060px) {
+      .process-step svg {
+        height: 5em;
+        width: 5em; } }
   .process-step h6 {
     font-family: brandon_grotesque_bold, Arial, "Helvetica Neue", Helvetica, sans-serif;
     text-transform: uppercase;
     margin-bottom: 0;
-    -webkit-transition: all 500ms cubic-bezier(0.23, 1, 0.32, 1);
-            transition: all 500ms cubic-bezier(0.23, 1, 0.32, 1); }
+    -webkit-transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1);
+            transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1); }
   .process-step a {
     display: block; }
   .process-step:after {
@@ -3153,8 +3226,8 @@ section {
     height: 5px; }
   .process-step:hover:after {
     width: 100%;
-    -webkit-transition: all 400ms cubic-bezier(0.23, 1, 0.32, 1);
-            transition: all 400ms cubic-bezier(0.23, 1, 0.32, 1); }
+    -webkit-transition: all 600ms cubic-bezier(0.23, 1, 0.32, 1);
+            transition: all 600ms cubic-bezier(0.23, 1, 0.32, 1); }
   .process-step:hover svg {
     fill: #fff; }
   .process-step:hover h6 {
@@ -3925,6 +3998,8 @@ div[class^="concept"] {
   background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/about-hero.jpg"); }
 #s485115 .hero {
   background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/lite-bg.jpg"); }
+#s485116 .hero {
+  background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/pro-bg.jpg"); }
 
 .bg-cover {
   background-size: cover;
