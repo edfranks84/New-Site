@@ -14,6 +14,16 @@
 			image: url("/smarter-web-company-co-uk/_img/images/backgrounds/pro-bg.jpg");
 		}
 	}
+	#s485117 &{
+		background:{ 
+			image: url("/smarter-web-company-co-uk/_img/images/backgrounds/ecom-bg.jpg");
+		}
+	}
+	#s485128 &{
+		background:{ 
+			image: url("/smarter-web-company-co-uk/_img/images/backgrounds/sports-bg.jpg");
+		}
+	}
 }
 
 
@@ -34,5 +44,11 @@
 	background:{ 
 		image: url("/smarter-web-company-co-uk/_img/images/backgrounds/design-bristol.jpg");
 		position: bottom center;
+	}
+}
+
+.buy-buttons{
+	background:{ 
+		image: url("/smarter-web-company-co-uk/_img/images/backgrounds/buy-button-bg.jpg");
 	}
 }

@@ -254,7 +254,11 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .h1 a, .h2 a, .h3 a, .h4 a, .h5 a, .h6 a {
   .black h1, .black h2, .black h3, .black h4, .black h5, .black h6, .black p {
     color: #fff; }
   .black p {
-    font-family: brandon_text_light, Arial, "Helvetica Neue", Helvetica, sans-serif; }
+    font-family: brandon_text_light, Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: rgba(255, 255, 255, 0.75); }
+
+section.black {
+  border-bottom: 3px solid #018dc2; }
 
 .blue {
   background-color: #018dc2; }
@@ -343,7 +347,8 @@ p {
   font-weight: normal;
   font-style: normal;
   margin-bottom: 0.8em;
-  padding-top: 0.2em; }
+  padding-top: 0.2em;
+  color: #555; }
 
 strong {
   font-family: brandon_grotesque_bold, Arial, "Helvetica Neue", Helvetica, sans-serif; }
@@ -1826,7 +1831,8 @@ LOGIN STYLES
   padding-top: 0; }
 .inner-intro p:first-of-type:first-line {
   font-size: 1.33484em;
-  font-family: brandon_text_bold, Arial, "Helvetica Neue", Helvetica, sans-serif; }
+  font-family: brandon_text_regular, Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color: #fff; }
 
 .section-title {
   text-align: center;
@@ -1933,6 +1939,9 @@ LOGIN STYLES
         max-width: 75%; } }
   .split-copy p {
     font-size: 1.05469em; }
+    @media  (min-width: 1500px) {
+      .split-copy p {
+        font-size: 1.18652em; } }
 
 .split-copy:after, .split-copy__cell:after {
   border: 25px transparent solid;
@@ -2006,17 +2015,27 @@ LOGIN STYLES
   position: relative; }
   @media  (min-width: 1000px) {
     .split-copy__cell {
-      padding: 4.5em; } }
+      padding: 5.5em; } }
 
 .narrow-content-wrap {
-  max-width: 55em;
+  max-width: 60em;
   margin: auto;
   width: 91%; }
+  .narrow-content-wrap:before, .narrow-content-wrap:after {
+    content: "";
+    display: table; }
+  .narrow-content-wrap:after {
+    clear: both; }
 
 .main-content-wrap {
   max-width: 72em;
   margin: auto;
   width: 92%; }
+  .main-content-wrap:before, .main-content-wrap:after {
+    content: "";
+    display: table; }
+  .main-content-wrap:after {
+    clear: both; }
 
 /******************************************
 *******************************************
@@ -2158,11 +2177,11 @@ Package Pages
 
 .hero.package-hero {
   height: auto;
-  min-height: 85vh; }
+  min-height: 90vh; }
   @media  (min-width: 480px) {
     .hero.package-hero {
-      height: 85%;
-      height: 85vh; } }
+      height: 90%;
+      height: 90vh; } }
   .previewFrame .hero.package-hero {
     height: 700px;
     min-height: 0; }
@@ -2183,9 +2202,17 @@ Package Pages
           -ms-transform: translateY(-50%);
               transform: translateY(-50%);
       padding: 5em 0 0; } }
+  .package-hero .hero-content h6.divider {
+    -webkit-animation-delay: .4s;
+            animation-delay: .4s; }
+    .package-hero .hero-content h6.divider:after {
+      width: 0;
+      -webkit-animation: expand 400ms ease-in 1s both;
+              animation: expand 400ms ease-in 1s both; }
+  .package-hero .hero-content .package-details h6 {
+    -webkit-animation-delay: 1.4s;
+            animation-delay: 1.4s; }
 .package-hero h6 {
-  -webkit-animation-delay: 1.3s;
-          animation-delay: 1.3s;
   font-size: 1.05469em; }
   @media  (min-width: 480px) {
     .package-hero h6 {
@@ -2202,8 +2229,8 @@ Package Pages
   -webkit-animation: textin 550ms ease-in both;
           animation: textin 550ms ease-in both; }
 .package-details h2 {
-  -webkit-animation-delay: 1.1s;
-          animation-delay: 1.1s;
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
   margin-bottom: 0;
   color: #fff;
   font-size: 2.13815em; }
@@ -2216,15 +2243,12 @@ Package Pages
   @media  (min-width: 1060px) {
     .package-details h2 {
       font-size: 3.42491em; } }
-.package-details h6 {
-  -webkit-animation-delay: 1.3s;
-          animation-delay: 1.3s; }
 .package-details .button:nth-child(1), .package-details .solid-button:nth-child(1) {
   -webkit-animation-delay: 1.5s;
           animation-delay: 1.5s; }
 .package-details .button:nth-child(2), .package-details .solid-button:nth-child(2) {
-  -webkit-animation-delay: 1.6s;
-          animation-delay: 1.6s; }
+  -webkit-animation-delay: 1.55s;
+          animation-delay: 1.55s; }
 .package-details .button-text {
   padding: 0.65em 1em; }
   @media  (min-width: 480px) {
@@ -2250,15 +2274,15 @@ Package Pages
   @media  (min-width: 1250px) {
     .package-examples .project-item:nth-child(1), .package-examples .project-item:nth-child(2), .package-examples .project-item:nth-child(3), .package-examples .project-item:nth-child(4) {
       width: 25%; } }
-@media  (min-width: 480px) {
-  .package-examples .project-item p {
-    display: none; } }
-@media  (min-width: 640px) {
-  .package-examples .project-item p {
-    display: block; } }
-@media  (min-width: 960px) {
-  .package-examples .project-item p {
-    display: block; } }
+  @media  (min-width: 480px) {
+    .package-examples .project-item:nth-child(1) p, .package-examples .project-item:nth-child(2) p, .package-examples .project-item:nth-child(3) p, .package-examples .project-item:nth-child(4) p {
+      display: none; } }
+  @media  (min-width: 640px) {
+    .package-examples .project-item:nth-child(1) p, .package-examples .project-item:nth-child(2) p, .package-examples .project-item:nth-child(3) p, .package-examples .project-item:nth-child(4) p {
+      display: block; } }
+  @media  (min-width: 960px) {
+    .package-examples .project-item:nth-child(1) p, .package-examples .project-item:nth-child(2) p, .package-examples .project-item:nth-child(3) p, .package-examples .project-item:nth-child(4) p {
+      display: block; } }
 
 .feature-list {
   text-align: center; }
@@ -2305,6 +2329,14 @@ Package Pages
       background-image: url("/smarter-web-company-co-uk/_img/images/svg/form.svg"); }
     .feature-list li.icon-blog:before {
       background-image: url("/smarter-web-company-co-uk/_img/images/svg/blog.svg"); }
+    .feature-list li.icon-options:before {
+      background-image: url("/smarter-web-company-co-uk/_img/images/svg/options2.svg"); }
+    .feature-list li.icon-payment:before {
+      background-image: url("/smarter-web-company-co-uk/_img/images/svg/payment.svg"); }
+    .feature-list li.icon-bespoke:before {
+      background-image: url("/smarter-web-company-co-uk/_img/images/svg/bespoke.svg"); }
+    .feature-list li.icon-social:before {
+      background-image: url("/smarter-web-company-co-uk/_img/images/svg/social.svg"); }
   .feature-list h6 {
     margin-bottom: 0.25em;
     font-family: brandon_grotesque_bold, Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -2315,7 +2347,10 @@ Package Pages
     line-height: 1.4; }
 
 .buy-buttons {
-  text-align: center; }
+  text-align: center;
+  padding: 9em 0; }
+  .buy-buttons h4 {
+    font-family: brandon_grotesque_medium, Arial, "Helvetica Neue", Helvetica, sans-serif; }
 
 /* ---------------------------------------------- *\
 
@@ -2335,94 +2370,85 @@ Package Pages
     text-transform: uppercase;
     line-height: 1;
     padding: 1em 2em;
-    border: 3px solid #111;
     -webkit-transition: all 500ms cubic-bezier(0.23, 1, 0.32, 1);
             transition: all 500ms cubic-bezier(0.23, 1, 0.32, 1);
     text-align: center; }
-  .button.white-button .button-text {
-    border-color: #fff;
-    color: #fff; }
-  .button.white-button a:hover .button-text {
-    background-color: #fff;
-    color: #111; }
-  .button.white-button a:hover i {
-    background-color: #fff; }
-    .button.white-button a:hover i svg {
-      fill: #111; }
-  .button.arrow-button {
-    display: inline-block;
-    font-size: 15px; }
-    .button.arrow-button .button-text {
-      position: relative;
-      height: 3.2em;
-      float: left; }
-    .button.arrow-button.white-button i {
-      border-color: #fff; }
-      .button.arrow-button.white-button i svg {
-        fill: #fff; }
-    .button.arrow-button i {
-      display: inline-block;
-      border: 3px solid #111;
-      background: transparent;
-      border-left: none;
-      height: 3.2em;
-      width: 3.2em;
-      float: right;
-      font-size: 1.18652em;
-      -webkit-transition: all 500ms cubic-bezier(0.23, 1, 0.32, 1);
-              transition: all 500ms cubic-bezier(0.23, 1, 0.32, 1); }
-      .button.arrow-button i svg {
-        fill: #111;
-        height: 1.2em;
-        width: 1.2em;
-        position: relative;
-        top: 50%;
-        -webkit-transform: translateY(-50%);
-            -ms-transform: translateY(-50%);
-                transform: translateY(-50%); }
-  .button a:hover .button-text {
-    background-color: #111;
-    color: #fff; }
-  .button a:hover i {
-    background-color: #111; }
-    .button a:hover i svg {
-      fill: #fff; }
 
-.solid-button {
-  margin: 1em 0.2em;
-  display: inline-block; }
-  .solid-button .button-text {
-    display: inline-block;
-    font-family: brandon_grotesque_bold, Arial, "Helvetica Neue", Helvetica, sans-serif;
-    font-size: 1.18652em;
-    background: #333;
-    border: 3px solid #333;
-    color: #fff;
-    text-transform: uppercase;
-    line-height: 1;
-    padding: 1em 2em;
-    -webkit-transition: all 500ms cubic-bezier(0.23, 1, 0.32, 1);
-            transition: all 500ms cubic-bezier(0.23, 1, 0.32, 1);
-    text-align: center; }
-  .solid-button:hover .button-text {
-    background: #111;
-    border-color: #111; }
-  .solid-button.white-button .button-text {
-    background-color: #fff;
-    color: #111;
+.border-button .button-text {
+  background: transparent;
+  border: 3px solid #111; }
+.border-button.white-button .button-text {
+  border-color: #fff;
+  color: #fff; }
+.border-button.white-button a:hover .button-text {
+  background-color: #fff;
+  color: #111; }
+.border-button.white-button a:hover i {
+  background-color: #fff; }
+  .border-button.white-button a:hover i svg {
+    fill: #111; }
+.border-button.arrow-button {
+  display: inline-block;
+  font-size: 15px; }
+  .border-button.arrow-button .button-text {
+    position: relative;
+    height: 3.2em;
+    float: left; }
+  .border-button.arrow-button.white-button i {
     border-color: #fff; }
-    .solid-button.white-button .button-text:hover {
-      background-color: #00b2f6;
-      border-color: #00b2f6;
-      color: #fff; }
-  .solid-button.blue-button .button-text {
+    .border-button.arrow-button.white-button i svg {
+      fill: #fff; }
+  .border-button.arrow-button i {
+    display: inline-block;
+    border: 3px solid #111;
+    background: transparent;
+    border-left: none;
+    height: 3.2em;
+    width: 3.2em;
+    float: right;
+    font-size: 1.18652em;
+    -webkit-transition: all 500ms cubic-bezier(0.23, 1, 0.32, 1);
+            transition: all 500ms cubic-bezier(0.23, 1, 0.32, 1); }
+    .border-button.arrow-button i svg {
+      fill: #111;
+      height: 1.2em;
+      width: 1.2em;
+      position: relative;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+              transform: translateY(-50%); }
+.border-button a:hover .button-text {
+  background-color: #111;
+  color: #fff; }
+.border-button a:hover i {
+  background-color: #111; }
+  .border-button a:hover i svg {
+    fill: #fff; }
+
+.solid-button .button-text {
+  background: #333;
+  border: 3px solid #333;
+  color: #fff; }
+.solid-button:hover .button-text {
+  background: #111;
+  border-color: #111; }
+.solid-button.white-button .button-text {
+  background-color: #fff;
+  color: #111;
+  border-color: #fff; }
+  .solid-button.white-button .button-text:hover {
     background-color: #00b2f6;
-    color: #fff;
-    border-color: #00b2f6; }
-    .solid-button.blue-button .button-text:hover {
-      background-color: #018dc2;
-      border-color: #018dc2;
-      color: #fff; }
+    border-color: #00b2f6;
+    color: #fff; }
+.solid-button.blue-button .button-text {
+  background-color: #018dc2;
+  color: #fff;
+  border-color: #018dc2; }
+  .solid-button.blue-button .button-text:hover {
+    background-color: #0bc0ff;
+    border-color: #0bc0ff;
+    color: #fff; }
 
 /* -----------------------------------------
 	13.0. Footer
@@ -2687,14 +2713,12 @@ footer {
     -webkit-animation: textin 650ms ease-in 1.2s both;
             animation: textin 650ms ease-in 1.2s both; }
   .hero-content .divider:after {
+    -webkit-animation: expand 400ms ease-in .75s both;
+            animation: expand 400ms ease-in .75s both;
     margin: 0.25em auto; }
     @media  (min-width: 768px) {
       .hero-content .divider:after {
         margin: 0.15em auto; } }
-    .cssanimations.csstransitions .hero-content .divider:after {
-      width: 0;
-      -webkit-animation: expand 400ms ease-in .75s forwards;
-              animation: expand 400ms ease-in .75s forwards; }
 
 @-webkit-keyframes textin {
   0% {
@@ -2749,7 +2773,7 @@ section {
     clear: both; }
   @media  (min-width: 480px) {
     section {
-      padding: 5em 1em; } }
+      padding: 6em 1em; } }
 
 .about-us {
   background-image: url("/smarter-web-company-co-uk/_img/images/what-we-do.jpg");
@@ -2766,7 +2790,8 @@ section {
   .about-us h2, .about-us h3, .about-us h4, .about-us h5, .about-us h6, .about-us p {
     color: #fff; }
   .about-us p {
-    font-family: brandon_text_light, Arial, "Helvetica Neue", Helvetica, sans-serif; }
+    font-family: brandon_text_light, Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: rgba(255, 255, 255, 0.8); }
   .about-us .divider-center:after {
     margin: 0.4em 0; }
     @media  (min-width: 480px) {
@@ -3131,7 +3156,8 @@ section {
   text-align: center; }
   .process h6 {
     text-transform: none;
-    font-family: brandon_text_regular, Arial, "Helvetica Neue", Helvetica, sans-serif; }
+    font-family: brandon_text_regular, Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: rgba(0, 0, 0, 0.7); }
 
 .process-wrap {
   padding: 1.5em; }
@@ -3140,27 +3166,27 @@ section {
     display: table; }
   .process-wrap:after {
     clear: both; }
-  .cssanimations.csstransitions .process-wrap .process-step {
+  .process-wrap .process-step {
     -webkit-transform: scale(0.1);
         -ms-transform: scale(0.1);
             transform: scale(0.1);
     opacity: 0; }
-  .cssanimations.csstransitions .process-wrap.visible .process-step:nth-child(1) {
+  .visible .process-wrap .process-step:nth-child(1) {
     -webkit-animation: fadein 600ms ease-in 0.05s forwards;
             animation: fadein 600ms ease-in 0.05s forwards; }
-  .cssanimations.csstransitions .process-wrap.visible .process-step:nth-child(2) {
+  .visible .process-wrap .process-step:nth-child(2) {
     -webkit-animation: fadein 600ms ease-in 0.2s forwards;
             animation: fadein 600ms ease-in 0.2s forwards; }
-  .cssanimations.csstransitions .process-wrap.visible .process-step:nth-child(3) {
+  .visible .process-wrap .process-step:nth-child(3) {
     -webkit-animation: fadein 600ms ease-in 0.35s forwards;
             animation: fadein 600ms ease-in 0.35s forwards; }
-  .cssanimations.csstransitions .process-wrap.visible .process-step:nth-child(4) {
+  .visible .process-wrap .process-step:nth-child(4) {
     -webkit-animation: fadein 600ms ease-in 0.5s forwards;
             animation: fadein 600ms ease-in 0.5s forwards; }
-  .cssanimations.csstransitions .process-wrap.visible .process-step:nth-child(5) {
+  .visible .process-wrap .process-step:nth-child(5) {
     -webkit-animation: fadein 600ms ease-in 0.65s forwards;
             animation: fadein 600ms ease-in 0.65s forwards; }
-  .cssanimations.csstransitions .process-wrap.visible .process-step:nth-child(6) {
+  .visible .process-wrap .process-step:nth-child(6) {
     -webkit-animation: fadein 600ms ease-in 0.8s forwards;
             animation: fadein 600ms ease-in 0.8s forwards; }
 
@@ -3212,7 +3238,9 @@ section {
     text-transform: uppercase;
     margin-bottom: 0;
     -webkit-transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1);
-            transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1); }
+            transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1);
+    color: #444;
+    color: rgba(0, 0, 0, 0.75); }
   .process-step a {
     display: block; }
   .process-step:after {
@@ -3264,12 +3292,13 @@ section {
     color: #fff; }
   .packages .sub-title h6 {
     text-transform: none;
-    font-family: brandon_text_light, Arial, "Helvetica Neue", Helvetica, sans-serif; }
+    font-family: brandon_text_light, Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: rgba(255, 255, 255, 0.7); }
 
 .packages-wrap {
   padding: 2.5em 0 1.5em;
   width: 98%;
-  max-width: 66em;
+  max-width: 72em;
   margin: auto; }
   .packages-wrap:before, .packages-wrap:after {
     content: "";
@@ -3491,7 +3520,9 @@ section {
     text-transform: none;
     max-width: 30em;
     margin: auto;
-    padding-top: 0; }
+    padding-top: 0;
+    color: #444;
+    color: rgba(0, 0, 0, 0.75); }
   .cms .play-icon {
     height: 7em;
     width: 7em;
@@ -4000,6 +4031,10 @@ div[class^="concept"] {
   background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/lite-bg.jpg"); }
 #s485116 .hero {
   background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/pro-bg.jpg"); }
+#s485117 .hero {
+  background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/ecom-bg.jpg"); }
+#s485128 .hero {
+  background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/sports-bg.jpg"); }
 
 .bg-cover {
   background-size: cover;
@@ -4013,3 +4048,6 @@ div[class^="concept"] {
 .design-bristol {
   background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/design-bristol.jpg");
   background-position: bottom center; }
+
+.buy-buttons {
+  background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/buy-button-bg.jpg"); }

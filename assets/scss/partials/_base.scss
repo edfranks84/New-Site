@@ -163,7 +163,11 @@
 		}
 		p{
 			font-family: $body-font-light;
+			color: rgba(255, 255, 255, 0.75);
 		}
+	}
+	section.black{
+		border-bottom: 3px solid $base-color;
 	}
 	.blue{
 		background-color: $base-color;
