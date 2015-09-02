@@ -129,7 +129,7 @@
 	.divider{
 		margin-bottom: 0.4em;
 		&:after{
-			width: 5rem;
+			width: 4rem;
 			height: 2px;
 			background-color: $base-color-light;
 			display: block;
@@ -163,7 +163,7 @@
 		}
 		p{
 			font-family: $body-font-light;
-			color: rgba(255, 255, 255, 0.75);
+			color: rgba(255, 255, 255, 0.8);
 		}
 	}
 	section.black{
@@ -179,4 +179,7 @@
 				background-color: #fff;
 			}
 		}
+	}
+	.grey{
+		background-color: $lightgrey;
 	}

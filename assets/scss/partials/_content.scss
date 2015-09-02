@@ -192,12 +192,23 @@
 		}
 	}
 }
+
 .split-copy__right.blue,.split-copy__cell.blue{
 	&:after{
 		border-bottom-color: $base-color;
 		@include respond-to(800){
 			border-bottom-color: transparent;
 			border-right-color: $base-color;
+		}
+	}
+}
+
+.split-copy__cell.grey{
+	&:after{
+		border-bottom-color: $lightgrey;
+		@include respond-to(800){
+			border-bottom-color: transparent;
+			border-right-color: $lightgrey;
 		}
 	}
 }
@@ -505,6 +516,10 @@ Package Pages
 			}
 			@include respond-to(1250){
 				width: 25%;
+				font-size: 14px;
+			}
+			@include respond-to(1500){
+				font-size: 16px;
 			}
 		
 			p{
@@ -523,6 +538,7 @@ Package Pages
 }
 
 .feature-list{
+	@include clearfix;
 	text-align: center;
 	@include respond-to(640){
 		text-align: left;
@@ -611,6 +627,26 @@ Package Pages
 		&.icon-social{
 			&:before{
 				background-image: url("/smarter-web-company-co-uk/_img/images/svg/social.svg");
+			}
+		}
+		&.icon-calc{
+			&:before{
+				background-image: url("/smarter-web-company-co-uk/_img/images/svg/calc.svg");
+			}
+		}
+		&.icon-maps{
+			&:before{
+				background-image: url("/smarter-web-company-co-uk/_img/images/svg/map.svg");
+			}
+		}
+		&.icon-search{
+			&:before{
+				background-image: url("/smarter-web-company-co-uk/_img/images/svg/search.svg");
+			}
+		}
+		&.icon-software{
+			&:before{
+				background-image: url("/smarter-web-company-co-uk/_img/images/svg/software.svg");
 			}
 		}
 		

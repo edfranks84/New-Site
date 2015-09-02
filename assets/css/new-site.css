@@ -227,7 +227,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .h1 a, .h2 a, .h3 a, .h4 a, .h5 a, .h6 a {
 .divider {
   margin-bottom: 0.4em; }
   .divider:after {
-    width: 5rem;
+    width: 4rem;
     height: 2px;
     background-color: #00b2f6;
     display: block;
@@ -255,7 +255,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .h1 a, .h2 a, .h3 a, .h4 a, .h5 a, .h6 a {
     color: #fff; }
   .black p {
     font-family: brandon_text_light, Arial, "Helvetica Neue", Helvetica, sans-serif;
-    color: rgba(255, 255, 255, 0.75); }
+    color: rgba(255, 255, 255, 0.8); }
 
 section.black {
   border-bottom: 3px solid #018dc2; }
@@ -266,6 +266,9 @@ section.black {
     color: #fff; }
   .blue .divider:after {
     background-color: #fff; }
+
+.grey {
+  background-color: #eee; }
 
 /* -----------------------------------------
 	9.0. Typography
@@ -348,7 +351,7 @@ p {
   font-style: normal;
   margin-bottom: 0.8em;
   padding-top: 0.2em;
-  color: #555; }
+  color: #454545; }
 
 strong {
   font-family: brandon_grotesque_bold, Arial, "Helvetica Neue", Helvetica, sans-serif; }
@@ -388,7 +391,7 @@ strong {
     @media  (min-width: 1250px) {
       .main-nav .menu > li {
         font-size: 16px;
-        margin: 0 0.5em; } }
+        margin: 0 0.45em; } }
     @media  (min-width: 1060px) {
       .main-nav .menu > li.liLinkActive:before {
         content: "";
@@ -1996,6 +1999,13 @@ LOGIN STYLES
       border-bottom-color: transparent;
       border-right-color: #018dc2; } }
 
+.split-copy__cell.grey:after {
+  border-bottom-color: #eee; }
+  @media  (min-width: 800px) {
+    .split-copy__cell.grey:after {
+      border-bottom-color: transparent;
+      border-right-color: #eee; } }
+
 @media  (min-width: 800px) {
   .split-copy__cell, .split-image__cell {
     padding: 4.5em;
@@ -2273,7 +2283,11 @@ Package Pages
       width: 50%; } }
   @media  (min-width: 1250px) {
     .package-examples .project-item:nth-child(1), .package-examples .project-item:nth-child(2), .package-examples .project-item:nth-child(3), .package-examples .project-item:nth-child(4) {
-      width: 25%; } }
+      width: 25%;
+      font-size: 14px; } }
+  @media  (min-width: 1500px) {
+    .package-examples .project-item:nth-child(1), .package-examples .project-item:nth-child(2), .package-examples .project-item:nth-child(3), .package-examples .project-item:nth-child(4) {
+      font-size: 16px; } }
   @media  (min-width: 480px) {
     .package-examples .project-item:nth-child(1) p, .package-examples .project-item:nth-child(2) p, .package-examples .project-item:nth-child(3) p, .package-examples .project-item:nth-child(4) p {
       display: none; } }
@@ -2286,6 +2300,11 @@ Package Pages
 
 .feature-list {
   text-align: center; }
+  .feature-list:before, .feature-list:after {
+    content: "";
+    display: table; }
+  .feature-list:after {
+    clear: both; }
   @media  (min-width: 640px) {
     .feature-list {
       text-align: left; } }
@@ -2337,6 +2356,14 @@ Package Pages
       background-image: url("/smarter-web-company-co-uk/_img/images/svg/bespoke.svg"); }
     .feature-list li.icon-social:before {
       background-image: url("/smarter-web-company-co-uk/_img/images/svg/social.svg"); }
+    .feature-list li.icon-calc:before {
+      background-image: url("/smarter-web-company-co-uk/_img/images/svg/calc.svg"); }
+    .feature-list li.icon-maps:before {
+      background-image: url("/smarter-web-company-co-uk/_img/images/svg/map.svg"); }
+    .feature-list li.icon-search:before {
+      background-image: url("/smarter-web-company-co-uk/_img/images/svg/search.svg"); }
+    .feature-list li.icon-software:before {
+      background-image: url("/smarter-web-company-co-uk/_img/images/svg/software.svg"); }
   .feature-list h6 {
     margin-bottom: 0.25em;
     font-family: brandon_grotesque_bold, Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -4035,6 +4062,12 @@ div[class^="concept"] {
   background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/ecom-bg.jpg"); }
 #s485128 .hero {
   background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/sports-bg.jpg"); }
+#s485129 .hero {
+  background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/hospitality-bg.jpg"); }
+#s485131 .hero {
+  background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/financial-bg.jpg"); }
+#s485126 .hero {
+  background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/property-bg.jpg"); }
 
 .bg-cover {
   background-size: cover;

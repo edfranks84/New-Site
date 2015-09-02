@@ -30,7 +30,7 @@
 			}
 			@include respond-to(1250){
 				font-size: 16px;
-				margin: 0 0.5em
+				margin: 0 0.45em
 			}
 			&.liLinkActive{
 				@include respond-to(1060){
