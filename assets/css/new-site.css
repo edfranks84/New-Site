@@ -2364,6 +2364,20 @@ Package Pages
       background-image: url("/smarter-web-company-co-uk/_img/images/svg/search.svg"); }
     .feature-list li.icon-software:before {
       background-image: url("/smarter-web-company-co-uk/_img/images/svg/software.svg"); }
+    .feature-list li.icon-listing:before {
+      background-image: url("/smarter-web-company-co-uk/_img/images/svg/listing.svg"); }
+    .feature-list li.icon-ecommerce:before {
+      background-image: url("/smarter-web-company-co-uk/_img/images/svg/listing.svg"); }
+    .feature-list li.icon-design:before {
+      background-image: url("/smarter-web-company-co-uk/_img/images/svg/design.svg"); }
+    .feature-list li.icon-uk:before {
+      background-image: url("/smarter-web-company-co-uk/_img/images/svg/uk.svg"); }
+    .feature-list li.icon-stationary:before {
+      background-image: url("/smarter-web-company-co-uk/_img/images/svg/stationary.svg"); }
+    .feature-list li.icon-vector:before {
+      background-image: url("/smarter-web-company-co-uk/_img/images/svg/vector.svg"); }
+    .feature-list li.icon-printer:before {
+      background-image: url("/smarter-web-company-co-uk/_img/images/svg/printing.svg"); }
   .feature-list h6 {
     margin-bottom: 0.25em;
     font-family: brandon_grotesque_bold, Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -4068,6 +4082,16 @@ div[class^="concept"] {
   background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/financial-bg.jpg"); }
 #s485126 .hero {
   background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/property-bg.jpg"); }
+#s485125 .hero {
+  background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/recruitment-bg.jpg"); }
+#s485127 .hero {
+  background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/fashion-bg.jpg"); }
+#s485130 .hero {
+  background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/retail-bg.jpg"); }
+#s485132 .hero {
+  background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/bar-restaurant-bg.jpg"); }
+#s485120 .hero {
+  background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/logo-bg.jpg"); }
 
 .bg-cover {
   background-size: cover;
