@@ -42,7 +42,7 @@
 .hero-content{
 	padding-top: 5em;
 	text-align: center;
-	width: 90%;
+	width: 83%;
 	max-width: 50em;
 	margin: auto;
 	position: relative;
@@ -94,6 +94,7 @@
 		font-size: ms(10);
 		line-height: 1;
 		margin: 0;
+		margin-bottom: 	0.1em;
 		padding-top: 0;
 		@include respond-to(480){
 			font-size: ms(12);

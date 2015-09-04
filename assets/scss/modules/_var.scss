@@ -35,6 +35,7 @@ $blockquote: #e3e3e3;
 $heading-font-light: brandon_grotesque_regular, Arial, "Helvetica Neue", Helvetica, sans-serif; 
 $heading-font: brandon_grotesque_medium, Arial, "Helvetica Neue", Helvetica, sans-serif;
 $heading-font-bold: brandon_grotesque_bold, Arial, "Helvetica Neue", Helvetica, sans-serif;
+$heading-font-black: brandon_grotesque_black, Arial, "Helvetica Neue", Helvetica, sans-serif;
 $body-font-light: brandon_text_light, Arial, "Helvetica Neue", Helvetica, sans-serif;
 $body-font: brandon_text_regular, Arial, "Helvetica Neue", Helvetica, sans-serif;
 $body-font-bold: brandon_text_bold, Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -48,6 +49,7 @@ $base-color-light: saturate(lighten(#018dc2, 10), 1);
 $base-color-dark: saturate(darken(#018dc2, 10), 1);
 $comp-color: #e5408e;
 $lightgrey: #eee;
+$grey: #999;
 
 $link: #018dc2;
 $link-hover: saturate(lighten(#018dc2, 10), 1);

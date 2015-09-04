@@ -190,3 +190,24 @@ $prefix-for-spec:      true !default;
   @include prefixer(transform-style, $style, webkit moz ms o spec);
 }
 
+/////////////////////////////////////
+
+// Paper Collapse Mixins
+
+////////////////////////////////////
+
+@mixin cf {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin raise-2 {
+  box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.08);
+  z-index: 200;
+}

@@ -1,0 +1,101 @@
+.collapse-card {
+  background-color: $white;
+  border-bottom: 1px solid #ddd;
+  color: $grey;
+  transition: all .4s ease;
+
+  &.active {
+    @include raise-2;
+    margin: 1rem -1rem;
+    // .collapse-card__heading {
+    //   &::after {
+    //     transform: rotate(45deg);
+    //   }
+    // }
+    // .collapse-card__heading:hover {
+    //   &::after {
+    //     transform: scale(1.02);
+    //   }
+    // }
+  }
+
+  .collapse-card__heading:hover {
+    &::after {
+      transform: scale(1.02);
+    }
+  }
+}
+
+.collapse-card__heading {
+  cursor: pointer;
+  @include cf;
+  padding: 1rem;
+  position: relative;
+  .active &{
+    background-color: #aaa;
+  }
+  // i {
+  //   float: left;
+  // }
+
+  // &::after {
+    //content: url("/smarter-web-company-co-uk/_img/images/svg/plus-black.svg");
+    // line-height: 2rem;
+    // padding-left: .4rem;
+    // position: absolute;
+    // right: 1rem;
+    // top: 1.09rem;
+    // width: 1.5em;
+    // height: 1.5em;
+    // transform-origin: 50% 50%;
+    // transition: transform 300ms linear;
+  // }
+}
+
+.collapse-card__title {
+  font-size: 14px;
+  line-height: 2rem;
+  margin: 0 2rem 0 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: $heading-font;
+  color: #333;
+  text-transform: uppercase;
+  transition: color 200ms ease;
+  .active &{
+    color: #fff;
+  }
+  @include respond-to(400){
+    font-size: 16px;
+  }
+  @include respond-to(640){
+    font-size: ms(1);
+  }
+}
+
+.collapse-card__body {
+  padding: 1.5em;
+  display: none;
+  color: #222;
+  font-size: ms(1);
+  @include respond-to(640){
+    padding: 2em;
+  }
+}
+.plus-icon{
+  fill: #333;
+  height: 1.5em;
+  width: 1.5em;
+  position: absolute;
+  right: 1em;
+  top: 50%;
+  transform: translateY(-50%)  rotate(0deg);
+  transition: all 300ms linear;
+  .active &{
+    transform: translateY(-50%) rotate(450deg);
+    height: 1.75em;
+    width: 1.75em;
+    fill: #fff;
+  }
+}

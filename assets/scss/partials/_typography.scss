@@ -7,7 +7,10 @@
 
 \* ---------------------------------------------- */
 
-
+@font-face {
+  font-family: 'brandon_grotesque_black';
+  src: url('/smarter-web-company-co-uk/_img/fonts/brandon_grotesque_black.woff') format('woff');
+}
 @font-face {
   font-family: 'brandon_grotesque_bold';
   src: url('/smarter-web-company-co-uk/_img/fonts/brandon_grotesque_bold.woff') format('woff');
@@ -49,6 +52,7 @@ h1, h2, h3, h4, h5, h6{
 }
 
 h1{
+	font-family: $heading-font-black;
 	font-size: ms(9);
 	@include respond-to(480){
 		font-size: ms(10);
@@ -56,6 +60,7 @@ h1{
 }
 
 h2{
+	font-family: $heading-font-black;
 	font-size: ms(8);
 	@include respond-to(480){
 		font-size: ms(9);
@@ -63,6 +68,7 @@ h2{
 }
 
 h3{
+	font-family: $heading-font-black;
 	font-size: ms(7);
 	@include respond-to(480){
 		font-size: ms(8);

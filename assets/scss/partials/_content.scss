@@ -1,9 +1,23 @@
 .hero{
 	&.inner-hero{
-		height: 85%;
-		height: 85vh;
+		height:100%;
+		height: 100vh;
 		.previewFrame &{
 			height: 700px;
+		}
+	}
+}
+
+.hero.inner-hero{
+	.hero-title.small-hero{
+		h1{
+			font-size: ms(10);
+			@include respond-to(768){
+				font-size: ms(15);
+			}
+			@include respond-to(1060){
+				font-size: ms(17);
+			}
 		}
 	}
 }
@@ -24,13 +38,13 @@
 		padding-top: 0;
 	}
 	p{
-		&:first-of-type{
-			&:first-line{
-				font-size: ms(3);
-				font-family: $body-font;
-				color: #fff;
-			}
-		}
+		// &:first-of-type{
+		// 	&:first-line{
+		// 		font-size: ms(3);
+		// 		font-family: $body-font;
+		// 		color: #fff;
+		// 	}
+		// }
 	}
 }
 
@@ -399,10 +413,10 @@ Package Pages
 }
 .hero.package-hero{
 	height: auto;
-	min-height: 90vh;
+	min-height: 100vh;
 	@include respond-to(480){
-		height: 90%;
-		height: 90vh;
+		height: 100%;
+		height: 100vh;
 	}
 	.previewFrame &{
 		height: 700px;
@@ -440,7 +454,7 @@ Package Pages
 		}
 	}
 	.button.white-button, .solid-button.blue-button{
-		font-size: 13px;
+		font-size: 14px;
 		margin: 0.5em 0.2em 0.1em;
 		@include respond-to(480){
 			margin: 1.5em 0.2em 1em;
@@ -456,6 +470,7 @@ Package Pages
 		animation-delay: 1.2s;
 		margin-bottom: 0;
 		color: #fff;
+		font-family: $heading-font-bold;
 		font-size: ms(7);
 		@include respond-to(480){
 			font-size: ms(8);
@@ -656,7 +671,7 @@ Package Pages
 		}
 		&.icon-ecommerce{
 			&:before{
-				background-image: url("/smarter-web-company-co-uk/_img/images/svg/listing.svg");
+				background-image: url("/smarter-web-company-co-uk/_img/images/svg/ecommerce.svg");
 			}
 		}
 		&.icon-design{
@@ -666,7 +681,7 @@ Package Pages
 		}
 		&.icon-uk{
 			&:before{
-				background-image: url("/smarter-web-company-co-uk/_img/images/svg/uk.svg");
+				background-image: url("/smarter-web-company-co-uk/_img/images/svg/globe.svg");
 			}
 		}
 		&.icon-stationary{
@@ -681,7 +696,7 @@ Package Pages
 		}
 		&.icon-printer{
 			&:before{
-				background-image: url("/smarter-web-company-co-uk/_img/images/svg/printing.svg");
+				background-image: url("/smarter-web-company-co-uk/_img/images/svg/printer.svg");
 			}
 		}
 		
@@ -696,6 +711,24 @@ Package Pages
 		margin-bottom: 0;
 		line-height: 1.4;
 	}
+	&.no-text{
+		@include respond-to(640){
+			li{
+				&::before{
+					display: inline-block;
+					position: relative;
+					margin-left: -6em;
+					margin-right: 2em;
+					vertical-align: middle;
+				}
+			}
+			h6{
+				display: inline-block;
+				vertical-align: middle;
+				margin-bottom: 0;
+			}
+		}
+	}
 	
 }
 
@@ -705,4 +738,15 @@ Package Pages
 	h4{
 		font-family: $heading-font;
 	}
+}
+
+
+/*//////////////////////////////////////
+
+Logo Gallery
+
+/////////////////////////////////////*/
+
+.logo-gallery{
+	padding: 0;
 }

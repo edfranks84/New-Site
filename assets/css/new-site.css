@@ -282,6 +282,10 @@ section.black {
 
 \* ---------------------------------------------- */
 @font-face {
+  font-family: 'brandon_grotesque_black';
+  src: url('/smarter-web-company-co-uk/_img/fonts/brandon_grotesque_black.woff') format('woff'); }
+
+@font-face {
   font-family: 'brandon_grotesque_bold';
   src: url('/smarter-web-company-co-uk/_img/fonts/brandon_grotesque_bold.woff') format('woff'); }
 
@@ -316,18 +320,21 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase; }
 
 h1 {
+  font-family: brandon_grotesque_black, Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 2.7061em; }
   @media  (min-width: 480px) {
     h1 {
       font-size: 3.04436em; } }
 
 h2 {
+  font-family: brandon_grotesque_black, Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 2.40542em; }
   @media  (min-width: 480px) {
     h2 {
       font-size: 2.7061em; } }
 
 h3 {
+  font-family: brandon_grotesque_black, Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 2.13815em; }
   @media  (min-width: 480px) {
     h3 {
@@ -1817,10 +1824,19 @@ LOGIN STYLES
 	12.0. Content
 ----------------------------------------- */
 .hero.inner-hero {
-  height: 85%;
-  height: 85vh; }
+  height: 100%;
+  height: 100vh; }
   .previewFrame .hero.inner-hero {
     height: 700px; }
+
+.hero.inner-hero .hero-title.small-hero h1 {
+  font-size: 3.04436em; }
+  @media  (min-width: 768px) {
+    .hero.inner-hero .hero-title.small-hero h1 {
+      font-size: 5.48604em; } }
+  @media  (min-width: 1060px) {
+    .hero.inner-hero .hero-title.small-hero h1 {
+      font-size: 6.94327em; } }
 
 @media  (min-width: 480px) {
   .inner-intro {
@@ -1832,10 +1848,6 @@ LOGIN STYLES
       margin: 0.4em auto; } }
 .inner-intro h2 {
   padding-top: 0; }
-.inner-intro p:first-of-type:first-line {
-  font-size: 1.33484em;
-  font-family: brandon_text_regular, Arial, "Helvetica Neue", Helvetica, sans-serif;
-  color: #fff; }
 
 .section-title {
   text-align: center;
@@ -2187,11 +2199,11 @@ Package Pages
 
 .hero.package-hero {
   height: auto;
-  min-height: 90vh; }
+  min-height: 100vh; }
   @media  (min-width: 480px) {
     .hero.package-hero {
-      height: 90%;
-      height: 90vh; } }
+      height: 100%;
+      height: 100vh; } }
   .previewFrame .hero.package-hero {
     height: 700px;
     min-height: 0; }
@@ -2228,7 +2240,7 @@ Package Pages
     .package-hero h6 {
       font-size: 1.33484em; } }
 .package-hero .button.white-button, .package-hero .solid-button.blue-button {
-  font-size: 13px;
+  font-size: 14px;
   margin: 0.5em 0.2em 0.1em; }
   @media  (min-width: 480px) {
     .package-hero .button.white-button, .package-hero .solid-button.blue-button {
@@ -2243,6 +2255,7 @@ Package Pages
           animation-delay: 1.2s;
   margin-bottom: 0;
   color: #fff;
+  font-family: brandon_grotesque_bold, Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 2.13815em; }
   @media  (min-width: 480px) {
     .package-details h2 {
@@ -2367,17 +2380,17 @@ Package Pages
     .feature-list li.icon-listing:before {
       background-image: url("/smarter-web-company-co-uk/_img/images/svg/listing.svg"); }
     .feature-list li.icon-ecommerce:before {
-      background-image: url("/smarter-web-company-co-uk/_img/images/svg/listing.svg"); }
+      background-image: url("/smarter-web-company-co-uk/_img/images/svg/ecommerce.svg"); }
     .feature-list li.icon-design:before {
       background-image: url("/smarter-web-company-co-uk/_img/images/svg/design.svg"); }
     .feature-list li.icon-uk:before {
-      background-image: url("/smarter-web-company-co-uk/_img/images/svg/uk.svg"); }
+      background-image: url("/smarter-web-company-co-uk/_img/images/svg/globe.svg"); }
     .feature-list li.icon-stationary:before {
       background-image: url("/smarter-web-company-co-uk/_img/images/svg/stationary.svg"); }
     .feature-list li.icon-vector:before {
       background-image: url("/smarter-web-company-co-uk/_img/images/svg/vector.svg"); }
     .feature-list li.icon-printer:before {
-      background-image: url("/smarter-web-company-co-uk/_img/images/svg/printing.svg"); }
+      background-image: url("/smarter-web-company-co-uk/_img/images/svg/printer.svg"); }
   .feature-list h6 {
     margin-bottom: 0.25em;
     font-family: brandon_grotesque_bold, Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -2386,12 +2399,31 @@ Package Pages
     font-size: 1.05469em;
     margin-bottom: 0;
     line-height: 1.4; }
+  @media  (min-width: 640px) {
+    .feature-list.no-text li::before {
+      display: inline-block;
+      position: relative;
+      margin-left: -6em;
+      margin-right: 2em;
+      vertical-align: middle; }
+    .feature-list.no-text h6 {
+      display: inline-block;
+      vertical-align: middle;
+      margin-bottom: 0; } }
 
 .buy-buttons {
   text-align: center;
   padding: 9em 0; }
   .buy-buttons h4 {
     font-family: brandon_grotesque_medium, Arial, "Helvetica Neue", Helvetica, sans-serif; }
+
+/*//////////////////////////////////////
+
+Logo Gallery
+
+/////////////////////////////////////*/
+.logo-gallery {
+  padding: 0; }
 
 /* ---------------------------------------------- *\
 
@@ -2728,7 +2760,7 @@ footer {
 .hero-content {
   padding-top: 5em;
   text-align: center;
-  width: 90%;
+  width: 83%;
   max-width: 50em;
   margin: auto;
   position: relative;
@@ -2787,6 +2819,7 @@ footer {
   font-size: 3.04436em;
   line-height: 1;
   margin: 0;
+  margin-bottom: 0.1em;
   padding-top: 0; }
   @media  (min-width: 480px) {
     .hero-title h1 {
@@ -4108,3 +4141,80 @@ div[class^="concept"] {
 
 .buy-buttons {
   background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/buy-button-bg.jpg"); }
+
+.collapse-card {
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #ddd;
+  color: #999;
+  -webkit-transition: all .4s ease;
+          transition: all .4s ease; }
+  .collapse-card.active {
+    box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.08);
+    z-index: 200;
+    margin: 1rem -1rem; }
+  .collapse-card .collapse-card__heading:hover::after {
+    -webkit-transform: scale(1.02);
+        -ms-transform: scale(1.02);
+            transform: scale(1.02); }
+
+.collapse-card__heading {
+  cursor: pointer;
+  padding: 1rem;
+  position: relative; }
+  .collapse-card__heading:before, .collapse-card__heading:after {
+    content: " ";
+    display: table; }
+  .collapse-card__heading:after {
+    clear: both; }
+  .active .collapse-card__heading {
+    background-color: #aaa; }
+
+.collapse-card__title {
+  font-size: 14px;
+  line-height: 2rem;
+  margin: 0 2rem 0 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: brandon_grotesque_medium, Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color: #333;
+  text-transform: uppercase;
+  -webkit-transition: color 200ms ease;
+          transition: color 200ms ease; }
+  .active .collapse-card__title {
+    color: #fff; }
+  @media  (min-width: 400px) {
+    .collapse-card__title {
+      font-size: 16px; } }
+  @media  (min-width: 640px) {
+    .collapse-card__title {
+      font-size: 1.05469em; } }
+
+.collapse-card__body {
+  padding: 1.5em;
+  display: none;
+  color: #222;
+  font-size: 1.05469em; }
+  @media  (min-width: 640px) {
+    .collapse-card__body {
+      padding: 2em; } }
+
+.plus-icon {
+  fill: #333;
+  height: 1.5em;
+  width: 1.5em;
+  position: absolute;
+  right: 1em;
+  top: 50%;
+  -webkit-transform: translateY(-50%) rotate(0deg);
+      -ms-transform: translateY(-50%) rotate(0deg);
+          transform: translateY(-50%) rotate(0deg);
+  -webkit-transition: all 300ms linear;
+          transition: all 300ms linear; }
+  .active .plus-icon {
+    -webkit-transform: translateY(-50%) rotate(450deg);
+        -ms-transform: translateY(-50%) rotate(450deg);
+            transform: translateY(-50%) rotate(450deg);
+    height: 1.75em;
+    width: 1.75em;
+    fill: #fff; }
