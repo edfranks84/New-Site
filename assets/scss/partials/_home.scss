@@ -181,7 +181,7 @@ section{
 		background-position: center;
 		padding-bottom: 60%;
 	}
-	@include respond-to(920){
+	@include respond-to(960){
 		@include span(6 of 12 last 0);
 	}
 	@include respond-to(1200){
@@ -209,7 +209,7 @@ section{
 			height: 100%;
 		}
 	}
-	@include respond-to(920){
+	@include respond-to(960){
 		@include span(6 of 12 0);
 	}
 	@include respond-to(1200){
@@ -331,14 +331,16 @@ section{
 		}
 	}
 	&:nth-child(7){
-		width:100%;
-		.project-link__wrap{
-			padding-top: 25%;
-		}
-		@include respond-to(960){
-			width: 25%;
+		.projects &{
+			width:100%;
 			.project-link__wrap{
-				padding-top: 100%;
+				padding-top: 25%;
+			}
+			@include respond-to(960){
+				width: 25%;
+				.project-link__wrap{
+					padding-top: 100%;
+				}
 			}
 		}
 	}
@@ -362,14 +364,16 @@ section{
 	}
 }
 
-.projects .hover-content, .link-content-wrap{
+//.projects .hover-content, .link-content-wrap{
+.hover-content, .link-content-wrap{
 	position: absolute;
 	top: 0;
 	right: 0;
 	left: 0;
 	bottom: 0;
 }
-.projects .hover-content{
+//.projects .hover-content{
+.hover-content{
 	margin: 1em;
 	padding: 1.5em;
 	background-color: rgba(0,0,0,0.8);

@@ -1833,10 +1833,10 @@ LOGIN STYLES
   font-size: 3.04436em; }
   @media  (min-width: 768px) {
     .hero.inner-hero .hero-title.small-hero h1 {
-      font-size: 5.48604em; } }
+      font-size: 4.87648em; } }
   @media  (min-width: 1060px) {
     .hero.inner-hero .hero-title.small-hero h1 {
-      font-size: 6.94327em; } }
+      font-size: 6.1718em; } }
 
 @media  (min-width: 480px) {
   .inner-intro {
@@ -2424,6 +2424,29 @@ Logo Gallery
 /////////////////////////////////////*/
 .logo-gallery {
   padding: 0; }
+  .logo-gallery .project-item {
+    width: 100%; }
+    @media  (min-width: 480px) {
+      .logo-gallery .project-item {
+        width: 50%; } }
+    @media  (min-width: 960px) {
+      .logo-gallery .project-item {
+        width: 25%;
+        font-size: 14px; }
+        .logo-gallery .project-item:nth-child(4), .logo-gallery .project-item:nth-child(5), .logo-gallery .project-item:nth-child(6) {
+          width: 33.333%; } }
+    @media  (min-width: 1500px) {
+      .logo-gallery .project-item {
+        font-size: 16px; } }
+    .logo-gallery .project-item:hover .hover-content {
+      opacity: 1;
+      -webkit-transition: opacity 700ms ease;
+              transition: opacity 700ms ease; }
+  .logo-gallery .project-item__inner {
+    padding-top: 100%;
+    text-align: center; }
+  .logo-gallery .button {
+    font-size: 10px; }
 
 /* ---------------------------------------------- *\
 
@@ -2899,7 +2922,7 @@ section {
       margin-right: 0;
       background-position: center;
       padding-bottom: 60%; } }
-  @media  (min-width: 920px) {
+  @media  (min-width: 960px) {
     .bespoke-image {
       width: 50%;
       float: right;
@@ -2927,7 +2950,7 @@ section {
         left: 0;
         right: 0;
         height: 100%; } }
-  @media  (min-width: 920px) {
+  @media  (min-width: 960px) {
     .bespoke-copy {
       width: 50%;
       float: left; } }
@@ -3036,14 +3059,14 @@ section {
           margin-top: 0.7em; }
         .project-item:nth-child(4) p, .project-item:nth-child(5) p, .project-item:nth-child(6) p, .project-item:nth-child(7) p {
           display: none; } }
-  .project-item:nth-child(7) {
+  .projects .project-item:nth-child(7) {
     width: 100%; }
-    .project-item:nth-child(7) .project-link__wrap {
+    .projects .project-item:nth-child(7) .project-link__wrap {
       padding-top: 25%; }
     @media  (min-width: 960px) {
-      .project-item:nth-child(7) {
+      .projects .project-item:nth-child(7) {
         width: 25%; }
-        .project-item:nth-child(7) .project-link__wrap {
+        .projects .project-item:nth-child(7) .project-link__wrap {
           padding-top: 100%; } }
   .project-item.dark-bg {
     background-size: auto;
@@ -3063,14 +3086,14 @@ section {
       -webkit-animation: fadein 500ms ease-in forwards;
               animation: fadein 500ms ease-in forwards; }
 
-.projects .hover-content, .link-content-wrap {
+.hover-content, .link-content-wrap {
   position: absolute;
   top: 0;
   right: 0;
   left: 0;
   bottom: 0; }
 
-.projects .hover-content {
+.hover-content {
   margin: 1em;
   padding: 1.5em;
   background-color: rgba(0, 0, 0, 0.8);
@@ -4147,7 +4170,8 @@ div[class^="concept"] {
   border-bottom: 1px solid #ddd;
   color: #999;
   -webkit-transition: all .4s ease;
-          transition: all .4s ease; }
+          transition: all .4s ease;
+  margin: 5px 0; }
   .collapse-card.active {
     box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.08);
     z-index: 200;
@@ -4212,9 +4236,9 @@ div[class^="concept"] {
   -webkit-transition: all 300ms linear;
           transition: all 300ms linear; }
   .active .plus-icon {
-    -webkit-transform: translateY(-50%) rotate(450deg);
-        -ms-transform: translateY(-50%) rotate(450deg);
-            transform: translateY(-50%) rotate(450deg);
+    -webkit-transform: translateY(-50%) rotate(495deg);
+        -ms-transform: translateY(-50%) rotate(495deg);
+            transform: translateY(-50%) rotate(495deg);
     height: 1.75em;
     width: 1.75em;
     fill: #fff; }

@@ -13,10 +13,10 @@
 		h1{
 			font-size: ms(10);
 			@include respond-to(768){
-				font-size: ms(15);
+				font-size: ms(14);
 			}
 			@include respond-to(1060){
-				font-size: ms(17);
+				font-size: ms(16);
 			}
 		}
 	}
@@ -749,4 +749,35 @@ Logo Gallery
 
 .logo-gallery{
 	padding: 0;
+	.project-item{
+		width: 100%;
+		@include respond-to(480){
+			width: 50%;
+		}
+		@include respond-to(960){
+			width: 25%;
+			font-size: 14px;
+			&:nth-child(4),&:nth-child(5),&:nth-child(6){
+				width: 33.333%;
+			}
+		}
+		@include respond-to(1500){
+			font-size: 16px;
+		}
+		
+		&:hover{
+			.hover-content{
+				opacity: 1;
+				transition: opacity 700ms ease;
+			}
+		}
+	}
+	.project-item__inner{
+		padding-top: 100%;
+		text-align: center;
+	}
+	.button{
+		font-size: 10px;
+	}
+
 }
