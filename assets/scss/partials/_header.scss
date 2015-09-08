@@ -213,13 +213,17 @@ Mobile Nav
                     top: 51%;
                 }
                 &:after {
-                    bottom: 0.6em;
+                    //bottom: 0.6em;
+                    bottom: 0.65em;
                     width: 3em;
+                    height: 0.55em;
                     transform: translateX(1.7em) rotate(135deg);
                 }
                 &:before {
-                    top: 0.6em;
+                    //top: 0.6em;
+                    top: 0.65em;
                     width: 3em;
+                    height: 0.55em;
                     transform: translateX(1.7em) rotate(-135deg);
                 }
                 &.left {

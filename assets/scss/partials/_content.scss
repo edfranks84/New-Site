@@ -438,7 +438,7 @@ Package Pages
 			animation-delay: .4s;
 			&:after{
 				width: 0;
-				animation: expand 400ms ease-in 1s both;
+				animation: expand 400ms ease-in .8s both;
 			}
 		}
 		.package-details{
@@ -467,7 +467,7 @@ Package Pages
 		animation: textin 550ms ease-in both;
 	}
 	h2{
-		animation-delay: 1.2s;
+		animation-delay: 1s;
 		margin-bottom: 0;
 		color: #fff;
 		font-family: $heading-font-bold;
@@ -488,10 +488,10 @@ Package Pages
 			// margin: 1.5em 0 1em;
 		}
 		&:nth-child(1){
-			animation-delay: 1.5s;
+			animation-delay: 1.2s;
 		}
 		&:nth-child(2){
-			animation-delay: 1.55s;
+			animation-delay: 1.25s;
 		}
 	}
 	.button-text{
@@ -780,4 +780,18 @@ Logo Gallery
 		font-size: 10px;
 	}
 
+}
+
+.seo-reporting{
+	text-align: center;
+	img{
+		margin-bottom: 2em;
+	}
+}
+.split-section--seo{
+	.split-copy__cell{
+		@include respond-to(1200){
+			padding: 8em 5.5em;
+		}
+	}
 }

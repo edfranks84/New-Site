@@ -1645,14 +1645,16 @@ Mobile Nav
         left: -0.4em;
         top: 51%; }
       .menu-btn.active .burger.arrow:after, .show-menu .menu-btn .burger.arrow:after {
-        bottom: 0.6em;
+        bottom: 0.65em;
         width: 3em;
+        height: 0.55em;
         -webkit-transform: translateX(1.7em) rotate(135deg);
             -ms-transform: translateX(1.7em) rotate(135deg);
                 transform: translateX(1.7em) rotate(135deg); }
       .menu-btn.active .burger.arrow:before, .show-menu .menu-btn .burger.arrow:before {
-        top: 0.6em;
+        top: 0.65em;
         width: 3em;
+        height: 0.55em;
         -webkit-transform: translateX(1.7em) rotate(-135deg);
             -ms-transform: translateX(1.7em) rotate(-135deg);
                 transform: translateX(1.7em) rotate(-135deg); }
@@ -2229,8 +2231,8 @@ Package Pages
             animation-delay: .4s; }
     .package-hero .hero-content h6.divider:after {
       width: 0;
-      -webkit-animation: expand 400ms ease-in 1s both;
-              animation: expand 400ms ease-in 1s both; }
+      -webkit-animation: expand 400ms ease-in .8s both;
+              animation: expand 400ms ease-in .8s both; }
   .package-hero .hero-content .package-details h6 {
     -webkit-animation-delay: 1.4s;
             animation-delay: 1.4s; }
@@ -2251,8 +2253,8 @@ Package Pages
   -webkit-animation: textin 550ms ease-in both;
           animation: textin 550ms ease-in both; }
 .package-details h2 {
-  -webkit-animation-delay: 1.2s;
-          animation-delay: 1.2s;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
   margin-bottom: 0;
   color: #fff;
   font-family: brandon_grotesque_bold, Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -2267,11 +2269,11 @@ Package Pages
     .package-details h2 {
       font-size: 3.42491em; } }
 .package-details .button:nth-child(1), .package-details .solid-button:nth-child(1) {
-  -webkit-animation-delay: 1.5s;
-          animation-delay: 1.5s; }
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s; }
 .package-details .button:nth-child(2), .package-details .solid-button:nth-child(2) {
-  -webkit-animation-delay: 1.55s;
-          animation-delay: 1.55s; }
+  -webkit-animation-delay: 1.25s;
+          animation-delay: 1.25s; }
 .package-details .button-text {
   padding: 0.65em 1em; }
   @media  (min-width: 480px) {
@@ -2447,6 +2449,15 @@ Logo Gallery
     text-align: center; }
   .logo-gallery .button {
     font-size: 10px; }
+
+.seo-reporting {
+  text-align: center; }
+  .seo-reporting img {
+    margin-bottom: 2em; }
+
+@media  (min-width: 1200px) {
+  .split-section--seo .split-copy__cell {
+    padding: 8em 5.5em; } }
 
 /* ---------------------------------------------- *\
 
@@ -4148,6 +4159,8 @@ div[class^="concept"] {
   background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/bar-restaurant-bg.jpg"); }
 #s485120 .hero {
   background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/logo-bg.jpg"); }
+#s485121 .hero {
+  background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/seo-bg.jpg"); }
 
 .bg-cover {
   background-size: cover;
@@ -4164,6 +4177,9 @@ div[class^="concept"] {
 
 .buy-buttons {
   background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/buy-button-bg.jpg"); }
+
+.seo-results {
+  background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/seo-results.jpg"); }
 
 .collapse-card {
   background-color: #FFFFFF;
