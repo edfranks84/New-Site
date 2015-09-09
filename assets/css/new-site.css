@@ -255,7 +255,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .h1 a, .h2 a, .h3 a, .h4 a, .h5 a, .h6 a {
     color: #fff; }
   .black p {
     font-family: brandon_text_light, Arial, "Helvetica Neue", Helvetica, sans-serif;
-    color: rgba(255, 255, 255, 0.8); }
+    color: rgba(255, 255, 255, 0.85); }
 
 section.black {
   border-bottom: 3px solid #018dc2; }
@@ -269,6 +269,16 @@ section.black {
 
 .grey {
   background-color: #eee; }
+
+.srt {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
 
 /* -----------------------------------------
 	9.0. Typography
@@ -2126,7 +2136,9 @@ TEAM LAYOUT
     text-align: center;
     -webkit-transition: opacity 550ms ease;
             transition: opacity 550ms ease;
-    opacity: 0; }
+    opacity: 0;
+    padding: 0;
+    margin: 0; }
   .team-item:hover .hover-content {
     opacity: 1; }
   .team-item:hover .team-border {
@@ -2450,6 +2462,11 @@ Logo Gallery
   .logo-gallery .button {
     font-size: 10px; }
 
+/*//////////////////////////////////////
+
+SEO
+
+/////////////////////////////////////*/
 .seo-reporting {
   text-align: center; }
   .seo-reporting img {
@@ -2458,6 +2475,110 @@ Logo Gallery
 @media  (min-width: 1200px) {
   .split-section--seo .split-copy__cell {
     padding: 8em 5.5em; } }
+
+.seo-prices {
+  padding: 3.5em 0.5em; }
+  .seo-prices table {
+    border-collapse: collapse;
+    margin: auto;
+    font-size: 13px;
+    width: 100%; }
+    @media  (min-width: 640px) {
+      .seo-prices table {
+        table-layout: fixed;
+        font-size: 16px; } }
+  .seo-prices th {
+    font-family: brandon_grotesque_bold, Arial, "Helvetica Neue", Helvetica, sans-serif;
+    text-align: center;
+    font-size: 1.33484em;
+    text-transform: uppercase;
+    padding: 0.5em;
+    border: 1px solid #00b2f6;
+    line-height: 1;
+    background-color: #018dc2;
+    background-image: -webkit-linear-gradient(#018dc2, #016f99);
+    background-image: linear-gradient(#018dc2, #016f99);
+    color: #fff; }
+    @media  (min-width: 640px) {
+      .seo-prices th {
+        font-family: brandon_grotesque_black, Arial, "Helvetica Neue", Helvetica, sans-serif;
+        padding: 1.3em 2em 1.2em; } }
+    .seo-prices th:first-child {
+      border: none;
+      background-color: transparent;
+      background-image: none; }
+    .seo-prices th:last-child {
+      border-left-width: 3px;
+      border-right-width: 3px; }
+  .seo-prices tr td:nth-child(1) {
+    text-align: left;
+    font-family: brandon_text_bold, Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 1.18652em;
+    background-color: #fff;
+    border-color: #ccc; }
+  .seo-prices tr td:nth-child(3) {
+    border-left: 3px solid #00b2f6;
+    border-right: 3px solid #00b2f6; }
+  .seo-prices tr:last-child .pro-price {
+    border-bottom: 3px solid #00b2f6; }
+  .seo-prices tr .pro-price {
+    font-size: 1.33484em;
+    font-family: brandon_grotesque_bold, Arial, "Helvetica Neue", Helvetica, sans-serif; }
+  .seo-prices td {
+    padding: 0.5em;
+    font-size: 1.05469em;
+    font-family: brandon_text_regular, Arial, "Helvetica Neue", Helvetica, sans-serif;
+    background-color: #fff;
+    text-align: center;
+    border: 1px solid #e5e5e5;
+    line-height: 1; }
+    @media  (min-width: 640px) {
+      .seo-prices td {
+        padding: 1.2em 2em; } }
+  .seo-prices svg {
+    color: #018dc2;
+    height: 1.5em;
+    width: 1.5em; }
+    .seo-prices svg.tick-icon {
+      fill: #018dc2; }
+    .seo-prices svg.cross-icon {
+      fill: #444; }
+
+.graph-line {
+  width: 100%;
+  fill: transparent;
+  stroke: rgba(255, 255, 255, 0.2);
+  stroke-width: 5;
+  stroke-dasharray: 2600px;
+  stroke-dashoffset: 2600px;
+  -webkit-transition: stroke-dashoffset 2000ms linear;
+          transition: stroke-dashoffset 2000ms linear; }
+
+.seo-reporting {
+  position: relative;
+  padding-left: 0;
+  padding-right: 0; }
+  .seo-reporting svg {
+    position: absolute;
+    top: 3em;
+    left: 0;
+    width: 100%;
+    z-index: 1; }
+  .seo-reporting.visible .graph-line {
+    stroke-dashoffset: 0; }
+  .seo-reporting .narrow-content-wrap {
+    z-index: 5;
+    position: relative; }
+
+/*//////////////////////////////////////
+
+CMS
+
+/////////////////////////////////////*/
+.cms-video-banner {
+  padding: 0; }
+  .cms-video-banner video {
+    width: 100%; }
 
 /* ---------------------------------------------- *\
 
@@ -4161,6 +4282,8 @@ div[class^="concept"] {
   background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/logo-bg.jpg"); }
 #s485121 .hero {
   background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/seo-bg.jpg"); }
+#s485133 .hero {
+  background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/cms-bg.jpg"); }
 
 .bg-cover {
   background-size: cover;
@@ -4180,6 +4303,15 @@ div[class^="concept"] {
 
 .seo-results {
   background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/seo-results.jpg"); }
+
+.cms-easy {
+  background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/cms-easy.jpg"); }
+
+.cms-ecommerce {
+  background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/cms-ecommerce.jpg"); }
+
+.cms-coding {
+  background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/cms-edit.jpg"); }
 
 .collapse-card {
   background-color: #FFFFFF;

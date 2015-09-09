@@ -339,6 +339,8 @@ TEAM LAYOUT
 		text-align: center;
 		transition: opacity 550ms ease;
 		opacity: 0;
+		padding: 0;
+		margin: 0;
 	}
 	&:hover{
 		.hover-content{
@@ -782,6 +784,13 @@ Logo Gallery
 
 }
 
+/*//////////////////////////////////////
+
+SEO
+
+/////////////////////////////////////*/
+
+
 .seo-reporting{
 	text-align: center;
 	img{
@@ -793,5 +802,148 @@ Logo Gallery
 		@include respond-to(1200){
 			padding: 8em 5.5em;
 		}
+	}
+}
+.seo-prices{
+	padding: 3.5em 0.5em;
+	table{
+		border-collapse: collapse;
+		margin: auto;
+		font-size: 13px;
+		width: 100%;
+		
+		@include respond-to(640){
+			table-layout: fixed;
+			font-size: 16px;
+		}
+	}
+	th{
+		font-family: $heading-font-bold;
+		text-align: center;
+		font-size: ms(3);
+		text-transform: uppercase;
+		padding: 0.5em;
+		//background-color: #999;
+		border: 1px solid $base-color-light;
+		line-height: 1;
+		background-color: $base-color;
+		background-image: linear-gradient($base-color, darken($base-color, 8%));
+		color: #fff;
+		@include respond-to(640){
+			font-family: $heading-font-black;
+			padding: 1.3em 2em 1.2em;
+		}
+		&:first-child{
+			border: none;
+			background-color: transparent;
+			background-image: none;
+		}
+		&:last-child{
+			// border: 3px solid $base-color-light;
+			// border-bottom: 1px solid #ddd;
+			border-left-width: 3px;
+			border-right-width: 3px;
+		}
+	}
+	tr{
+		td{
+			&:nth-child(1){
+				text-align: left;
+				font-family: $body-font-bold;
+				font-size: ms(2);
+				background-color: #fff;
+				//color: #fff;
+				border-color: #ccc;
+				//min-width: 8em;
+			}
+			&:nth-child(3){
+				border-left: 3px solid $base-color-light;
+				border-right: 3px solid $base-color-light;
+			}
+		}
+		&:last-child{
+			.pro-price{
+				border-bottom: 3px solid $base-color-light;
+			}
+		}
+		.pro-price{
+			font-size: ms(3);
+			font-family:$heading-font-bold;
+		}
+	}
+	td{
+		padding: 0.5em;
+		font-size: ms(1);
+		font-family: $body-font;
+		background-color: #fff;
+		text-align: center;
+		border: 1px solid #e5e5e5;
+		line-height: 1;
+		@include respond-to(640){
+			padding: 1.2em 2em;
+
+		}
+	}
+	svg{
+		color: $base-color;
+		height: 1.5em;
+		width: 1.5em;
+		&.tick-icon{
+			fill: $base-color;
+		}
+		&.cross-icon{
+			fill: #444;
+		}
+	}
+}
+
+.graph-line{
+	
+	width: 100%;
+	fill: transparent;
+	stroke: rgba(255, 255, 255, 0.2);
+	stroke-width: 5;
+	stroke-dasharray: 2600px;
+	stroke-dashoffset: 2600px;
+	transition: stroke-dashoffset 2000ms linear;
+}
+.seo-reporting{
+	position: relative;
+	padding-left: 0;
+	padding-right: 0;
+	svg{
+		position: absolute;
+		top: 3em;
+		left: 0;
+		width: 100%;
+		z-index: 1;
+	}
+	&.visible{
+		.graph-line{
+			stroke-dashoffset: 0;
+		}
+	}
+	.narrow-content-wrap{
+		z-index: 5;
+		position: relative;
+	}
+}
+
+/*//////////////////////////////////////
+
+CMS
+
+/////////////////////////////////////*/
+
+.cms-video-banner{
+	padding: 0;
+	video{
+		width: 100%;
+	}
+	.touch &{
+		video {}
+	} 
+	.no-touch &{
+		video {}
 	}
 }
