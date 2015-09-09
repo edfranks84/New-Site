@@ -6,6 +6,13 @@
 			height: 700px;
 		}
 	}
+	&.short-hero{
+		height:50%;
+		height: 50vh;
+		.previewFrame &{
+			height: 400px;
+		}
+	}
 }
 
 .hero.inner-hero{
@@ -217,12 +224,22 @@
 	}
 }
 
-.split-copy__cell.grey{
+.split-copy__cell.grey,.split-copy__right.grey{
 	&:after{
 		border-bottom-color: $lightgrey;
 		@include respond-to(800){
 			border-bottom-color: transparent;
 			border-right-color: $lightgrey;
+		}
+	}
+}
+
+.split-copy__left.grey{
+	&:after{
+		border-bottom-color: $lightgrey;
+		@include respond-to(800){
+			border-color: transparent;
+			border-left-color: $lightgrey;
 		}
 	}
 }
@@ -935,15 +952,103 @@ CMS
 
 /////////////////////////////////////*/
 
-.cms-video-banner{
-	padding: 0;
-	video{
-		width: 100%;
+// .cms-video-banner{
+// 	background-image: url("/smarter-web-company-co-uk/_img/images/home-cms-bg.jpg");
+// 	background-size: cover;
+// 	background-position: center;
+// 	padding: 0;
+// 	background-color: #222;
+// 	border-bottom: ;
+// 	video{
+// 		width: 100%;
+// 		max-height: 100%;
+// 	}
+// 	.touch &{
+// 		height: 80%;
+// 		height: 80vh;
+// 		video {
+// 			display: none;
+// 		}
+// 	} 
+// 	.no-touch &{
+// 		padding: 5em;
+// 		background-image: none;
+// 		video {
+// 			display: block;
+// 		}
+// 	}
+// }
+
+/*//////////////////////////////////////
+
+Design Process
+
+/////////////////////////////////////*/
+
+.process-section{
+	border-bottom: 1px solid #d4d4d4;
+	.process-icon{
+		height: 2.4em;
+		width: 2.4em;
+		fill: #222;
+		float: left;
+		margin-right: 0.75em;
 	}
-	.touch &{
-		video {}
-	} 
-	.no-touch &{
-		video {}
+	h3{
+		padding-top: 0;
+	}
+	&.process-support{
+		.process-icon{
+			height: 2.8em;
+			width: 2.8em;
+		}
+	}
+	.content-wrap{
+		padding: 4em 0;
+	}
+}
+.process-signup{
+	.split-image{
+		background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/process-signup-img.jpg");
+	}
+	// h3{
+	// 	&:before{
+	// 		height: 1em;
+	// 		width: 1em;
+	// 		display: block;
+	// 		content: "";
+	// 		float: left;
+	// 		margin-right: 0.5em;
+	// 		background:{
+	// 			image: url("/smarter-web-company-co-uk/_img/images/svg/signup.svg");
+	// 			size: cover;
+	// 			repeat: no-repeat;
+	// 		}
+	// 	}
+	// }
+}
+.process-research{
+	.split-image{
+		background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/process-research-img.jpg");
+	}
+}
+.process-design{
+	.split-image{
+		background-image: url("/smarter-web-company-co-uk/_img/images/bespoke-design.jpg");
+	}
+}
+.process-build{
+	.split-image{
+		background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/process-build-img.jpg");
+	}
+}
+.process-launch{
+	.split-image{
+		background-image: url("/smarter-web-company-co-uk/_img/images/case-studies/somerset-house-cs.jpg");
+	}
+}
+.process-support{
+	.split-image{
+		background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/cms-edit.jpg");
 	}
 }

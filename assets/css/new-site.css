@@ -268,7 +268,7 @@ section.black {
     background-color: #fff; }
 
 .grey {
-  background-color: #eee; }
+  background-color: #e9e9e9; }
 
 .srt {
   border: 0;
@@ -368,7 +368,7 @@ p {
   font-style: normal;
   margin-bottom: 0.8em;
   padding-top: 0.2em;
-  color: #454545; }
+  color: #333; }
 
 strong {
   font-family: brandon_grotesque_bold, Arial, "Helvetica Neue", Helvetica, sans-serif; }
@@ -1840,6 +1840,11 @@ LOGIN STYLES
   height: 100vh; }
   .previewFrame .hero.inner-hero {
     height: 700px; }
+.hero.short-hero {
+  height: 50%;
+  height: 50vh; }
+  .previewFrame .hero.short-hero {
+    height: 400px; }
 
 .hero.inner-hero .hero-title.small-hero h1 {
   font-size: 3.04436em; }
@@ -2023,12 +2028,19 @@ LOGIN STYLES
       border-bottom-color: transparent;
       border-right-color: #018dc2; } }
 
-.split-copy__cell.grey:after {
-  border-bottom-color: #eee; }
+.split-copy__cell.grey:after, .split-copy__right.grey:after {
+  border-bottom-color: #e9e9e9; }
   @media  (min-width: 800px) {
-    .split-copy__cell.grey:after {
+    .split-copy__cell.grey:after, .split-copy__right.grey:after {
       border-bottom-color: transparent;
-      border-right-color: #eee; } }
+      border-right-color: #e9e9e9; } }
+
+.split-copy__left.grey:after {
+  border-bottom-color: #e9e9e9; }
+  @media  (min-width: 800px) {
+    .split-copy__left.grey:after {
+      border-color: transparent;
+      border-left-color: #e9e9e9; } }
 
 @media  (min-width: 800px) {
   .split-copy__cell, .split-image__cell {
@@ -2575,10 +2587,44 @@ SEO
 CMS
 
 /////////////////////////////////////*/
-.cms-video-banner {
-  padding: 0; }
-  .cms-video-banner video {
-    width: 100%; }
+/*//////////////////////////////////////
+
+Design Process
+
+/////////////////////////////////////*/
+.process-section {
+  border-bottom: 1px solid #d4d4d4; }
+  .process-section .process-icon {
+    height: 2.4em;
+    width: 2.4em;
+    fill: #222;
+    float: left;
+    margin-right: 0.75em; }
+  .process-section h3 {
+    padding-top: 0; }
+  .process-section.process-support .process-icon {
+    height: 2.8em;
+    width: 2.8em; }
+  .process-section .content-wrap {
+    padding: 4em 0; }
+
+.process-signup .split-image {
+  background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/process-signup-img.jpg"); }
+
+.process-research .split-image {
+  background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/process-research-img.jpg"); }
+
+.process-design .split-image {
+  background-image: url("/smarter-web-company-co-uk/_img/images/bespoke-design.jpg"); }
+
+.process-build .split-image {
+  background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/process-build-img.jpg"); }
+
+.process-launch .split-image {
+  background-image: url("/smarter-web-company-co-uk/_img/images/case-studies/somerset-house-cs.jpg"); }
+
+.process-support .split-image {
+  background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/cms-edit.jpg"); }
 
 /* ---------------------------------------------- *\
 
@@ -4284,6 +4330,10 @@ div[class^="concept"] {
   background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/seo-bg.jpg"); }
 #s485133 .hero {
   background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/cms-bg.jpg"); }
+#s485134 .hero {
+  background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/design-process-bg.jpg"); }
+#s485135 .hero {
+  background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/faq-bg.jpg"); }
 
 .bg-cover {
   background-size: cover;
@@ -4348,7 +4398,7 @@ div[class^="concept"] {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-family: brandon_grotesque_medium, Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-family: brandon_grotesque_bold, Arial, "Helvetica Neue", Helvetica, sans-serif;
   color: #333;
   text-transform: uppercase;
   -webkit-transition: color 200ms ease;
