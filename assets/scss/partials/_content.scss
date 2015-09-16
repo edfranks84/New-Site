@@ -6,6 +6,13 @@
 			height: 700px;
 		}
 	}
+	&.med-hero{
+		height:75%;
+		height: 75vh;
+		.previewFrame &{
+			height: 600px;
+		}
+	}
 	&.short-hero{
 		height:50%;
 		height: 50vh;
@@ -23,7 +30,7 @@
 				font-size: ms(14);
 			}
 			@include respond-to(1060){
-				font-size: ms(16);
+				font-size: ms(15);
 			}
 		}
 	}
@@ -244,6 +251,26 @@
 	}
 }
 
+.split-copy__cell.black,.split-copy__right.black{
+	&:after{
+		border-bottom-color: $black;
+		@include respond-to(800){
+			border-bottom-color: transparent;
+			border-right-color: $black;
+		}
+	}
+}
+
+.split-copy__left.black{
+	&:after{
+		border-bottom-color: $black;
+		@include respond-to(800){
+			border-color: transparent;
+			border-left-color: $black;
+		}
+	}
+}
+
 .split-copy__cell,.split-image__cell{
 	@include respond-to(800){
 		padding: 4.5em;
@@ -268,7 +295,18 @@
 	}
 }
 
-
+.main-content{
+	border-bottom: 1px solid #ccc;
+	.disc{
+		padding-left: 1.5em;
+		margin: 2em 0;
+		li{
+			font-size: ms(2);
+			// color: #111;
+			// font-family: $body-font-bold;
+		}
+	}
+}
 .narrow-content-wrap{
 	max-width: 60em;
 	margin: auto;
@@ -858,8 +896,8 @@ SEO
 		&:last-child{
 			// border: 3px solid $base-color-light;
 			// border-bottom: 1px solid #ddd;
-			border-left-width: 3px;
-			border-right-width: 3px;
+			// border-left-width: 3px;
+			// border-right-width: 3px;
 		}
 	}
 	tr{
@@ -873,14 +911,14 @@ SEO
 				border-color: #ccc;
 				//min-width: 8em;
 			}
-			&:nth-child(3){
-				border-left: 3px solid $base-color-light;
-				border-right: 3px solid $base-color-light;
-			}
+			// &:nth-child(3){
+			// 	border-left: 3px solid $base-color-light;
+			// 	border-right: 3px solid $base-color-light;
+			// }
 		}
 		&:last-child{
 			.pro-price{
-				border-bottom: 3px solid $base-color-light;
+				// border-bottom: 3px solid $base-color-light;
 			}
 		}
 		.pro-price{
@@ -919,7 +957,7 @@ SEO
 	width: 100%;
 	fill: transparent;
 	stroke: rgba(255, 255, 255, 0.2);
-	stroke-width: 5;
+	stroke-width: 8;
 	stroke-dasharray: 2600px;
 	stroke-dashoffset: 2600px;
 	transition: stroke-dashoffset 2000ms linear;
@@ -1052,3 +1090,115 @@ Design Process
 		background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/cms-edit.jpg");
 	}
 }
+
+/*//////////////////////////////////////
+
+Contact Page
+
+/////////////////////////////////////*/
+
+#s485138{
+	.split-copy{
+		&:after{
+			display: none;
+		}
+	}
+}
+
+.contact-info, .career-info{
+	text-align: center;
+	@include respond-to(800){
+		text-align: left;
+	}
+	.divider-center{
+		@include respond-to(800){
+			&:after{
+				margin: 0.4em 0;
+			}
+		}
+	}
+}
+
+.contact-info{
+	.contact-icon{
+		position: relative;
+		@include respond-to(800){
+			margin-left: 2em;
+		}
+		&:before{
+			height: 1.75em;
+			width: 1.75em;
+			display: block;
+			content: "";
+			margin: auto;
+			margin-bottom: 0.25em;
+			background:{
+				size: contain;
+				repeat: no-repeat;
+			}
+			@include respond-to(800){
+				height: 1.5em;
+				width: 1.5em;
+				position: absolute;
+				left: -2em;
+				top: 2px;
+			}
+		}
+	}
+	.address{
+		&:before{
+			background:{
+				image: url("/smarter-web-company-co-uk/_img/images/svg/address-blue-solid.svg");
+			}
+		}
+	}
+	.phone{
+		&:before{
+			background:{
+				image: url("/smarter-web-company-co-uk/_img/images/svg/phone-blue-solid.svg");
+			}
+		}
+	}
+	.email{
+		&:before{
+			top: 0.3em;
+			background:{
+				image: url("/smarter-web-company-co-uk/_img/images/svg/mail-blue-solid.svg");
+			}
+		}
+	}
+}
+
+#contact-map {
+    height: 50%;
+    height: 50vh;
+    width: 100%;
+    border-top: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    @include respond-to(800){
+    	height: 100%;
+    }
+}
+.gm-style-iw * {
+    display: block;
+    width: 100%;
+}
+.gm-style-iw h4, .gm-style-iw p {
+    margin: 0;
+    padding: 0;
+}
+.gm-style-iw a {
+    color: #4272db;
+}
+
+.career-info{
+	.content-wrap{
+		padding: 5.5em 0;
+	}
+}
+.contact-wrap{
+	.contact-info{
+		padding: 5.5em 0;
+	}
+}
+

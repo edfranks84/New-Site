@@ -193,6 +193,11 @@ button {
   -moz-appearance: none;
   appearance: none; }
 
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; }
+
 /*********************************************
 	- 2.0 -  LINKS
 *********************************************/
@@ -279,6 +284,12 @@ section.black {
   padding: 0;
   position: absolute;
   width: 1px; }
+
+.white-box {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 1px;
+  background-color: #fff;
+  padding: 2.5em; }
 
 /* -----------------------------------------
 	9.0. Typography
@@ -1545,6 +1556,35 @@ header {
   .logo img {
     max-width: 9em; }
 
+.logo-mark, .logo-phone {
+  display: none;
+  vertical-align: middle; }
+
+.logo-mark {
+  padding-right: 0.5em;
+  margin-right: 0.5em;
+  border-right: 2px solid #fff; }
+  .logo-mark img {
+    height: 2.5em;
+    width: 2.5em; }
+
+.logo-phone {
+  color: #fff;
+  font-size: 0.9375em;
+  font-family: brandon_text_bold, Arial, "Helvetica Neue", Helvetica, sans-serif; }
+
+.headroom--top .main-logo {
+  display: block; }
+.headroom--top .logo-mark, .headroom--top .logo-phone {
+  display: none; }
+
+.headroom--not-top .logo {
+  padding: 1.5em 0 1.5em 0.25em; }
+.headroom--not-top .main-logo {
+  display: none; }
+.headroom--not-top .logo-mark, .headroom--not-top .logo-phone {
+  display: inline-block; }
+
 .main-nav {
   height: 100%;
   position: relative;
@@ -1793,34 +1833,6 @@ LOGIN STYLES
 #pnlLogin {
   margin-top: 1em; }
 
-.modal form input {
-  padding: 1em;
-  margin: 0.5em 0;
-  display: inline-block;
-  width: 100%;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  border: 1px solid #ccc;
-  outline: none;
-  font-family: brandon_text_regular, Arial, "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 0.9375em;
-  background-color: #fff; }
-  .modal form input:focus {
-    border-color: #999;
-    background-color: #f8f8f8; }
-  .modal form input[type="submit"] {
-    cursor: pointer;
-    background: #00b2f6;
-    color: #fff;
-    font-size: 1.18652em;
-    text-transform: uppercase;
-    font-family: brandon_grotesque_bold, Arial, "Helvetica Neue", Helvetica, sans-serif;
-    margin-top: 1em;
-    border: none; }
-    .modal form input[type="submit"]:hover {
-      background: #2ac4ff;
-      color: #fff; }
-
 .forgot-password {
   margin-top: 1.7em;
   padding-top: 1.7em;
@@ -1840,6 +1852,11 @@ LOGIN STYLES
   height: 100vh; }
   .previewFrame .hero.inner-hero {
     height: 700px; }
+.hero.med-hero {
+  height: 75%;
+  height: 75vh; }
+  .previewFrame .hero.med-hero {
+    height: 600px; }
 .hero.short-hero {
   height: 50%;
   height: 50vh; }
@@ -1853,7 +1870,7 @@ LOGIN STYLES
       font-size: 4.87648em; } }
   @media  (min-width: 1060px) {
     .hero.inner-hero .hero-title.small-hero h1 {
-      font-size: 6.1718em; } }
+      font-size: 5.48604em; } }
 
 @media  (min-width: 480px) {
   .inner-intro {
@@ -2042,6 +2059,20 @@ LOGIN STYLES
       border-color: transparent;
       border-left-color: #e9e9e9; } }
 
+.split-copy__cell.black:after, .split-copy__right.black:after {
+  border-bottom-color: #141414; }
+  @media  (min-width: 800px) {
+    .split-copy__cell.black:after, .split-copy__right.black:after {
+      border-bottom-color: transparent;
+      border-right-color: #141414; } }
+
+.split-copy__left.black:after {
+  border-bottom-color: #141414; }
+  @media  (min-width: 800px) {
+    .split-copy__left.black:after {
+      border-color: transparent;
+      border-left-color: #141414; } }
+
 @media  (min-width: 800px) {
   .split-copy__cell, .split-image__cell {
     padding: 4.5em;
@@ -2062,6 +2093,14 @@ LOGIN STYLES
   @media  (min-width: 1000px) {
     .split-copy__cell {
       padding: 5.5em; } }
+
+.main-content {
+  border-bottom: 1px solid #ccc; }
+  .main-content .disc {
+    padding-left: 1.5em;
+    margin: 2em 0; }
+    .main-content .disc li {
+      font-size: 1.18652em; }
 
 .narrow-content-wrap {
   max-width: 60em;
@@ -2519,20 +2558,12 @@ SEO
       border: none;
       background-color: transparent;
       background-image: none; }
-    .seo-prices th:last-child {
-      border-left-width: 3px;
-      border-right-width: 3px; }
   .seo-prices tr td:nth-child(1) {
     text-align: left;
     font-family: brandon_text_bold, Arial, "Helvetica Neue", Helvetica, sans-serif;
     font-size: 1.18652em;
     background-color: #fff;
     border-color: #ccc; }
-  .seo-prices tr td:nth-child(3) {
-    border-left: 3px solid #00b2f6;
-    border-right: 3px solid #00b2f6; }
-  .seo-prices tr:last-child .pro-price {
-    border-bottom: 3px solid #00b2f6; }
   .seo-prices tr .pro-price {
     font-size: 1.33484em;
     font-family: brandon_grotesque_bold, Arial, "Helvetica Neue", Helvetica, sans-serif; }
@@ -2560,7 +2591,7 @@ SEO
   width: 100%;
   fill: transparent;
   stroke: rgba(255, 255, 255, 0.2);
-  stroke-width: 5;
+  stroke-width: 8;
   stroke-dasharray: 2600px;
   stroke-dashoffset: 2600px;
   -webkit-transition: stroke-dashoffset 2000ms linear;
@@ -2625,6 +2656,79 @@ Design Process
 
 .process-support .split-image {
   background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/cms-edit.jpg"); }
+
+/*//////////////////////////////////////
+
+Contact Page
+
+/////////////////////////////////////*/
+#s485138 .split-copy:after {
+  display: none; }
+
+.contact-info, .career-info {
+  text-align: center; }
+  @media  (min-width: 800px) {
+    .contact-info, .career-info {
+      text-align: left; } }
+  @media  (min-width: 800px) {
+    .contact-info .divider-center:after, .career-info .divider-center:after {
+      margin: 0.4em 0; } }
+
+.contact-info .contact-icon {
+  position: relative; }
+  @media  (min-width: 800px) {
+    .contact-info .contact-icon {
+      margin-left: 2em; } }
+  .contact-info .contact-icon:before {
+    height: 1.75em;
+    width: 1.75em;
+    display: block;
+    content: "";
+    margin: auto;
+    margin-bottom: 0.25em;
+    background-size: contain;
+    background-repeat: no-repeat; }
+    @media  (min-width: 800px) {
+      .contact-info .contact-icon:before {
+        height: 1.5em;
+        width: 1.5em;
+        position: absolute;
+        left: -2em;
+        top: 2px; } }
+.contact-info .address:before {
+  background-image: url("/smarter-web-company-co-uk/_img/images/svg/address-blue-solid.svg"); }
+.contact-info .phone:before {
+  background-image: url("/smarter-web-company-co-uk/_img/images/svg/phone-blue-solid.svg"); }
+.contact-info .email:before {
+  top: 0.3em;
+  background-image: url("/smarter-web-company-co-uk/_img/images/svg/mail-blue-solid.svg"); }
+
+#contact-map {
+  height: 50%;
+  height: 50vh;
+  width: 100%;
+  border-top: 2px solid #ccc;
+  border-bottom: 2px solid #ccc; }
+  @media  (min-width: 800px) {
+    #contact-map {
+      height: 100%; } }
+
+.gm-style-iw * {
+  display: block;
+  width: 100%; }
+
+.gm-style-iw h4, .gm-style-iw p {
+  margin: 0;
+  padding: 0; }
+
+.gm-style-iw a {
+  color: #4272db; }
+
+.career-info .content-wrap {
+  padding: 5.5em 0; }
+
+.contact-wrap .contact-info {
+  padding: 5.5em 0; }
 
 /* ---------------------------------------------- *\
 
@@ -2912,6 +3016,60 @@ footer {
 /* -----------------------------------------
 	14.0. Extras
 ----------------------------------------- */
+input, textarea {
+  -webkit-appearance: none;
+  border-radius: 0;
+  outline: none;
+  resize: none;
+  font-family: brandon_text_regular, Arial, "Helvetica Neue", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: white;
+  width: 100%;
+  line-height: 1;
+  padding: 1em;
+  border: 1px solid #d4d7da;
+  margin: 0.5em 0;
+  font-size: 0.9375em; }
+  input:focus, textarea:focus {
+    border-color: #999;
+    background-color: #f8f8f8; }
+  input[type="submit"], textarea[type="submit"] {
+    cursor: pointer;
+    background: #00b2f6;
+    color: #fff;
+    font-size: 1.18652em;
+    text-transform: uppercase;
+    font-family: brandon_grotesque_bold, Arial, "Helvetica Neue", Helvetica, sans-serif;
+    margin-top: 1em;
+    border: none; }
+    input[type="submit"]:hover, textarea[type="submit"]:hover {
+      background: #2ac4ff;
+      color: #fff; }
+
+label {
+  line-height: 1;
+  font-family: brandon_text_bold, Arial, "Helvetica Neue", Helvetica, sans-serif;
+  text-transform: uppercase; }
+
+textarea {
+  height: 12em;
+  overflow: auto;
+  max-height: 12em; }
+
+.form_error_wrap {
+  display: none; }
+
+.form_error_specific {
+  color: #f44336; }
+
+.contact-form__wrap {
+  max-width: 38em;
+  margin: auto; }
+  .contact-form__wrap label {
+    display: none; }
+  .contact-form__wrap input[type="text"] {
+    margin: 0.75em 0; }
+
 @-webkit-keyframes fadein {
   0% {
     opacity: 0; }
@@ -2920,6 +3078,7 @@ footer {
     opacity: 1;
     -webkit-transform: translateY(0) scale(1);
             transform: translateY(0) scale(1); } }
+
 @keyframes fadein {
   0% {
     opacity: 0; }
@@ -2973,7 +3132,7 @@ footer {
   @media  (min-width: 960px) {
     .hero-content {
       font-size: 16px; } }
-  .hero-content h1, .hero-content h6 {
+  .hero-content h1, .hero-content h2, .hero-content h3, .hero-content h4, .hero-content h5, .hero-content h6, .hero-content p {
     color: #fff; }
   .hero-content .button, .hero-content .solid-button {
     margin-top: 1.5em; }
@@ -4332,8 +4491,14 @@ div[class^="concept"] {
   background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/cms-bg.jpg"); }
 #s485134 .hero {
   background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/design-process-bg.jpg"); }
-#s485135 .hero {
+#s485135 .hero, .d12936 .hero {
   background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/faq-bg.jpg"); }
+#s485138 .hero {
+  background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/contact-bg.jpg"); }
+#s485142 .hero {
+  background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/not-found-bg.jpg"); }
+#s531396 .hero {
+  background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/thanks-bg.jpg"); }
 
 .bg-cover {
   background-size: cover;
@@ -4362,6 +4527,23 @@ div[class^="concept"] {
 
 .cms-coding {
   background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/cms-edit.jpg"); }
+
+.contact-1 {
+  display: none;
+  background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/contact-1.jpg"); }
+  @media  (min-width: 800px) {
+    .contact-1 {
+      display: block; } }
+
+.contact-2 {
+  display: none;
+  background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/contact-2.jpg"); }
+  @media  (min-width: 800px) {
+    .contact-2 {
+      display: block; } }
+
+.contact-3 {
+  background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/contact-3.jpg"); }
 
 .collapse-card {
   background-color: #FFFFFF;

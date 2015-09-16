@@ -83,6 +83,44 @@ header{
 		max-width: 9em;
 	}
 }
+
+.logo-mark,.logo-phone{
+	display: none;
+	vertical-align: middle;
+}
+.logo-mark{
+	padding-right: 0.5em;
+	margin-right: 0.5em;
+	border-right: 2px solid #fff;
+	img{
+		height: 2.5em;
+		width: 2.5em;
+	}
+}
+.logo-phone{
+	color: #fff;
+	font-size: ms(0);
+	font-family: $body-font-bold;
+}
+.headroom--top{
+	.main-logo{
+		display: block;
+	}
+	.logo-mark,.logo-phone{
+		display: none;
+	}
+}
+.headroom--not-top{
+	.logo{
+		padding: 1.5em 0 1.5em 0.25em;
+	}
+	.main-logo{
+		display: none;
+	}
+	.logo-mark,.logo-phone{
+		display: inline-block;
+	}
+}
 .main-nav{
 	//width: 100%;
 	//padding: 1.5em 1.5em 0 0;
@@ -376,39 +414,7 @@ LOGIN STYLES
 #pnlLogin{
 	margin-top: 1em;
 }
-.modal form{
-	input{
-		padding: 1em;
-		margin: 0.5em 0;
-		display: inline-block;
-		width: 100%;
-		-webkit-appearance: none;
-		-moz-appearance: none;
-		border: 1px solid #ccc;
-		outline: none;
-		font-family: $body-font;
-		font-size: ms(0);
-		background-color: #fff;
-		&:focus{
-			border-color: #999;
-			background-color: #f8f8f8;
-		}
-		&[type="submit"]{
-			cursor: pointer;
-			background: $base-color-light;
-			color: #fff;
-			font-size: ms(2);
-			text-transform: uppercase;
-			font-family: $heading-font-bold;
-			margin-top: 1em;
-			border: none;
-			&:hover{
-				background: lighten($base-color-light,10%);
-				color: #fff;
-			}
-		}
-	}
-}
+
 .forgot-password{
 	margin-top: 1.7em;
 	padding-top: 1.7em;

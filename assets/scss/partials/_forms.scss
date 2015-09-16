@@ -1,0 +1,64 @@
+input,textarea{
+	-webkit-appearance: none;
+    border-radius: 0;
+    outline: none;
+    resize: none;
+    font-family: $body-font;
+    -webkit-font-smoothing: antialiased;
+    background: white;
+    width: 100%;
+    line-height: 1;
+    padding: 1em;
+    border: 1px solid #d4d7da;
+    margin: 0.5em 0;
+    font-size: ms(0);
+    &:focus{
+		border-color: #999;
+		background-color: #f8f8f8;
+	}
+	&[type="submit"]{
+		cursor: pointer;
+		background: $base-color-light;
+		color: #fff;
+		font-size: ms(2);
+		text-transform: uppercase;
+		font-family: $heading-font-bold;
+		margin-top: 1em;
+		border: none;
+		&:hover{
+			background: lighten($base-color-light,10%);
+			color: #fff;
+		}
+	}
+}
+
+label{
+	line-height: 1;
+	font-family: $body-font-bold;
+	text-transform: uppercase;
+}
+
+textarea{
+	height: 12em;
+	overflow: auto;
+	max-height: 12em;
+}
+
+.form_error_wrap{
+	display: none;
+}
+
+.form_error_specific{
+	color: #f44336;
+}
+
+.contact-form__wrap{
+	max-width: 38em;
+	margin: auto;
+	label{
+		display: none;
+	}
+	input[type="text"]{
+		margin: 0.75em 0;
+	}
+}

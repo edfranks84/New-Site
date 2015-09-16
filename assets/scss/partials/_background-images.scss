@@ -79,9 +79,24 @@
 			image: url("/smarter-web-company-co-uk/_img/images/backgrounds/design-process-bg.jpg");
 		}
 	}
-	#s485135 &{
+	#s485135 &, .d12936 &{
 		background:{ 
 			image: url("/smarter-web-company-co-uk/_img/images/backgrounds/faq-bg.jpg");
+		}
+	}
+	#s485138 &{
+		background:{ 
+			image: url("/smarter-web-company-co-uk/_img/images/backgrounds/contact-bg.jpg");
+		}
+	}
+	#s485142 &{
+		background:{ 
+			image: url("/smarter-web-company-co-uk/_img/images/backgrounds/not-found-bg.jpg");
+		}
+	}
+	#s531396 &{
+		background:{ 
+			image: url("/smarter-web-company-co-uk/_img/images/backgrounds/thanks-bg.jpg");
 		}
 	}
 }
@@ -130,5 +145,28 @@
 .cms-coding{
 	background:{ 
 		image: url("/smarter-web-company-co-uk/_img/images/backgrounds/cms-edit.jpg");
+	}
+}
+.contact-1{
+	display: none;
+	background:{ 
+		image: url("/smarter-web-company-co-uk/_img/images/backgrounds/contact-1.jpg");
+	}
+	@include respond-to(800){
+		display: block;
+	}
+}
+.contact-2{
+	display: none;
+	background:{ 
+		image: url("/smarter-web-company-co-uk/_img/images/backgrounds/contact-2.jpg");
+	}
+	@include respond-to(800){
+		display: block;
+	}
+}
+.contact-3{
+	background:{ 
+		image: url("/smarter-web-company-co-uk/_img/images/backgrounds/contact-3.jpg");
 	}
 }
