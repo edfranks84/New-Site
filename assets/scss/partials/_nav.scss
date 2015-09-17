@@ -191,7 +191,7 @@
 						}
 					}
 					&.open{
-						background-color: darken(#243040,6%); 
+						background-color: rgba($nav-bg1,0.75);
 						>a{
 							color: #fff;
 							&:after{
@@ -206,18 +206,18 @@
 				}
 				a{
 					//line-height: 4;
-					line-height: 2;
+					line-height: 2.5;
 					display: block;
 					text-transform: uppercase;
 					//color: #fff;
 					color: rgba(255, 255, 255, 0.5);
 					padding: 0 0 0 0.95em;
 					font-family: $heading-font;
-					font-size: ms(2);
+					font-size: ms(3);
 					padding-top: 3px;
 					@include respond-to(640){
 						font-size: ms(4);
-						line-height: 2.2;
+						line-height: 3;
 					}
 					&.open{
 						color: $base-color;
@@ -254,7 +254,7 @@
 					}
 				}
 				ul{
-					background-color: darken(#243040,3%);
+					background-color: rgba($nav-bg2,0.65);
 					padding: 0.5em 1em 0.75em;
 					display: none;
 					border-left: 1px solid darken(#243040,6%);
@@ -264,8 +264,8 @@
 						a{
 							//text-align: right;
 							padding: 0.1em 0.5em;
-							font-size: ms(0);
-							line-height: 2.5;
+							font-size: ms(1);
+							line-height: 3;
 							font-family: $heading-font;
 							&:hover{
 								color: $base-color-light;

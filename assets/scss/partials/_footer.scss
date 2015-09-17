@@ -67,6 +67,9 @@ footer{
 		font-size: ms(1);
 		line-height: 1;
 	}
+	a{
+		word-wrap: break-word;
+	}
 	@include respond-to(480){
 		p{
 			font-size: ms(3);
@@ -123,7 +126,7 @@ footer{
 	width: 3em;
 	display: inline-block;
 	margin: 0 .25em;
-	@include respond-to(960){
+	@include respond-to(1060){
 		margin: 0 .5em;
 	}
 	&.facebook{

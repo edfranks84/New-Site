@@ -254,6 +254,9 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .h1 a, .h2 a, .h3 a, .h4 a, .h5 a, .h6 a {
 .grid {
   background: url("/smarter-web-company-co-uk/_img/images/grid-pattern.png") repeat #fff; }
 
+.striped {
+  background: url("/smarter-web-company-co-uk/_img/images/pinstripe.png") repeat; }
+
 .black {
   background: #141414; }
   .black h1, .black h2, .black h3, .black h4, .black h5, .black h6, .black p {
@@ -567,7 +570,7 @@ strong {
                 transform-origin: 50% 50%;
         top: -2px; }
       .mobile-menu .nav > ul > li.parent.open {
-        background-color: #19212c; }
+        background-color: rgba(25, 33, 44, 0.75); }
         .mobile-menu .nav > ul > li.parent.open > a {
           color: #fff; }
           .mobile-menu .nav > ul > li.parent.open > a:after {
@@ -578,18 +581,18 @@ strong {
         .mobile-menu .nav > ul > li.parent.open > ul {
           display: block; }
       .mobile-menu .nav > ul > li a {
-        line-height: 2;
+        line-height: 2.5;
         display: block;
         text-transform: uppercase;
         color: rgba(255, 255, 255, 0.5);
         padding: 0 0 0 0.95em;
         font-family: brandon_grotesque_medium, Arial, "Helvetica Neue", Helvetica, sans-serif;
-        font-size: 1.18652em;
+        font-size: 1.33484em;
         padding-top: 3px; }
         @media  (min-width: 640px) {
           .mobile-menu .nav > ul > li a {
             font-size: 1.50169em;
-            line-height: 2.2; } }
+            line-height: 3; } }
         .mobile-menu .nav > ul > li a.open {
           color: #018dc2; }
           .mobile-menu .nav > ul > li a.open:after {
@@ -618,15 +621,15 @@ strong {
           .mobile-menu .nav > ul > li:last-child a:hover {
             background-color: #05c3ff; }
       .mobile-menu .nav > ul > li ul {
-        background-color: #1e2936;
+        background-color: rgba(30, 41, 54, 0.65);
         padding: 0.5em 1em 0.75em;
         display: none;
         border-left: 1px solid #19212c;
         border-right: 1px solid #19212c; }
         .mobile-menu .nav > ul > li ul li a {
           padding: 0.1em 0.5em;
-          font-size: 0.9375em;
-          line-height: 2.5;
+          font-size: 1.05469em;
+          line-height: 3;
           font-family: brandon_grotesque_medium, Arial, "Helvetica Neue", Helvetica, sans-serif; }
           .mobile-menu .nav > ul > li ul li a:hover {
             color: #00b2f6; }
@@ -2892,6 +2895,8 @@ footer {
 .footer-contact p {
   font-size: 1.05469em;
   line-height: 1; }
+.footer-contact a {
+  word-wrap: break-word; }
 @media  (min-width: 480px) {
   .footer-contact p {
     font-size: 1.33484em; } }
@@ -2978,7 +2983,7 @@ footer {
   width: 3em;
   display: inline-block;
   margin: 0 .25em; }
-  @media  (min-width: 960px) {
+  @media  (min-width: 1060px) {
     .social-icon {
       margin: 0 .5em; } }
   .social-icon.facebook {
@@ -3069,6 +3074,12 @@ textarea {
     display: none; }
   .contact-form__wrap input[type="text"] {
     margin: 0.75em 0; }
+
+.alert-error {
+  padding: 0.5em 1em;
+  background-color: firebrick;
+  color: #fff;
+  margin: 5px 0; }
 
 @-webkit-keyframes fadein {
   0% {
