@@ -25,7 +25,10 @@
 .hero.inner-hero{
 	.hero-title.small-hero{
 		h1{
-			font-size: ms(10);
+			font-size: ms(9);
+			@include respond-to(480){
+				font-size: ms(10);
+			}
 			@include respond-to(768){
 				font-size: ms(14);
 			}
@@ -74,6 +77,13 @@
 .split-section{
 	padding: 0;
 	@include clearfix;
+	@include respond-to(800){
+		border-bottom: 1px solid #ccc;
+	}
+	@include respond-to(920){
+		border-bottom: none;
+	}
+
 }
 .split-image{
 	padding-bottom: 75%;
@@ -111,7 +121,7 @@
 		padding-bottom: 50%;
 	}
 	@include respond-to(1400){
-		padding-bottom: 40%;
+		padding-bottom: 48%;
 	}
 }
 .split-copy{
@@ -150,7 +160,7 @@
 		padding-bottom: 50%;
 	}
 	@include respond-to(1400){
-		padding-bottom: 40%;
+		padding-bottom: 48%;
 	}
 	.content-wrap{
 		max-width: 85%;
@@ -290,6 +300,9 @@
 .split-copy__cell{
 	padding: 3em;
 	position: relative;
+	.content-wrap{
+		display: inline-block;
+	}
 	@include respond-to(1000){
 		padding: 5.5em;
 	}
@@ -482,13 +495,20 @@ Package Pages
 }
 .package-hero{ 
 	.hero-content{
+		position: relative;
+		left: auto;
+		top: auto;
 		transform: none;
 		padding: 10em 0 3em;
 		@include respond-to(480){
-			position: relative;
-			left: auto;
-			transform: none;
-			transform: translateY(-50%);
+			// position: relative;
+			// left: auto;
+			// transform: none;
+			// transform: translateY(-50%);
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
 			padding: 5em 0 0;
 		}
 		h6.divider{
@@ -754,6 +774,21 @@ Package Pages
 		&.icon-printer{
 			&:before{
 				background-image: url("/smarter-web-company-co-uk/_img/images/svg/printer.svg");
+			}
+		}
+		&.icon-strategy{
+			&:before{
+				background-image: url("/smarter-web-company-co-uk/_img/images/svg/graph.svg");
+			}
+		}
+		&.icon-ppc{
+			&:before{
+				background-image: url("/smarter-web-company-co-uk/_img/images/svg/cursor.svg");
+			}
+		}
+		&.icon-manage{
+			&:before{
+				background-image: url("/smarter-web-company-co-uk/_img/images/svg/calendar.svg");
 			}
 		}
 		
@@ -1202,3 +1237,6 @@ Contact Page
 	}
 }
 
+.custom-form{
+	padding: 0 1em;
+}

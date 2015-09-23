@@ -84,7 +84,7 @@
 			image: url("/smarter-web-company-co-uk/_img/images/backgrounds/faq-bg.jpg");
 		}
 	}
-	#s485138 &{
+	#s485138 &, #s545327 &{
 		background:{ 
 			image: url("/smarter-web-company-co-uk/_img/images/backgrounds/contact-bg.jpg");
 		}
@@ -94,9 +94,29 @@
 			image: url("/smarter-web-company-co-uk/_img/images/backgrounds/not-found-bg.jpg");
 		}
 	}
-	#s531396 &{
+	#s531396 &, #s548369 &, #s548408 &{
 		background:{ 
 			image: url("/smarter-web-company-co-uk/_img/images/backgrounds/thanks-bg.jpg");
+		}
+	}
+	#s485114 &{
+		background:{ 
+			image: url("/smarter-web-company-co-uk/_img/images/backgrounds/micro-bg.jpg");
+		}
+	}
+	#s485122 &{
+		background:{ 
+			image: url("/smarter-web-company-co-uk/_img/images/backgrounds/360-bg.jpg");
+		}
+	}
+	#s485123 &{
+		background:{ 
+			image: url("/smarter-web-company-co-uk/_img/images/backgrounds/custom-dev-bg.jpg");
+		}
+	}
+	#s497110 &{
+		background:{ 
+			image: url("/smarter-web-company-co-uk/_img/images/backgrounds/email-marketing-bg.jpg");
 		}
 	}
 }
@@ -168,5 +188,26 @@
 .contact-3{
 	background:{ 
 		image: url("/smarter-web-company-co-uk/_img/images/backgrounds/contact-3.jpg");
+	}
+}
+
+.custom-hosting{
+	background:{ 
+		image: url("/smarter-web-company-co-uk/_img/images/hosted-solution.jpg");
+	}
+}
+.custom-support{
+	background:{ 
+		image: url("/smarter-web-company-co-uk/_img/images/backgrounds/cms-edit.jpg");
+	}
+}
+.custom-plan{
+	background:{ 
+		image: url("/smarter-web-company-co-uk/_img/images/backgrounds/custom-plan-bg.jpg");
+	}
+}
+.custom-pricing{
+	background:{ 
+		image: url("/smarter-web-company-co-uk/_img/images/backgrounds/custom-price-bg.jpg");
 	}
 }

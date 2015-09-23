@@ -45,10 +45,17 @@
 	width: 83%;
 	max-width: 50em;
 	margin: auto;
-	position: relative;
+	// position: relative;
+	// top: 50%;
+	// transform: translateY(-50%);
+	position: absolute;
 	top: 50%;
-	transform: translateY(-50%);
-	font-size: 14px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 13px;
+	@include respond-to(320){
+		font-size: 14px;
+	}
 	@include respond-to(960){
 		font-size: 16px;
 	}
@@ -56,7 +63,7 @@
 		color: #fff;
 	}
 	.button,.solid-button{
-		margin-top: 1.5em;
+		margin: 0.5em 0.2em;
 		@include respond-to(400){
 			margin-top: 3em;
 		}
@@ -121,6 +128,7 @@
 
 section{
 	padding: 3.5em 1em;
+	position: relative;
 	@include clearfix;
 	@include respond-to(480){
 		padding: 6em 1em;
@@ -282,11 +290,28 @@ section{
 		width: 100%;
 		.project-item__inner{
 			padding-top: 100%;
+			.home-projects &{
+				@include respond-to(480){
+					padding-top: 60%;
+				}
+				@include respond-to(960){
+					padding-top: 100%;
+				}
+			}
 		}
 		@include respond-to(480){
 			width: 50%;
 		}
+		.home-projects &{
+			@include respond-to(480){
+				width: 100%;
+			}
+			@include respond-to(960){
+				width: 50%;
+			}
+		}
 	}
+	
 	&:nth-child(2),&:nth-child(3){
 		width: 100%;
 		.project-item__inner{
@@ -330,20 +355,20 @@ section{
 			}
 		}
 	}
-	&:nth-child(7){
-		.projects &{
-			width:100%;
-			.project-link__wrap{
-				padding-top: 25%;
-			}
-			@include respond-to(960){
-				width: 25%;
-				.project-link__wrap{
-					padding-top: 100%;
-				}
-			}
-		}
-	}
+	// &:nth-child(7){
+	// 	.projects &{
+	// 		width:100%;
+	// 		.project-link__wrap{
+	// 			padding-top: 25%;
+	// 		}
+	// 		@include respond-to(960){
+	// 			width: 25%;
+	// 			.project-link__wrap{
+	// 				padding-top: 100%;
+	// 			}
+	// 		}
+	// 	}
+	// }
 	&.dark-bg{
 		background-size: auto;
 		background-repeat: repeat;
@@ -355,7 +380,7 @@ section{
 		display: block;
 		width: 100%;
 	}
-	.cssanimations.csstransitions &{
+	.no-touch.cssanimations.csstransitions &{
 		transform:  scale(0.5);
 		opacity: 0;
 		&.visible{
@@ -564,30 +589,34 @@ section{
 	}
 
 	.process-step{
-		transform:  scale(0.1);
-		opacity: 0;
+		.no-touch &{
+			transform:  scale(0.1);
+			opacity: 0;
+		}
 	}
 	.visible &{
-		.process-step{
-			&:nth-child(1){
-				animation: fadein 600ms ease-in 0.05s forwards;	
+		.no-touch &{
+			.process-step{
+				&:nth-child(1){
+					animation: fadein 600ms ease-in 0.05s forwards;	
+				}
+				&:nth-child(2){
+					animation: fadein 600ms ease-in 0.2s forwards;	
+				}
+				&:nth-child(3){
+					animation: fadein 600ms ease-in 0.35s forwards;	
+				}
+				&:nth-child(4){
+					animation: fadein 600ms ease-in 0.5s forwards;	
+				}
+				&:nth-child(5){
+					animation: fadein 600ms ease-in 0.65s forwards;	
+				}
+				&:nth-child(6){
+					animation: fadein 600ms ease-in 0.8s forwards;	
+				}
+				
 			}
-			&:nth-child(2){
-				animation: fadein 600ms ease-in 0.2s forwards;	
-			}
-			&:nth-child(3){
-				animation: fadein 600ms ease-in 0.35s forwards;	
-			}
-			&:nth-child(4){
-				animation: fadein 600ms ease-in 0.5s forwards;	
-			}
-			&:nth-child(5){
-				animation: fadein 600ms ease-in 0.65s forwards;	
-			}
-			&:nth-child(6){
-				animation: fadein 600ms ease-in 0.8s forwards;	
-			}
-			
 		}
 	}
 }
@@ -799,7 +828,7 @@ section{
 			}
 		}
 	}
-	.cssanimations.csstransitions &{
+	.no-touch.cssanimations.csstransitions &{
 		transform:  scale(0.5);
 		opacity: 0;
 		&.visible{

@@ -1,0 +1,228 @@
+#s545214 {
+     padding:  3em;
+     background: $base-color-light;
+}
+.ticketSummary,  .ticketFeedback,  .ticketNotes,  .ticketOriginal,  .smarterFeedbackError,  .smarterFeedbackSuccess {
+     width:  100%;
+     max-width:  75em;
+     overflow:  hidden;
+     box-shadow:  0 2px 5px 0 rgba(0, 0, 0, 0.2);
+     margin:  0 auto 2em;
+     background:  #fff;
+     border-radius:  5px;
+     transition:  all 300ms ease-in-out;
+     h2{
+          margin-bottom: 0;
+     }
+ }
+ .ticketSummary:hover,  .ticketFeedback:hover,  .ticketNotes:hover,  .ticketOriginal:hover {
+     box-shadow:  0 5px 10px 0 rgba(0, 0, 0, 0.35);
+     transition:  all 300ms ease-in-out;
+ }
+ .ticketSummaryRowWrap {
+     width:  100%;
+     display:  table;
+ }
+ .ticketSummaryLabel {
+     display:  inline-block;
+     display:  table-cell;
+     vertical-align:  middle;
+     padding:  1em;
+     width:  40%;
+     border-bottom:  1px solid #222;
+     background:  #333;
+     color:  #ccc;
+     font-family: $heading-font;
+     text-transform: uppercase;
+ }
+ .ticketSummaryRowWrap:hover .ticketSummaryLabel {
+     background:  #111;
+     color:  #fff;
+ }
+ .ticketSummaryValue {
+     display:  inline-block;
+     display:  table-cell;
+     vertical-align:  middle;
+     padding:  1em;
+     width:  60%;
+     border-bottom:  1px solid #ddd;
+     background:  #fff;
+     color:  #444;
+     font-family:  $body-font;
+ }
+ .ticketSummaryRowWrap:hover .ticketSummaryValue {
+     background:  #f7f7f7;
+     color:  #111;
+ }
+ .ticketFeedbackInner,  .ticketOriginalInner {
+     padding:  1em 1.5em;
+ }
+ .ticketFeedbackInner p:first-of-type {
+     margin-top:  0;
+ }
+ .ticketFeedback h2,  .ticketNotes h2,  .ticketOriginal h2 {
+     display:  block;
+     padding:  0.7em 1em;
+     color:  #fff;
+     background:  #333;
+     font-size:  1.6em;
+     text-align:  center;
+ }
+ .ticketFeedback p,  .ticketOriginal p {
+     font-family:  $body-font;
+     color:  #222;
+ }
+ .ticketFeedback form {
+     width:  100%;
+     margin-top:  2em;
+ }
+ .smarterFormWrap {
+     padding:  1em;
+     background:  #ebeef1;
+ }
+ .smarterFormItemTitle {
+     color:  #222;
+     font-family: $heading-font;
+     font-size:  1.6em;
+     margin-bottom:  0.25em;
+ }
+ .smarterFormItemInput textarea {
+     min-height:  10em;
+     width:  100%;
+     border:  1px solid #ccc;
+     padding:  1em;
+ }
+ a.smarterFormItemButtonWrapButton {
+     display:  block;
+     padding:  0.5em 1.25em;
+     margin:  0.75em auto;
+     font-family:  'OpenSansSemibold',  Arial,  "Helvetica Neue",  Helvetica,  sans-serif;
+     font-size:  0.95em;
+     color:  #fff;
+     text-decoration:  none;
+     border-radius:  5px;
+     transition:  transform 0.2s ease-in-out;
+     background-color:  #029ed9;
+     text-align:  center;
+ }
+ a.smarterFormItemButtonWrapButton:hover {
+     background:  #32c1f7;
+     transition:  transform 0.2s ease-in-out;
+ }
+ a.smarterFormItemButtonWrapButton:active {
+     background:  #0272ac;
+     transition:  transform 0.2s ease-in-out;
+ }
+ .ticketNotes table {
+     border-collapse:  collapse;
+     width:  100%;
+ }
+ .ticketNotes table tbody {
+     width:  100%;
+ }
+ .ticketNotes table.concepts.large-only {
+     display:  none;
+ }
+ .ticketNotes table.concepts.small-only {
+     font-size:  14px;
+ }
+ .stacktable  {
+     width:  100%;
+ }
+ .st-head-row  {
+     padding-top:  1em;
+ }
+ .st-head-row.st-head-row-main  {
+     font-size:  1.5em;
+ }
+ .st-key  {
+     width:  40%;
+     text-align:  right;
+     padding-right:  1%;
+ }
+ .st-val  {
+     width:  60%;
+     padding-left:  1%;
+ }
+ .ticketNotes th {
+     background-color: #888;
+     font-family:  $heading-font;
+     font-size:  1.125em;
+     color:  #fff;
+     border:  1px solid #555;
+     padding:  0.5em;
+ }
+ .ticketNotes th:nth-child(1) {
+     width:  15%;
+ }
+ .ticketNotes th:nth-child(2) {
+     width:  15%;
+ }
+ .ticketNotes th:nth-child(3) {
+     width:  70%;
+ }
+ .ticketNotes tr:nth-child(even) {
+     background:  #f2f5f8;
+ }
+ .ticketNotes tr:nth-child(odd) {
+     background:  #fff;
+ }
+ .ticketNotes tr:hover {
+     background:  #d4d9de;
+ }
+ .ticketNotes td {
+     border:  1px solid #ddd;
+     padding:  1em 0.8em;
+     color:  #222;
+     font-family:  $body-font;
+ }
+ .ticketNotes td p {
+     color:  #222;
+     font-family:  $body-font;
+     margin:  0;
+ }
+ .ticketNotes td p + p {
+     margin-top:  1em;
+ }
+ .ticketNotes tr:hover td {
+     border-color:  #ccc;
+ }
+ .smarterFeedbackError,  .smarterFeedbackSuccess {
+     background:  firebrick;
+     color:  #fff;
+     padding:  1em;
+     font-family:  $body-font;
+ }
+ .smarterFeedbackSuccess {
+     background:  #71C341;
+ }
+ @media only screen and (min-width: 550px)  {
+     #s545214 {
+          padding:  3em;
+     }
+     .ticketSummaryLabel {
+          width:  25%;
+     }
+     .ticketSummaryValue {
+          width:  75%;
+     }
+     .ticketFeedbackInner,  .ticketOriginalInner {
+          padding:  2em;
+     }
+     .smarterFormWrap {
+          padding:  1em 2em;
+     }
+     a.smarterFormItemButtonWrapButton {
+          display:  inline-block;
+          font-size: 1.125em;
+     }
+     .ticketFeedback h2,  .ticketNotes h2,  .ticketOriginal h2 {
+          text-align:  left;
+     }
+     .ticketNotes table.concepts.small-only {
+          display:  none;
+     }
+     .ticketNotes table.concepts.large-only {
+          display:  table;
+     }
+ }

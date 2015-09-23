@@ -1,21 +1,28 @@
-input,textarea{
+input[type="text"],input[type="password"],input[type="submit"],input[type="email"],input[type="tel"],textarea,select{
+	border-radius: 0;
+	//background: white;
+	padding: 1.3em;
+	border: 1px solid #d4d7da;
+	margin: 0.5em 0;
 	-webkit-appearance: none;
-    border-radius: 0;
+}
+
+input,textarea,select{
     outline: none;
     resize: none;
     font-family: $body-font;
     -webkit-font-smoothing: antialiased;
-    background: white;
     width: 100%;
     line-height: 1;
-    padding: 1em;
-    border: 1px solid #d4d7da;
-    margin: 0.5em 0;
     font-size: ms(0);
     &:focus{
 		border-color: #999;
 		background-color: #f8f8f8;
 	}
+	// &[type="text"],&[type="submit"],&[type="password"]{
+	// 	-webkit-appearance: none;
+	// }
+	
 	&[type="submit"]{
 		cursor: pointer;
 		background: $base-color-light;
@@ -32,6 +39,21 @@ input,textarea{
 	}
 }
 
+input{
+	&[type="radio"]{
+		-webkit-appearance: radio;
+	}
+}
+input{
+	&[type="checkbox"]{
+		-webkit-appearance: checkbox;
+	}
+}
+select{
+	padding: 1em 0.3em;
+	background-color: #f3f3f3;
+	-moz-appearance: none;
+}
 label{
 	line-height: 1;
 	font-family: $body-font-bold;
@@ -42,6 +64,29 @@ textarea{
 	height: 12em;
 	overflow: auto;
 	max-height: 12em;
+}
+
+.select-wrap{
+	position: relative;
+	display: inline;
+	&:after{
+		content: "";
+	    position: absolute;
+	    top: 50%;
+	    bottom: auto;
+	    display: inline-block;
+	    -webkit-transform: translateY(-50%);
+	    -moz-transform: translateY(-50%);
+	    -ms-transform: translateY(-50%);
+	    -o-transform: translateY(-50%);
+	    transform: translateY(-50%);
+	    right: 15px;
+	    width: 11px;
+	    height: 7px;
+	    background: url("/smarter-web-company-co-uk/_img/images/svg/down-black.svg") no-repeat center center;
+	    background-size: 10px 6px;
+	    pointer-events: none;
+	}
 }
 
 .form_error_wrap{
@@ -67,4 +112,215 @@ textarea{
     background-color: firebrick;
     color: #fff;
     margin: 5px 0;
+}
+
+
+.signup-wrap{
+	padding: 1.5em 0.25em;
+}
+.signup-form{
+    max-width: 50em;
+	margin: auto;
+	h2{
+		text-align: center;
+		line-height: 1;
+	}
+	h4{
+		border-bottom: 1px solid #111;
+		padding-top: 2em;
+		margin-bottom: 1em;
+		font-size: ms(4);
+	}
+	p{
+		font-size: ms(1);
+		line-height: 1.4;
+	}
+	label{
+		font-family: $body-font-bold;
+		//font-size: ms(0);
+		font-size: 14px;
+		width: 100%;
+		margin-top: 0.5em;
+		display: block;
+	}
+}
+
+
+.signUpSection {
+	@include clearfix;
+	padding: 2em 1.5em;
+	margin-bottom: 3em;
+	box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15), 0 2px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 1px;
+    background-color: #fff;
+    border-bottom: 8px solid #00b2f6;
+    @include respond-to(640){
+		padding: 3em;
+    }
+}
+
+.signUpSection1{
+	
+	@include respond-to(1060){
+		margin-top: -5em;
+	}
+}
+
+.signUpSection1,.signUpSection3{
+	h2{
+		margin-bottom: 1em;
+	}
+}
+
+.packageWrapQuestion{
+	@include respond-to(640){
+		@include span(4 of 12 split 0.1);
+	}
+}
+
+#rdlFrequency,.checkbox{
+	input,label{
+		display: inline-block;
+		vertical-align: middle;
+		margin: 0.5em 0;
+	}
+	input{
+		width: 40px;
+	}
+	label{
+		width: calc(100% - 40px);
+	}
+}
+
+.checkbox{
+	margin: 1em 0 0.5em;
+}
+
+.web-address,#owndomaindetails{
+	p,input,select{
+		display: inline-block;
+		height: 55px;
+		line-height: 1;
+	}
+	p{
+		width: 50px;
+		margin-bottom: 0;
+	}
+	select{
+		width: 70px;
+		@include respond-to(640){
+			width: 125px;
+		}
+	}
+	input{
+		width: calc(100% - 115px);
+		@include respond-to(640){
+			width: calc(100% - 185px);
+		}
+	}
+}
+.initialCost{
+	background-color: $base-color;
+	border: 1px solid $base-color-dark;
+	margin-bottom: 1em;
+	@include respond-to(640){
+		@include span(6 of 12);	
+		margin-bottom: 0;
+    }
+	p{
+		font-family: $heading-font-bold;
+		text-transform: uppercase;
+	}
+}
+.subsequentCost{
+	
+	background-color: #141414;
+	border: 1px solid #000;
+	@include respond-to(640){
+		@include span(6 of 12 last);
+    }
+}
+.initialCost,.subsequentCost{
+	padding: 2em;
+	text-align: center;
+	color: #fff;
+	box-shadow: 0 2px 3px 0 rgba(0,0,0,0.1), 0 4px 8px 0 rgba(0,0,0,0.2);	
+	@include respond-to(640){
+		padding: 3em;
+	}
+	h6,p{
+		color: #fff;
+	}
+}
+#initialCostValue,#subsequentCostValue{
+	position: relative;
+	font-size: ms(8);
+	font-family: $heading-font-bold;
+	display: inline-block;
+	line-height: 1.4;
+	margin-bottom: 0.25em;
+	&:after{
+		content:"";
+		width: 100%;
+		height: 3px;
+		background-color: #fff;
+		display: inline-block;
+		transition: transform 300ms ease-in-out;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		visibility: hidden;
+		transform: scaleX(0);
+	}
+}
+
+.costBox{
+	&:hover{
+		#initialCostValue,#subsequentCostValue{
+			&:after{
+				transform: scaleX(1);
+				visibility: visible;
+			}
+		}
+	}
+}
+
+.message-text{
+	margin-top: 2em;
+	h6{
+		text-align: center;
+		margin-bottom: 2em;
+	}
+}
+.costNote{
+	float: left;
+	width: 100%;
+	margin-top: 2em;
+	> *{
+		display: inline;
+	}
+	p{
+		margin-bottom: 0;
+	}
+}
+.expiry-date{
+	@include span(8 of 12);
+	select,.slash{
+		//float: left;
+		display: inline-block;
+	}
+	.slash{
+		width: 30px;
+		text-align: center;
+	}
+	select{
+		width: calc(50% - 20px);
+		height: 55px;
+	}
+}
+.cvc{
+	@include span(4 of 12 last);
+	input{
+		height: 55px;
+	}
 }

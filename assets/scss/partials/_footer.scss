@@ -1,4 +1,7 @@
-footer{
+.sm-footer{
+	padding: 3em 1em;
+}
+.footer{
 	padding: 3em 1em 24em;
 	// padding-top: 5em;
 	// padding-bottom: 28em;
@@ -30,7 +33,7 @@ footer{
 			margin: 1em auto;
 		}
 	}
-	.cssanimations.csstransitions &{
+	.no-touch.cssanimations.csstransitions &{
 		h2{
 			transform:  scale(0.5);
 			opacity: 0;
@@ -44,7 +47,7 @@ footer{
 }
 .footer-info{
 	max-width: $site-width;
-	width: 94%;
+	width: 100%;
 	margin: 2.5em auto 1.95em;
 	padding-bottom: 1.95em;
 	border-bottom: 1px solid #ddd;
@@ -53,7 +56,7 @@ footer{
 	@include respond-to(320){
 		padding: 0 1.5em 1.95em;
 	}
-	@include respond-to(960){
+	@include respond-to(1060){
 		padding: 0 2.5em 1.95em;
 	}
 	p{
@@ -76,7 +79,7 @@ footer{
 		}
 	}
 	@include respond-to(960){
-		@include span(4 of 12);
+		@include span(4 of 12 0.1);
 		text-align: left;
 		p{
 			font-size: ms(2);
