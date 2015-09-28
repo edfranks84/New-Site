@@ -1,9 +1,12 @@
 .hero{
 	&.inner-hero{
-		height:100%;
-		height: 100vh;
+		height:40em;
 		.previewFrame &{
 			height: 700px;
+		}
+		@include respond-to(1000){
+			height: 100%;
+			height: 100vh;
 		}
 	}
 	&.med-hero{
@@ -23,6 +26,25 @@
 }
 
 .hero.inner-hero{
+	.hero-title{ 
+		h1{
+			font-size: ms(9);
+			line-height: 1;
+			margin: 0;
+			margin-bottom: 	0.1em;
+			padding-top: 0;
+			@include respond-to(480){
+				font-size: ms(10);
+			}
+			@include respond-to(768){
+				font-size: ms(11);
+			}
+			@include respond-to(1060){
+				font-size: ms(14);
+			}
+			
+		}
+	}
 	.hero-title.small-hero{
 		h1{
 			font-size: ms(9);
@@ -30,10 +52,22 @@
 				font-size: ms(10);
 			}
 			@include respond-to(768){
-				font-size: ms(14);
+				font-size: ms(13);
 			}
 			@include respond-to(1060){
-				font-size: ms(15);
+				font-size: ms(14);
+			}
+		}
+	}
+}
+.extras__hero{
+	.hero-content{
+		.button{
+			font-size: 14px;
+			margin: 0.5em 0.2em 0.1em;
+			@include respond-to(480){
+				margin: 1.5em 0.2em 1em;
+				font-size: 16px;
 			}
 		}
 	}
@@ -664,134 +698,7 @@ Package Pages
 				top: 0;
 				margin-bottom: 0;
 			}
-		}
-		
-		&.icon-responsive{
-			&:before{
-				background-image: url("/smarter-web-company-co-uk/_img/images/svg/responsive.svg");
-			}
-		}
-		&.icon-pages{
-			&:before{
-				background-image: url("/smarter-web-company-co-uk/_img/images/svg/pages.svg");
-			}
-		}
-		&.icon-cms{
-			&:before{
-				background-image: url("/smarter-web-company-co-uk/_img/images/svg/cms.svg");
-			}
-		}
-		&.icon-domain{
-			&:before{
-				background-image: url("/smarter-web-company-co-uk/_img/images/svg/domain.svg");
-			}
-		}
-		&.icon-email{
-			&:before{
-				background-image: url("/smarter-web-company-co-uk/_img/images/svg/email.svg");
-			}
-		}
-		&.icon-form{
-			&:before{
-				background-image: url("/smarter-web-company-co-uk/_img/images/svg/form.svg");
-			}
-		}
-		&.icon-blog{
-			&:before{
-				background-image: url("/smarter-web-company-co-uk/_img/images/svg/blog.svg");
-			}
-		}
-		&.icon-options{
-			&:before{
-				background-image: url("/smarter-web-company-co-uk/_img/images/svg/options2.svg");
-			}
-		}
-		&.icon-payment{
-			&:before{
-				background-image: url("/smarter-web-company-co-uk/_img/images/svg/payment.svg");
-			}
-		}
-		&.icon-bespoke{
-			&:before{
-				background-image: url("/smarter-web-company-co-uk/_img/images/svg/bespoke.svg");
-			}
-		}
-		&.icon-social{
-			&:before{
-				background-image: url("/smarter-web-company-co-uk/_img/images/svg/social.svg");
-			}
-		}
-		&.icon-calc{
-			&:before{
-				background-image: url("/smarter-web-company-co-uk/_img/images/svg/calc.svg");
-			}
-		}
-		&.icon-maps{
-			&:before{
-				background-image: url("/smarter-web-company-co-uk/_img/images/svg/map.svg");
-			}
-		}
-		&.icon-search{
-			&:before{
-				background-image: url("/smarter-web-company-co-uk/_img/images/svg/search.svg");
-			}
-		}
-		&.icon-software{
-			&:before{
-				background-image: url("/smarter-web-company-co-uk/_img/images/svg/software.svg");
-			}
-		}
-		&.icon-listing{
-			&:before{
-				background-image: url("/smarter-web-company-co-uk/_img/images/svg/listing.svg");
-			}
-		}
-		&.icon-ecommerce{
-			&:before{
-				background-image: url("/smarter-web-company-co-uk/_img/images/svg/ecommerce.svg");
-			}
-		}
-		&.icon-design{
-			&:before{
-				background-image: url("/smarter-web-company-co-uk/_img/images/svg/design.svg");
-			}
-		}
-		&.icon-uk{
-			&:before{
-				background-image: url("/smarter-web-company-co-uk/_img/images/svg/globe.svg");
-			}
-		}
-		&.icon-stationary{
-			&:before{
-				background-image: url("/smarter-web-company-co-uk/_img/images/svg/stationary.svg");
-			}
-		}
-		&.icon-vector{
-			&:before{
-				background-image: url("/smarter-web-company-co-uk/_img/images/svg/vector.svg");
-			}
-		}
-		&.icon-printer{
-			&:before{
-				background-image: url("/smarter-web-company-co-uk/_img/images/svg/printer.svg");
-			}
-		}
-		&.icon-strategy{
-			&:before{
-				background-image: url("/smarter-web-company-co-uk/_img/images/svg/graph.svg");
-			}
-		}
-		&.icon-ppc{
-			&:before{
-				background-image: url("/smarter-web-company-co-uk/_img/images/svg/cursor.svg");
-			}
-		}
-		&.icon-manage{
-			&:before{
-				background-image: url("/smarter-web-company-co-uk/_img/images/svg/calendar.svg");
-			}
-		}
-		
+		}	
 	}
 	h6{
 		margin-bottom: 0.25em;
@@ -894,7 +801,7 @@ SEO
 		}
 	}
 }
-.seo-prices{
+.table-section{
 	padding: 3.5em 0.5em;
 	table{
 		border-collapse: collapse;
@@ -917,16 +824,11 @@ SEO
 		border: 1px solid $base-color-light;
 		line-height: 1;
 		background-color: $base-color;
-		background-image: linear-gradient($base-color, darken($base-color, 8%));
+		background-image: linear-gradient($base-color, darken($base-color, 5%));
 		color: #fff;
 		@include respond-to(640){
 			font-family: $heading-font-black;
 			padding: 1.3em 2em 1.2em;
-		}
-		&:first-child{
-			border: none;
-			background-color: transparent;
-			background-image: none;
 		}
 		&:last-child{
 			// border: 3px solid $base-color-light;
@@ -936,21 +838,6 @@ SEO
 		}
 	}
 	tr{
-		td{
-			&:nth-child(1){
-				text-align: left;
-				font-family: $body-font-bold;
-				font-size: ms(2);
-				background-color: #fff;
-				//color: #fff;
-				border-color: #ccc;
-				//min-width: 8em;
-			}
-			// &:nth-child(3){
-			// 	border-left: 3px solid $base-color-light;
-			// 	border-right: 3px solid $base-color-light;
-			// }
-		}
 		&:last-child{
 			.pro-price{
 				// border-bottom: 3px solid $base-color-light;
@@ -967,7 +854,7 @@ SEO
 		font-family: $body-font;
 		background-color: #fff;
 		text-align: center;
-		border: 1px solid #e5e5e5;
+		border: 1px solid #ddd;
 		line-height: 1;
 		@include respond-to(640){
 			padding: 1.2em 2em;
@@ -985,6 +872,30 @@ SEO
 			fill: #444;
 		}
 	}
+}
+.seo-prices{
+	th:first-child{
+		border: none;
+		background-color: transparent;
+		background-image: none;	
+	}
+	tr{
+		td{
+			&:nth-child(1){
+				text-align: left;
+				font-family: $body-font-bold;
+				font-size: ms(2);
+				background-color: #fff;
+				//color: #fff;
+				border-color: #ccc;
+				//min-width: 8em;
+			}
+		}
+	}
+}
+.email-table{
+	text-align: center;
+	margin-top: 3em;
 }
 
 .graph-line{
@@ -1051,6 +962,15 @@ CMS
 // 		}
 // 	}
 // }
+
+#s485133{
+	.cms{
+		.button{
+			opacity: 0;
+		}
+	}
+}
+
 
 /*//////////////////////////////////////
 
@@ -1238,5 +1158,12 @@ Contact Page
 }
 
 .custom-form{
-	padding: 0 1em;
+	text-align: center;
+    padding: 4em 0;
+    @include respond-to(768){
+    	padding: 9em 0;
+    }
+	.contact-form__wrap{
+		padding: 0 1em;
+	}
 }

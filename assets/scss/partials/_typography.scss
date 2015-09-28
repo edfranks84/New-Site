@@ -8,8 +8,14 @@
 \* ---------------------------------------------- */
 
 @font-face {
-  font-family: 'brandon_grotesque_black';
-  src: url('/smarter-web-company-co-uk/_img/fonts/brandon_grotesque_black.woff') format('woff');
+  	font-family: 'brandon_grotesque_black';
+  	src: url('/smarter-web-company-co-uk/_img/fonts/brandon_grotesque_black.eot');
+    src: url('/smarter-web-company-co-uk/_img/fonts/brandon_grotesque_black.eot?#iefix') format('embedded-opentype'),
+         url('/smarter-web-company-co-uk/_img/fonts/brandon_grotesque_black.woff') format('woff'),
+         url('/smarter-web-company-co-uk/_img/fonts/brandon_grotesque_black.ttf') format('truetype'),
+         url('/smarter-web-company-co-uk/_img/fonts/brandon_grotesque_black.svg#brandon_grotesque_black') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 @font-face {
   font-family: 'brandon_grotesque_bold';

@@ -1,3 +1,9 @@
+#s538159{
+	.client-quote{
+		display: none;
+	}
+}
+
 
 .case-studies{
 	.previewFrame &{
@@ -84,6 +90,9 @@
 	@include clearfix;
 	@include respond-to(480){
 		padding: 6em 0;
+	}
+	@include respond-to(1700){
+		padding: 8em 0;
 	}
 	.content-wrap{
 		width: span(10 of 12 0);

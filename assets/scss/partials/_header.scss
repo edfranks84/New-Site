@@ -22,20 +22,29 @@ header{
 	left: 0;
 	right: 0;
 	border-bottom: 1px solid rgba(255,255,255,0.1);
-	height: 5.875rem;
+	height: 4rem;
 	transition: all 350ms cubic-bezier(.13,.68,.69,.3);
+	@include respond-to(1060){
+		height: 5.875rem;
+	}
 	&.headroom--not-top{
 		position: fixed;
-		height: 4rem;
+		height: 3.6rem;
 		background-color: rgba(0,0,0,0.85);
-		.show-menu &{
+		@include respond-to(1060){
 			height: 4rem;
+		}
+		.show-menu &{
+			height: 3.6rem;
 			//height: 5.875rem;
 		}
 	}
 	&.headroom--top{
 		.show-menu &{
-			height: 5.875rem;
+			height: 4rem;
+			@include respond-to(1060){
+				height: 5.875rem;
+			}
 		}
 	}
 }

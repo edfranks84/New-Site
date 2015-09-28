@@ -170,9 +170,11 @@ ul li {
 ol li {
   list-style: none; }
 
-ul.disc li {
-  list-style-type: disc;
-  margin-bottom: 0.5em; }
+ul.disc {
+  padding-left: 1em; }
+  ul.disc li {
+    list-style-type: disc;
+    margin-bottom: 0.5em; }
 
 img, object, embed {
   height: auto;
@@ -307,7 +309,10 @@ section.black {
 \* ---------------------------------------------- */
 @font-face {
   font-family: 'brandon_grotesque_black';
-  src: url('/smarter-web-company-co-uk/_img/fonts/brandon_grotesque_black.woff') format('woff'); }
+  src: url('/smarter-web-company-co-uk/_img/fonts/brandon_grotesque_black.eot');
+  src: url('/smarter-web-company-co-uk/_img/fonts/brandon_grotesque_black.eot?#iefix') format('embedded-opentype'), url('/smarter-web-company-co-uk/_img/fonts/brandon_grotesque_black.woff') format('woff'), url('/smarter-web-company-co-uk/_img/fonts/brandon_grotesque_black.ttf') format('truetype'), url('/smarter-web-company-co-uk/_img/fonts/brandon_grotesque_black.svg#brandon_grotesque_black') format('svg');
+  font-weight: normal;
+  font-style: normal; }
 
 @font-face {
   font-family: 'brandon_grotesque_bold';
@@ -472,7 +477,7 @@ strong {
           left: -5px;
           min-width: 250px;
           margin: 0;
-          background-color: rgba(0, 0, 0, 0.9);
+          background-color: rgba(0, 0, 0, 0.93);
           height: 0;
           opacity: 0;
           -webkit-transition: opacity .2s linear;
@@ -557,18 +562,22 @@ strong {
             -ms-transform: translateY(120em);
                 transform: translateY(120em); }
       .mobile-menu .nav > ul > li.parent > a:after {
-        content: url("/smarter-web-company-co-uk/_img/images/down.svg");
+        content: "";
+        background-image: url("/smarter-web-company-co-uk/_img/images/down.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
         width: 10px;
-        height: 10px;
+        height: 20px;
         margin-left: 0.5em;
         position: relative;
-        display: inline-table;
+        display: inline-block;
         -webkit-transition: -webkit-transform 150ms cubic-bezier(.13, .68, .69, .3);
                 transition: transform 150ms cubic-bezier(.13, .68, .69, .3);
         -webkit-transform-origin: 50% 50%;
             -ms-transform-origin: 50% 50%;
                 transform-origin: 50% 50%;
-        top: -2px; }
+        top: 4px; }
       .mobile-menu .nav > ul > li.parent.open {
         background-color: rgba(25, 33, 44, 0.95); }
         .mobile-menu .nav > ul > li.parent.open > a {
@@ -1495,17 +1504,26 @@ header {
   left: 0;
   right: 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  height: 5.875rem;
+  height: 4rem;
   -webkit-transition: all 350ms cubic-bezier(.13, .68, .69, .3);
           transition: all 350ms cubic-bezier(.13, .68, .69, .3); }
+  @media  (min-width: 1060px) {
+    header {
+      height: 5.875rem; } }
   header.headroom--not-top {
     position: fixed;
-    height: 4rem;
+    height: 3.6rem;
     background-color: rgba(0, 0, 0, 0.85); }
+    @media  (min-width: 1060px) {
+      header.headroom--not-top {
+        height: 4rem; } }
     .show-menu header.headroom--not-top {
-      height: 4rem; }
+      height: 3.6rem; }
   .show-menu header.headroom--top {
-    height: 5.875rem; }
+    height: 4rem; }
+    @media  (min-width: 1060px) {
+      .show-menu header.headroom--top {
+        height: 5.875rem; } }
 
 .slideUp {
   -webkit-transform: translateY(-100%);
@@ -1851,10 +1869,13 @@ LOGIN STYLES
 	12.0. Content
 ----------------------------------------- */
 .hero.inner-hero {
-  height: 100%;
-  height: 100vh; }
+  height: 40em; }
   .previewFrame .hero.inner-hero {
     height: 700px; }
+  @media  (min-width: 1000px) {
+    .hero.inner-hero {
+      height: 100%;
+      height: 100vh; } }
 .hero.med-hero {
   height: 75%;
   height: 75vh; }
@@ -1866,6 +1887,21 @@ LOGIN STYLES
   .previewFrame .hero.short-hero {
     height: 400px; }
 
+.hero.inner-hero .hero-title h1 {
+  font-size: 2.7061em;
+  line-height: 1;
+  margin: 0;
+  margin-bottom: 0.1em;
+  padding-top: 0; }
+  @media  (min-width: 480px) {
+    .hero.inner-hero .hero-title h1 {
+      font-size: 3.04436em; } }
+  @media  (min-width: 768px) {
+    .hero.inner-hero .hero-title h1 {
+      font-size: 3.42491em; } }
+  @media  (min-width: 1060px) {
+    .hero.inner-hero .hero-title h1 {
+      font-size: 4.87648em; } }
 .hero.inner-hero .hero-title.small-hero h1 {
   font-size: 2.7061em; }
   @media  (min-width: 480px) {
@@ -1873,10 +1909,18 @@ LOGIN STYLES
       font-size: 3.04436em; } }
   @media  (min-width: 768px) {
     .hero.inner-hero .hero-title.small-hero h1 {
-      font-size: 4.87648em; } }
+      font-size: 4.33465em; } }
   @media  (min-width: 1060px) {
     .hero.inner-hero .hero-title.small-hero h1 {
-      font-size: 5.48604em; } }
+      font-size: 4.87648em; } }
+
+.extras__hero .hero-content .button {
+  font-size: 14px;
+  margin: 0.5em 0.2em 0.1em; }
+  @media  (min-width: 480px) {
+    .extras__hero .hero-content .button {
+      margin: 1.5em 0.2em 1em;
+      font-size: 16px; } }
 
 @media  (min-width: 480px) {
   .inner-intro {
@@ -2427,56 +2471,6 @@ Package Pages
           left: 0.5em;
           top: 0;
           margin-bottom: 0; } }
-    .feature-list li.icon-responsive:before {
-      background-image: url("/smarter-web-company-co-uk/_img/images/svg/responsive.svg"); }
-    .feature-list li.icon-pages:before {
-      background-image: url("/smarter-web-company-co-uk/_img/images/svg/pages.svg"); }
-    .feature-list li.icon-cms:before {
-      background-image: url("/smarter-web-company-co-uk/_img/images/svg/cms.svg"); }
-    .feature-list li.icon-domain:before {
-      background-image: url("/smarter-web-company-co-uk/_img/images/svg/domain.svg"); }
-    .feature-list li.icon-email:before {
-      background-image: url("/smarter-web-company-co-uk/_img/images/svg/email.svg"); }
-    .feature-list li.icon-form:before {
-      background-image: url("/smarter-web-company-co-uk/_img/images/svg/form.svg"); }
-    .feature-list li.icon-blog:before {
-      background-image: url("/smarter-web-company-co-uk/_img/images/svg/blog.svg"); }
-    .feature-list li.icon-options:before {
-      background-image: url("/smarter-web-company-co-uk/_img/images/svg/options2.svg"); }
-    .feature-list li.icon-payment:before {
-      background-image: url("/smarter-web-company-co-uk/_img/images/svg/payment.svg"); }
-    .feature-list li.icon-bespoke:before {
-      background-image: url("/smarter-web-company-co-uk/_img/images/svg/bespoke.svg"); }
-    .feature-list li.icon-social:before {
-      background-image: url("/smarter-web-company-co-uk/_img/images/svg/social.svg"); }
-    .feature-list li.icon-calc:before {
-      background-image: url("/smarter-web-company-co-uk/_img/images/svg/calc.svg"); }
-    .feature-list li.icon-maps:before {
-      background-image: url("/smarter-web-company-co-uk/_img/images/svg/map.svg"); }
-    .feature-list li.icon-search:before {
-      background-image: url("/smarter-web-company-co-uk/_img/images/svg/search.svg"); }
-    .feature-list li.icon-software:before {
-      background-image: url("/smarter-web-company-co-uk/_img/images/svg/software.svg"); }
-    .feature-list li.icon-listing:before {
-      background-image: url("/smarter-web-company-co-uk/_img/images/svg/listing.svg"); }
-    .feature-list li.icon-ecommerce:before {
-      background-image: url("/smarter-web-company-co-uk/_img/images/svg/ecommerce.svg"); }
-    .feature-list li.icon-design:before {
-      background-image: url("/smarter-web-company-co-uk/_img/images/svg/design.svg"); }
-    .feature-list li.icon-uk:before {
-      background-image: url("/smarter-web-company-co-uk/_img/images/svg/globe.svg"); }
-    .feature-list li.icon-stationary:before {
-      background-image: url("/smarter-web-company-co-uk/_img/images/svg/stationary.svg"); }
-    .feature-list li.icon-vector:before {
-      background-image: url("/smarter-web-company-co-uk/_img/images/svg/vector.svg"); }
-    .feature-list li.icon-printer:before {
-      background-image: url("/smarter-web-company-co-uk/_img/images/svg/printer.svg"); }
-    .feature-list li.icon-strategy:before {
-      background-image: url("/smarter-web-company-co-uk/_img/images/svg/graph.svg"); }
-    .feature-list li.icon-ppc:before {
-      background-image: url("/smarter-web-company-co-uk/_img/images/svg/cursor.svg"); }
-    .feature-list li.icon-manage:before {
-      background-image: url("/smarter-web-company-co-uk/_img/images/svg/calendar.svg"); }
   .feature-list h6 {
     margin-bottom: 0.25em;
     font-family: brandon_grotesque_bold, Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -2548,18 +2542,18 @@ SEO
   .split-section--seo .split-copy__cell {
     padding: 8em 5.5em; } }
 
-.seo-prices {
+.table-section {
   padding: 3.5em 0.5em; }
-  .seo-prices table {
+  .table-section table {
     border-collapse: collapse;
     margin: auto;
     font-size: 13px;
     width: 100%; }
     @media  (min-width: 640px) {
-      .seo-prices table {
+      .table-section table {
         table-layout: fixed;
         font-size: 16px; } }
-  .seo-prices th {
+  .table-section th {
     font-family: brandon_grotesque_bold, Arial, "Helvetica Neue", Helvetica, sans-serif;
     text-align: center;
     font-size: 1.33484em;
@@ -2568,45 +2562,50 @@ SEO
     border: 1px solid #00b2f6;
     line-height: 1;
     background-color: #018dc2;
-    background-image: -webkit-linear-gradient(#018dc2, #016f99);
-    background-image: linear-gradient(#018dc2, #016f99);
+    background-image: -webkit-linear-gradient(#018dc2, #017ba9);
+    background-image: linear-gradient(#018dc2, #017ba9);
     color: #fff; }
     @media  (min-width: 640px) {
-      .seo-prices th {
+      .table-section th {
         font-family: brandon_grotesque_black, Arial, "Helvetica Neue", Helvetica, sans-serif;
         padding: 1.3em 2em 1.2em; } }
-    .seo-prices th:first-child {
-      border: none;
-      background-color: transparent;
-      background-image: none; }
-  .seo-prices tr td:nth-child(1) {
-    text-align: left;
-    font-family: brandon_text_bold, Arial, "Helvetica Neue", Helvetica, sans-serif;
-    font-size: 1.18652em;
-    background-color: #fff;
-    border-color: #ccc; }
-  .seo-prices tr .pro-price {
+  .table-section tr .pro-price {
     font-size: 1.33484em;
     font-family: brandon_grotesque_bold, Arial, "Helvetica Neue", Helvetica, sans-serif; }
-  .seo-prices td {
+  .table-section td {
     padding: 0.5em;
     font-size: 1.05469em;
     font-family: brandon_text_regular, Arial, "Helvetica Neue", Helvetica, sans-serif;
     background-color: #fff;
     text-align: center;
-    border: 1px solid #e5e5e5;
+    border: 1px solid #ddd;
     line-height: 1; }
     @media  (min-width: 640px) {
-      .seo-prices td {
+      .table-section td {
         padding: 1.2em 2em; } }
-  .seo-prices svg {
+  .table-section svg {
     color: #018dc2;
     height: 1.5em;
     width: 1.5em; }
-    .seo-prices svg.tick-icon {
+    .table-section svg.tick-icon {
       fill: #018dc2; }
-    .seo-prices svg.cross-icon {
+    .table-section svg.cross-icon {
       fill: #444; }
+
+.seo-prices th:first-child {
+  border: none;
+  background-color: transparent;
+  background-image: none; }
+.seo-prices tr td:nth-child(1) {
+  text-align: left;
+  font-family: brandon_text_bold, Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 1.18652em;
+  background-color: #fff;
+  border-color: #ccc; }
+
+.email-table {
+  text-align: center;
+  margin-top: 3em; }
 
 .graph-line {
   width: 100%;
@@ -2639,6 +2638,9 @@ SEO
 CMS
 
 /////////////////////////////////////*/
+#s485133 .cms .button {
+  opacity: 0; }
+
 /*//////////////////////////////////////
 
 Design Process
@@ -2752,7 +2754,13 @@ Contact Page
   padding: 5.5em 0; }
 
 .custom-form {
-  padding: 0 1em; }
+  text-align: center;
+  padding: 4em 0; }
+  @media  (min-width: 768px) {
+    .custom-form {
+      padding: 9em 0; } }
+  .custom-form .contact-form__wrap {
+    padding: 0 1em; }
 
 /* ---------------------------------------------- *\
 
@@ -3032,10 +3040,9 @@ Contact Page
 
 .footer-copy {
   max-width: 100em;
-  width: 90%;
+  width: 96%;
   margin: auto;
-  padding: 0 1em;
-  text-align: center; }
+  padding: 0 1em; }
   .footer-copy p {
     font-size: 0.9375em; }
   @media  (min-width: 480px) {
@@ -3120,7 +3127,8 @@ textarea {
   display: none; }
 
 .form_error_specific {
-  color: #f44336; }
+  color: #f44336;
+  text-align: left; }
 
 .contact-form__wrap {
   max-width: 38em;
@@ -3351,8 +3359,7 @@ textarea {
     width: 5rem; } }
 
 .hero {
-  height: 100%;
-  height: 100vh;
+  height: 40em;
   width: 100%;
   padding: 0;
   position: relative;
@@ -3360,6 +3367,10 @@ textarea {
   background-repeat: no-repeat;
   background-color: #111;
   background-position: center; }
+  @media  (min-width: 1000px) {
+    .hero {
+      height: 100%;
+      height: 100vh; } }
   .previewFrame .hero {
     height: 700px; }
   #s466567 .hero {
@@ -3390,13 +3401,20 @@ textarea {
     margin: 0.5em 0.2em; }
     @media  (min-width: 400px) {
       .hero-content .button, .hero-content .solid-button {
+        margin-top: 1.5em; } }
+    @media  (min-width: 1000px) {
+      .hero-content .button, .hero-content .solid-button {
         margin-top: 3em; } }
   .hero-content h6 {
     -webkit-animation: textin 550ms ease-in 1s both;
             animation: textin 550ms ease-in 1s both; }
   .hero-content .button {
     -webkit-animation: textin 650ms ease-in 1.2s both;
-            animation: textin 650ms ease-in 1.2s both; }
+            animation: textin 650ms ease-in 1.2s both;
+    font-size: 13px; }
+    @media  (min-width: 400px) {
+      .hero-content .button {
+        font-size: inherit; } }
   .hero-content .divider:after {
     -webkit-animation: expand 400ms ease-in .75s both;
             animation: expand 400ms ease-in .75s both;
@@ -3428,20 +3446,20 @@ textarea {
             transform: scale(1); } }
 
 .hero-title h1 {
-  font-size: 3.04436em;
+  font-size: 2.40542em;
   line-height: 1;
   margin: 0;
   margin-bottom: 0.1em;
   padding-top: 0; }
   @media  (min-width: 480px) {
     .hero-title h1 {
-      font-size: 3.85302em; } }
+      font-size: 3.04436em; } }
   @media  (min-width: 768px) {
     .hero-title h1 {
-      font-size: 5.48604em; } }
+      font-size: 3.85302em; } }
   @media  (min-width: 1060px) {
     .hero-title h1 {
-      font-size: 6.94327em; } }
+      font-size: 4.87648em; } }
 .cssanimations.csstransitions .hero-title {
   -webkit-transform: translateY(-5%);
       -ms-transform: translateY(-5%);
@@ -3511,15 +3529,16 @@ section {
       float: right;
       margin-right: 0;
       background-position: center;
-      padding-bottom: 60%; } }
+      padding-bottom: 78%; } }
   @media  (min-width: 960px) {
     .bespoke-image {
       width: 50%;
       float: right;
-      margin-right: 0; } }
+      margin-right: 0;
+      padding-bottom: 70%; } }
   @media  (min-width: 1200px) {
     .bespoke-image {
-      padding-bottom: 50%; } }
+      padding-bottom: 60%; } }
   @media  (min-width: 1400px) {
     .bespoke-image {
       padding-bottom: 40%; } }
@@ -3531,7 +3550,7 @@ section {
     .bespoke-copy {
       width: 66.66667%;
       float: left;
-      padding-bottom: 60%;
+      padding-bottom: 78%;
       height: 0; }
       .bespoke-copy__inner {
         position: absolute;
@@ -3543,10 +3562,11 @@ section {
   @media  (min-width: 960px) {
     .bespoke-copy {
       width: 50%;
-      float: left; } }
+      float: left;
+      padding-bottom: 70%; } }
   @media  (min-width: 1200px) {
     .bespoke-copy {
-      padding-bottom: 50%; } }
+      padding-bottom: 60%; } }
   @media  (min-width: 1400px) {
     .bespoke-copy {
       padding-bottom: 40%; } }
@@ -3561,7 +3581,7 @@ section {
         -webkit-transform: translateY(-50%);
             -ms-transform: translateY(-50%);
                 transform: translateY(-50%); } }
-    @media  (min-width: 920px) {
+    @media  (min-width: 1200px) {
       .bespoke-copy .content-wrap {
         max-width: 75%; } }
   .bespoke-copy:after {
@@ -3747,7 +3767,7 @@ section {
     -webkit-transition: all 300ms ease 400ms;
             transition: all 300ms ease 400ms;
     padding-top: 0;
-    font-size: 1.68941em; }
+    font-size: 1.50169em; }
     @media  (min-width: 480px) {
       .project-item__content h3:after, .link-content h3:after {
         margin-top: 0.75em; } }
@@ -3980,10 +4000,22 @@ section {
   text-align: center; }
   .packages h2, .packages h6 {
     color: #fff; }
-  .packages .sub-title h6 {
-    text-transform: none;
-    font-family: brandon_text_light, Arial, "Helvetica Neue", Helvetica, sans-serif;
-    color: rgba(255, 255, 255, 0.7); }
+  .packages .sub-title {
+    width: 98%;
+    max-width: 72em;
+    margin: auto; }
+    .packages .sub-title:before, .packages .sub-title:after {
+      content: "";
+      display: table; }
+    .packages .sub-title:after {
+      clear: both; }
+    @media  (min-width: 960px) {
+      .packages .sub-title {
+        width: 85%; } }
+    .packages .sub-title h6 {
+      text-transform: none;
+      font-family: brandon_text_light, Arial, "Helvetica Neue", Helvetica, sans-serif;
+      color: rgba(255, 255, 255, 0.7); }
 
 .packages-wrap {
   padding: 2.5em 0 1.5em;
@@ -4293,29 +4325,36 @@ section {
   width: 100%; }
   @media  (min-width: 640px) {
     .testimonials {
+      height: 40em;
+      padding: 2em;
+      font-size: 14px; } }
+  @media  (min-width: 1000px) {
+    .testimonials {
       height: 75%;
       height: 75vh;
-      padding: 2em; }
-      .previewFrame .testimonials {
-        height: 500px; } }
+      padding: 2em;
+      font-size: 16px; } }
+  .previewFrame .testimonials {
+    height: 500px; }
   .testimonials h2 {
     color: #fff;
     padding-top: 0;
     font-size: 2.13815em; }
-    @media  (min-width: 480px) {
+    @media  (min-width: 1000px) {
       .testimonials h2 {
         font-size: 2.7061em; } }
-  .testimonials .divider:after {
-    margin: 0.6em auto; }
+  @media  (min-width: 1000px) {
+    .testimonials .divider:after {
+      margin: 0.6em auto; } }
 
 .testimonial-wrap {
   border: 3px solid rgba(255, 255, 255, 0.5);
   width: 100%;
   height: 100%;
-  padding: 2.5em 2em;
+  padding: 2em;
   text-align: center;
   position: relative; }
-  @media  (min-width: 640px) {
+  @media  (min-width: 1000px) {
     .testimonial-wrap {
       padding: 3em; } }
 
@@ -4346,9 +4385,12 @@ section {
     color: #fff;
     text-transform: uppercase;
     margin-top: 1em; }
-    @media  (min-width: 640px) {
+    @media  (min-width: 1000px) {
       .testimonial-item .client-name {
         margin-top: 2em; } }
+
+#s538159 .client-quote {
+  display: none; }
 
 .previewFrame .case-studies header {
   top: 40px; }
@@ -4417,6 +4459,9 @@ section {
   @media  (min-width: 480px) {
     .cs-about, .cs-brief, .client-quote {
       padding: 6em 0; } }
+  @media  (min-width: 1700px) {
+    .cs-about, .cs-brief, .client-quote {
+      padding: 8em 0; } }
   .cs-about .content-wrap, .cs-brief .content-wrap, .client-quote .content-wrap {
     width: 83.33333%;
     margin: auto; }
@@ -4753,7 +4798,7 @@ div[class^="concept"] {
   background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/contact-bg.jpg"); }
 #s485142 .hero {
   background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/not-found-bg.jpg"); }
-#s531396 .hero, #s548369 .hero, #s548408 .hero {
+#s531396 .hero, #s548369 .hero, #s548408 .hero, #s565912 .hero {
   background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/thanks-bg.jpg"); }
 #s485114 .hero {
   background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/micro-bg.jpg"); }
@@ -4777,7 +4822,7 @@ div[class^="concept"] {
   background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/design-bristol.jpg");
   background-position: bottom center; }
 
-.buy-buttons {
+.buy-buttons, .custom-form {
   background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/buy-button-bg.jpg"); }
 
 .seo-results {
@@ -4820,6 +4865,93 @@ div[class^="concept"] {
 
 .custom-pricing {
   background-image: url("/smarter-web-company-co-uk/_img/images/backgrounds/custom-price-bg.jpg"); }
+
+.icon-responsive:before {
+  background-image: url("/smarter-web-company-co-uk/_img/images/svg/responsive.svg"); }
+
+.icon-pages:before {
+  background-image: url("/smarter-web-company-co-uk/_img/images/svg/pages.svg"); }
+
+.icon-cms:before {
+  background-image: url("/smarter-web-company-co-uk/_img/images/svg/cms.svg"); }
+
+.icon-domain:before {
+  background-image: url("/smarter-web-company-co-uk/_img/images/svg/domain.svg"); }
+
+.icon-email:before {
+  background-image: url("/smarter-web-company-co-uk/_img/images/svg/email.svg"); }
+
+.icon-form:before {
+  background-image: url("/smarter-web-company-co-uk/_img/images/svg/form.svg"); }
+
+.icon-blog:before {
+  background-image: url("/smarter-web-company-co-uk/_img/images/svg/blog.svg"); }
+
+.icon-options:before {
+  background-image: url("/smarter-web-company-co-uk/_img/images/svg/options2.svg"); }
+
+.icon-payment:before {
+  background-image: url("/smarter-web-company-co-uk/_img/images/svg/payment.svg"); }
+
+.icon-bespoke:before {
+  background-image: url("/smarter-web-company-co-uk/_img/images/svg/bespoke.svg"); }
+
+.icon-social:before {
+  background-image: url("/smarter-web-company-co-uk/_img/images/svg/social.svg"); }
+
+.icon-calc:before {
+  background-image: url("/smarter-web-company-co-uk/_img/images/svg/calc.svg"); }
+
+.icon-maps:before {
+  background-image: url("/smarter-web-company-co-uk/_img/images/svg/map.svg"); }
+
+.icon-search:before {
+  background-image: url("/smarter-web-company-co-uk/_img/images/svg/search.svg"); }
+
+.icon-software:before {
+  background-image: url("/smarter-web-company-co-uk/_img/images/svg/software.svg"); }
+
+.icon-listing:before {
+  background-image: url("/smarter-web-company-co-uk/_img/images/svg/listing.svg"); }
+
+.icon-ecommerce:before {
+  background-image: url("/smarter-web-company-co-uk/_img/images/svg/ecommerce.svg"); }
+
+.icon-design:before {
+  background-image: url("/smarter-web-company-co-uk/_img/images/svg/design.svg"); }
+
+.icon-uk:before {
+  background-image: url("/smarter-web-company-co-uk/_img/images/svg/globe.svg"); }
+
+.icon-stationary:before {
+  background-image: url("/smarter-web-company-co-uk/_img/images/svg/stationary.svg"); }
+
+.icon-vector:before {
+  background-image: url("/smarter-web-company-co-uk/_img/images/svg/vector.svg"); }
+
+.icon-printer:before {
+  background-image: url("/smarter-web-company-co-uk/_img/images/svg/printer.svg"); }
+
+.icon-strategy:before {
+  background-image: url("/smarter-web-company-co-uk/_img/images/svg/graph.svg"); }
+
+.icon-ppc:before {
+  background-image: url("/smarter-web-company-co-uk/_img/images/svg/cursor.svg"); }
+
+.icon-manage:before {
+  background-image: url("/smarter-web-company-co-uk/_img/images/svg/calendar.svg"); }
+
+.icon-unsubscribe:before {
+  background-image: url("/smarter-web-company-co-uk/_img/images/svg/unsubscribe.svg"); }
+
+.icon-broadcast:before {
+  background-image: url("/smarter-web-company-co-uk/_img/images/svg/broadcast.svg"); }
+
+.icon-templates:before {
+  background-image: url("/smarter-web-company-co-uk/_img/images/svg/template.svg"); }
+
+.icon-manage-lists:before {
+  background-image: url("/smarter-web-company-co-uk/_img/images/svg/manage-lists.svg"); }
 
 .collapse-card {
   background-color: #FFFFFF;
