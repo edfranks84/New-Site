@@ -1,31 +1,48 @@
 .hero{
 	&.inner-hero{
-		height:40em;
+		// height:40em;
+		height: auto;
 		.previewFrame &{
 			height: 700px;
 		}
-		@include respond-to(1000){
-			height: 100%;
-			height: 100vh;
-		}
+		// @include respond-to(1000){
+		// 	height: 100%;
+		// 	height: 100vh;
+		// }
 	}
 	&.med-hero{
-		height:75%;
-		height: 75vh;
+		// height: 75%;
+		// height: 75vh;
+		height: auto;
 		.previewFrame &{
 			height: 600px;
 		}
 	}
 	&.short-hero{
-		height:50%;
-		height: 50vh;
+		// height:50%;
+		// height: 50vh;
+		height: auto;
 		.previewFrame &{
 			height: 400px;
 		}
 	}
+	&.full{
+		height: 100%;
+	}
 }
 
-.hero.inner-hero{
+.hero{
+	&.inner-hero, &.med-hero, &.short-hero{
+		.hero-content{
+			padding: 12em 0 8em;
+			@include respond-to(768){
+				padding: 12em 0 8em;
+			}
+			@include respond-to(1200){
+				padding: 14em 0 10em
+			}
+		}
+	}
 	.hero-title{ 
 		h1{
 			font-size: ms(9);
@@ -126,7 +143,7 @@
 	background:{
 		size: cover;
 		repeat: no-repeat;
-		color: #111;
+		color: #fff;
 		position: center ;
 	}
 	@include respond-to(700){
@@ -134,7 +151,7 @@
 	}
 	@include respond-to(800){
 		background-position: center;
-		padding-bottom: 60%;
+		padding-bottom: 65%;
 		&.split-image__right{
 			@include span(4 of 12 last 0);
 		}
@@ -165,7 +182,7 @@
 		background: url("/smarter-web-company-co-uk/_img/images/white-dot.png") repeat $base-color;
 	}
 	@include respond-to(800){
-		padding-bottom: 60%;
+		padding-bottom: 65%;
 		height: 0;
 		&.split-copy__right{
 			@include span(8 of 12 last 0);
@@ -218,7 +235,7 @@
 }
 
 
-.split-copy,.split-copy__cell{
+.split-copy,.split-copy__cell,.reverse-sec .split-copy__cell{
 	&:after{
 		border: 25px transparent solid;
 		border-bottom-color: #fff;
@@ -228,7 +245,6 @@
 		display: block;
 		content: "";
 		transform: translateX(-50%);
-		
 		@include respond-to(800){
 			transform: none;
 			border-bottom-color: transparent;
@@ -341,6 +357,20 @@
 		padding: 5.5em;
 	}
 }
+.reverse-sec{
+	.split-image__cell{
+		@include respond-to(800){
+			left: 50%;
+			position: relative;
+		}
+	}
+	.split-copy__cell{
+		@include respond-to(800){
+			right: 50%;
+			position: relative;
+		}
+	}
+}
 
 .main-content{
 	border-bottom: 1px solid #ccc;
@@ -367,6 +397,95 @@
 	width: 92%;
 	@include clearfix;
 }
+
+/******************************************
+*******************************************
+
+About History
+
+*******************************************
+******************************************/
+
+.history-sec{
+	.split-copy__cell,.split-image__cell{
+		display: block;
+		width: 100%;
+		@include respond-to(800){
+			left: auto;
+			right: auto;
+		}
+		@include respond-to(1000){
+			padding: 3.5em;
+			display: table-cell;
+			width: 50%;
+		}
+	}
+	.split-image__cell{
+		@include respond-to(640){
+			height: 25em;
+		}
+		@include respond-to(1000){
+			height: auto;
+			left: 50%;
+		}
+	}
+	.split-copy__cell{
+		@include respond-to(1000){
+			padding: 3.5em 2.25em;
+			right: 50%;
+		}
+		@include respond-to(1250){
+			padding: 5.5em;
+		}
+		@include respond-to(1500){
+			padding: 7em 5.5em;
+		}
+	}
+}
+.about-value-sec{
+	.split-copy__cell{
+		@include respond-to(1000){
+			padding: 3.5em 2.25em;
+		}
+		@include respond-to(1250){
+			padding: 5.5em;
+		}
+		@include respond-to(1500){
+			padding: 7em 5.5em;
+		}
+	}
+}
+.company-link{
+	margin-top: 1.5em;
+	display: block;
+	img{
+		display: inline-block;
+		vertical-align: middle;
+	}
+	&::after{
+		content: "";
+		background:{
+			image: url("/smarter-web-company-co-uk/_img/images/svg/chevron.svg");
+			size: contain;
+			position: center;
+			repeat: no-repeat;
+		}
+		height: 1em;
+		width: 1em;
+		display: inline-block;
+		vertical-align: middle;
+		margin-left: 1em;
+		position: relative;
+		top: 2px;
+		transition: transform 300ms cubic-bezier(.17,.67,.52,1.56);
+	}
+	&:hover{
+		&::after{
+			transform: translateX(0.5em);
+		}
+	}
+}
+
 
 
 /******************************************
@@ -424,7 +543,7 @@ TEAM LAYOUT
 		display: none;
 		
 		@include respond-to(920){
-			width: 50%;	
+			width: 75%;	
 			display: block;
 		}
 	}
@@ -515,12 +634,15 @@ Package Pages
 		}
 	}
 }
-.hero.package-hero{
+.hero.inner-hero.package-hero{
 	height: auto;
-	min-height: 100vh;
+	// min-height: 100vh;
 	@include respond-to(480){
-		height: 100%;
-		height: 100vh;
+		// height: 100%;
+		// height: 100vh;
+	}
+	@include respond-to(1000){
+		height: auto;
 	}
 	.previewFrame &{
 		height: 700px;
@@ -533,17 +655,22 @@ Package Pages
 		left: auto;
 		top: auto;
 		transform: none;
-		padding: 10em 0 3em;
-		@include respond-to(480){
+		//padding: 10em 0 3em;
+		padding: 12em 0 8em;
+		@include respond-to(768){
+			padding: 12em 0 8em;
+		}
+		@include respond-to(1200){
 			// position: relative;
 			// left: auto;
 			// transform: none;
 			// transform: translateY(-50%);
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			padding: 5em 0 0;
+			// position: absolute;
+			// top: 50%;
+			// left: 50%;
+			// transform: translate(-50%, -50%);
+			// padding: 5em 0 0;
+			padding: 14em 0 10em
 		}
 		h6.divider{
 			animation-delay: .4s;
@@ -661,6 +788,16 @@ Package Pages
 			}
 		}
 	}
+	.micro-projects{
+		.project-item{
+			@include respond-to(1250){
+				width: 50%;
+				.project-item__inner{
+					padding-top: 60%;
+				}
+			}
+		}
+	}
 }
 
 .feature-list{
@@ -690,7 +827,7 @@ Package Pages
 			background:{
 				position: center top;
 				repeat: no-repeat;
-
+				size: contain;
 			}
 			@include respond-to(640){
 				position: absolute;
@@ -892,6 +1029,16 @@ SEO
 			}
 		}
 	}
+	.button{ 
+		margin: 0;
+		.button-text{
+			font-size: ms(-1);
+			padding: 0.5em;
+			@include respond-to(400){
+				padding: 0.75em 1.5em;
+			}
+		}
+	}
 }
 .email-table{
 	text-align: center;
@@ -954,7 +1101,7 @@ CMS
 // 			display: none;
 // 		}
 // 	} 
-// 	.no-touch &{
+// 	.no-touchevents &{
 // 		padding: 5em;
 // 		background-image: none;
 // 		video {
@@ -978,14 +1125,49 @@ Design Process
 
 /////////////////////////////////////*/
 
+
+#s485134{
+	counter-reset: process-section;
+	.process-section{
+		counter-increment: process-section;
+	}
+}
+
 .process-section{
 	border-bottom: 1px solid #d4d4d4;
+	.split-image{
+		@include respond-to(800){
+			&.split-image__right{
+				@include span(6 of 12 last 0);
+			}
+			&.split-image__left{
+				@include span(6 of 12 0);
+			}
+			
+		}
+	}
+	.split-copy{
+		@include respond-to(800){
+			&.split-copy__right{
+				@include span(6 of 12 last 0);
+			}
+			&.split-copy__left{
+				@include span(6 of 12 0);
+			}
+		}
+	}
 	.process-icon{
 		height: 2.4em;
 		width: 2.4em;
 		fill: #222;
 		float: left;
 		margin-right: 0.75em;
+		position: relative;
+		z-index: 2;
+	}
+	.divider{
+		position: relative;
+		z-index: 2;
 	}
 	h3{
 		padding-top: 0;
@@ -997,7 +1179,29 @@ Design Process
 		}
 	}
 	.content-wrap{
-		padding: 4em 0;
+		padding: 4em 0.5em;
+		&:after{
+			content: '0' counter(process-section);
+			font-size: 10em;
+			opacity: 0.08;
+			color: #9b9b9b;
+			font-family: $heading-font-black;
+			position: absolute;
+			top: -7%;
+			left: -7%;
+			z-index: 1;
+			letter-spacing: -5px;
+			@include respond-to(1000){
+				font-size: 12em;
+				top: -10%;
+				left: -10%;
+			}
+		}
+		.previewFrame &{
+			&:after{
+				display: none;
+			}
+		}
 	}
 }
 .process-signup{

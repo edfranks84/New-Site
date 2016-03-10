@@ -121,13 +121,13 @@
 
 .mobile-menu{
 	.nav{
-		 padding: 7.5em 0 3em;
+		 padding: 6.5em 0 3em;
 		 overflow: hidden;
 		 height: 100%;
 		 width: 95%;
-		 @include respond-to(640){
-		 	padding-top: 8.5em;
-		 }
+		 // @include respond-to(640){
+		 // 	padding-top: 8.5em;
+		 // }
 		>ul{
 			overflow-y: auto;
 		 	webkit-overflow-scrolling: touch;

@@ -143,3 +143,29 @@
 		background-image: url("/smarter-web-company-co-uk/_img/images/svg/manage-lists.svg");
 	}
 }
+
+.icon-payment-gateway{
+	&:before{
+		background-image: url("/smarter-web-company-co-uk/_img/images/svg/payment-gateway.svg");
+	}
+}
+.icon-team{
+	&:before{
+		background-image: url("/smarter-web-company-co-uk/_img/images/svg/team.svg");
+	}
+}
+.icon-money{
+	&:before{
+		background-image: url("/smarter-web-company-co-uk/_img/images/svg/money.svg");
+	}
+}
+.icon-images{
+	&:before{
+		background-image: url("/smarter-web-company-co-uk/_img/images/svg/images.svg");
+	}
+}
+.icon-barcode{
+	&:before{
+		background-image: url("/smarter-web-company-co-uk/_img/images/svg/barcode.svg");
+	}
+}

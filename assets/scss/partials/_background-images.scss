@@ -84,7 +84,7 @@
 			image: url("/smarter-web-company-co-uk/_img/images/backgrounds/faq-bg.jpg");
 		}
 	}
-	#s485138 &, #s545327 &{
+	#s485138 &, #s545327 &, #s853557 &{
 		background:{ 
 			image: url("/smarter-web-company-co-uk/_img/images/backgrounds/contact-bg.jpg");
 		}
@@ -119,6 +119,11 @@
 			image: url("/smarter-web-company-co-uk/_img/images/backgrounds/email-marketing-bg.jpg");
 		}
 	}
+	#s730296 &{
+		background:{ 
+			image: url("/smarter-web-company-co-uk/_img/images/backgrounds/advanced-bg.jpg");
+		}
+	}
 }
 
 
@@ -131,8 +136,14 @@
 }
 .about-value{
 	background:{ 
-		image: url("/smarter-web-company-co-uk/_img/images/backgrounds/about-value.jpg");
-		position: top center;
+		image: url("/smarter-web-company-co-uk/_img/images/backgrounds/value-bg.jpg");
+		position: center center;
+	}
+}
+.about-history{
+	background:{ 
+		image: url("/smarter-web-company-co-uk/_img/images/backgrounds/history-bg.jpg");
+		position: center center;
 	}
 }
 .design-bristol{

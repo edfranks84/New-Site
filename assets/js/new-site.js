@@ -1,3 +1,4 @@
+function countUp(a,b,c,d,e,f){for(var g=0,h=["webkit","moz","ms","o"],i=0;i<h.length&&!window.requestAnimationFrame;++i)window.requestAnimationFrame=window[h[i]+"RequestAnimationFrame"],window.cancelAnimationFrame=window[h[i]+"CancelAnimationFrame"]||window[h[i]+"CancelRequestAnimationFrame"];window.requestAnimationFrame||(window.requestAnimationFrame=function(a){var c=(new Date).getTime(),d=Math.max(0,16-(c-g)),e=window.setTimeout(function(){a(c+d)},d);return g=c+d,e}),window.cancelAnimationFrame||(window.cancelAnimationFrame=function(a){clearTimeout(a)}),this.options=f||{useEasing:!0,useGrouping:!0,separator:",",decimal:"."},""==this.options.separator&&(this.options.useGrouping=!1),null==this.options.prefix&&(this.options.prefix=""),null==this.options.suffix&&(this.options.suffix="");var j=this;this.d="string"==typeof a?document.getElementById(a):a,this.startVal=Number(b),this.endVal=Number(c),this.countDown=this.startVal>this.endVal?!0:!1,this.startTime=null,this.timestamp=null,this.remaining=null,this.frameVal=this.startVal,this.rAF=null,this.decimals=Math.max(0,d||0),this.dec=Math.pow(10,this.decimals),this.duration=1e3*e||2e3,this.version=function(){return"1.3.2"},this.printValue=function(a){var b=isNaN(a)?"--":j.formatNumber(a);"INPUT"==j.d.tagName?this.d.value=b:"text"==j.d.tagName?this.d.textContent=b:this.d.innerHTML=b},this.easeOutExpo=function(a,b,c,d){return 1024*c*(-Math.pow(2,-10*a/d)+1)/1023+b},this.count=function(a){null===j.startTime&&(j.startTime=a),j.timestamp=a;var b=a-j.startTime;if(j.remaining=j.duration-b,j.options.useEasing)if(j.countDown){var c=j.easeOutExpo(b,0,j.startVal-j.endVal,j.duration);j.frameVal=j.startVal-c}else j.frameVal=j.easeOutExpo(b,j.startVal,j.endVal-j.startVal,j.duration);else if(j.countDown){var c=(j.startVal-j.endVal)*(b/j.duration);j.frameVal=j.startVal-c}else j.frameVal=j.startVal+(j.endVal-j.startVal)*(b/j.duration);j.frameVal=j.countDown?j.frameVal<j.endVal?j.endVal:j.frameVal:j.frameVal>j.endVal?j.endVal:j.frameVal,j.frameVal=Math.round(j.frameVal*j.dec)/j.dec,j.printValue(j.frameVal),b<j.duration?j.rAF=requestAnimationFrame(j.count):null!=j.callback&&j.callback()},this.start=function(a){return j.callback=a,isNaN(j.endVal)||isNaN(j.startVal)?(console.log("countUp error: startVal or endVal is not a number"),j.printValue()):j.rAF=requestAnimationFrame(j.count),!1},this.stop=function(){cancelAnimationFrame(j.rAF)},this.reset=function(){j.startTime=null,j.startVal=b,cancelAnimationFrame(j.rAF),j.printValue(j.startVal)},this.resume=function(){j.stop(),j.startTime=null,j.duration=j.remaining,j.startVal=j.frameVal,requestAnimationFrame(j.count)},this.formatNumber=function(a){a=a.toFixed(j.decimals),a+="";var b,c,d,e;if(b=a.split("."),c=b[0],d=b.length>1?j.options.decimal+b[1]:"",e=/(\d+)(\d{3})/,j.options.useGrouping)for(;e.test(c);)c=c.replace(e,"$1"+j.options.separator+"$2");return j.options.prefix+c+d+j.options.suffix},j.printValue(j.startVal)}
 /*!
  * headroom.js v0.7.0 - Give your page some headroom. Hide your header until you need it
  * Copyright (c) 2014 Nick Williams - http://wicky.nillia.ms/headroom.js
@@ -28,16 +29,147 @@ a.attr("style"))});m.css("display","block");d.byRow&&(g.each(function(){var a=c(
 ""):(e.each(function(){var a=c(this),b={display:"inline-block"===a.css("display")?"inline-block":"block"};b[d.property]="";a.css(b);a.outerHeight(!1)>f&&(f=a.outerHeight(!1));a.css("display","")}),e.each(function(){var a=c(this),b=0;"border-box"!==a.css("box-sizing")&&(b+=h(a.css("border-top-width"))+h(a.css("border-bottom-width")),b+=h(a.css("padding-top"))+h(a.css("padding-bottom")));a.css(d.property,f-b)}))});m.each(function(){var a=c(this);a.attr("style",a.data("style-cache")||null)});b._maintainScroll&&
 c(window).scrollTop(l/f*c("html").outerHeight(!0));return this};b._applyDataApi=function(){var a={};c("[data-match-height], [data-mh]").each(function(){var b=c(this),d=b.attr("data-match-height")||b.attr("data-mh");a[d]=d in a?a[d].add(b):b});c.each(a,function(){this.matchHeight(!0)})};var q=function(a){b._beforeUpdate&&b._beforeUpdate(a,b._groups);c.each(b._groups,function(){b._apply(this.elements,this.options)});b._afterUpdate&&b._afterUpdate(a,b._groups)};b._update=function(a,e){if(e&&"resize"===
 e.type){var d=c(window).width();if(d===n)return;n=d}a?-1===f&&(f=setTimeout(function(){q(e);f=-1},b._throttle)):q(e)};c(b._applyDataApi);c(window).bind("load",function(a){b._update(!1,a)});c(window).bind("resize orientationchange",function(a){b._update(!0,a)})})(jQuery);
-/**
- * jQuery-viewport-checker - v1.8.2 - 2015-07-15
- * https://github.com/dirkgroenen/jQuery-viewport-checker
- *
- * Copyright (c) 2015 Dirk Groenen
- * Licensed MIT <https://github.com/dirkgroenen/jQuery-viewport-checker/blob/master/LICENSE>
- */
+/*
+    Version 1.8.2
+    The MIT License (MIT)
 
-!function(a){a.fn.viewportChecker=function(b){var c={classToAdd:"visible",classToRemove:"invisible",offset:100,repeat:!1,invertBottomOffset:!0,callbackFunction:function(a,b){},scrollHorizontal:!1};a.extend(c,b);var d=this,e={height:a(window).height(),width:a(window).width()},f=-1!=navigator.userAgent.toLowerCase().indexOf("webkit")||-1!=navigator.userAgent.toLowerCase().indexOf("windows phone")?"body":"html";return this.checkElements=function(){var b,g;c.scrollHorizontal?(b=a(f).scrollLeft(),g=b+e.width):(b=a(f).scrollTop(),g=b+e.height),d.each(function(){var d=a(this),f={},h={};if(d.data("vp-add-class")&&(h.classToAdd=d.data("vp-add-class")),d.data("vp-remove-class")&&(h.classToRemove=d.data("vp-remove-class")),d.data("vp-offset")&&(h.offset=d.data("vp-offset")),d.data("vp-repeat")&&(h.repeat=d.data("vp-repeat")),d.data("vp-scrollHorizontal")&&(h.scrollHorizontal=d.data("vp-scrollHorizontal")),d.data("vp-invertBottomOffset")&&(h.scrollHorizontal=d.data("vp-invertBottomOffset")),a.extend(f,c),a.extend(f,h),!d.hasClass(f.classToAdd)||f.repeat){String(f.offset).indexOf("%")>0&&(f.offset=parseInt(f.offset)/100*e.height);var i=f.scrollHorizontal?Math.round(d.offset().left)+f.offset:Math.round(d.offset().top)+f.offset,j=f.scrollHorizontal?i+d.width():i+d.height();f.invertBottomOffset&&(j-=2*f.offset),g>i&&j>b?(d.removeClass(f.classToRemove),d.addClass(f.classToAdd),f.callbackFunction(d,"add")):d.hasClass(f.classToAdd)&&f.repeat&&(d.removeClass(f.classToAdd),f.callbackFunction(d,"remove"))}})},"ontouchstart"in window?a(document).bind("touchmove MSPointerMove pointermove",this.checkElements):a(window).bind("scroll",this.checkElements),a(window).bind("load",this.checkElements),a(window).resize(function(b){e={height:a(window).height(),width:a(window).width()},d.checkElements()}),this.checkElements(),this}}(jQuery);
-//# sourceMappingURL=jquery.viewportchecker.min.js.map
+    Copyright (c) 2014 Dirk Groenen
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy of
+    this software and associated documentation files (the "Software"), to deal in
+    the Software without restriction, including without limitation the rights to
+    use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+    the Software, and to permit persons to whom the Software is furnished to do so,
+    subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+*/
+
+(function($){
+    $.fn.viewportChecker = function(useroptions){
+        // Define options and extend with user
+        var options = {
+            classToAdd: 'visible',
+            classToRemove : 'invisible',
+            offset: 100,
+            repeat: false,
+            invertBottomOffset: true,
+            callbackFunction: function(elem, action){},
+            scrollHorizontal: false
+        };
+        $.extend(options, useroptions);
+
+        // Cache the given element and height of the browser
+        var $elem = this,
+            windowSize = {height: $(window).height(), width: $(window).width()},
+            scrollElem = ((navigator.userAgent.toLowerCase().indexOf('webkit') != -1 || navigator.userAgent.toLowerCase().indexOf('windows phone') != -1) ? 'body' : 'html');
+
+        /*
+         * Main method that checks the elements and adds or removes the class(es)
+         */
+        this.checkElements = function(){
+            var viewportStart, viewportEnd;
+
+            // Set some vars to check with
+            if(!options.scrollHorizontal){
+                viewportStart = $(scrollElem).scrollTop();
+                viewportEnd = (viewportStart + windowSize.height);
+            }
+            else{
+                viewportStart = $(scrollElem).scrollLeft();
+                viewportEnd = (viewportStart + windowSize.width);
+            }
+
+            // Loop through all given dom elements
+            $elem.each(function(){
+                var $obj = $(this),
+                    objOptions = {},
+                    attrOptions = {};
+
+                //  Get any individual attribution data
+                if ($obj.data('vp-add-class'))
+                    attrOptions.classToAdd = $obj.data('vp-add-class');
+                if ($obj.data('vp-remove-class'))
+                    attrOptions.classToRemove = $obj.data('vp-remove-class');
+                if ($obj.data('vp-offset'))
+                    attrOptions.offset = $obj.data('vp-offset');
+                if ($obj.data('vp-repeat'))
+                    attrOptions.repeat = $obj.data('vp-repeat');
+                if ($obj.data('vp-scrollHorizontal'))
+                    attrOptions.scrollHorizontal = $obj.data('vp-scrollHorizontal');
+                if ($obj.data('vp-invertBottomOffset'))
+                    attrOptions.scrollHorizontal = $obj.data('vp-invertBottomOffset');
+
+                // Extend objOptions with data attributes and default options
+                $.extend(objOptions, options);
+                $.extend(objOptions, attrOptions);
+
+                // If class already exists; quit
+                if ($obj.hasClass(objOptions.classToAdd) && !objOptions.repeat){
+                    return;
+                }
+
+                // Check if the offset is percentage based
+                if(String(objOptions.offset).indexOf("%") > 0)
+                    objOptions.offset = (parseInt(objOptions.offset) / 100) * windowSize.height;
+
+                // define the top position of the element and include the offset which makes is appear earlier or later
+                var elemStart = (!objOptions.scrollHorizontal) ? Math.round( $obj.offset().top ) + objOptions.offset : Math.round( $obj.offset().left ) + objOptions.offset,
+                    elemEnd = (!objOptions.scrollHorizontal) ? elemStart + $obj.height() : elemStart + $obj.width();
+
+                if(objOptions.invertBottomOffset)
+                	elemEnd -= (objOptions.offset * 2);
+
+                // Add class if in viewport
+                if ((elemStart < viewportEnd) && (elemEnd > viewportStart)){
+
+                    // remove class
+                    $obj.removeClass(objOptions.classToRemove);
+
+                    $obj.addClass(objOptions.classToAdd);
+
+                    // Do the callback function. Callback wil send the jQuery object as parameter
+                    objOptions.callbackFunction($obj, "add");
+
+                // Remove class if not in viewport and repeat is true
+                } else if ($obj.hasClass(objOptions.classToAdd) && (objOptions.repeat)){
+                    $obj.removeClass(objOptions.classToAdd);
+
+                    // Do the callback function.
+                    objOptions.callbackFunction($obj, "remove");
+                }
+            });
+
+        };
+
+        // Select the correct events
+        if( !!('ontouchstart' in window) ){
+            // Touchscreen
+            $(document).bind("touchmove MSPointerMove pointermove", this.checkElements);
+        }
+        else{
+            // No touchscreen
+            $(window).bind("scroll", this.checkElements);
+        }
+
+        // Always load on window load
+        $(window).bind("load", this.checkElements);
+
+        // On resize change the height var
+        $(window).resize(function(e){
+            windowSize = {height: $(window).height(), width: $(window).width()};
+            $elem.checkElements();
+        });
+
+        // trigger inital check if elements already visible
+        this.checkElements();
+
+        // Default jquery plugin behaviour
+        return this;
+    };
+})(jQuery);
+
 /* ========================================================================
  * Bootstrap: modal.js v3.0.0
  * http://twbs.github.com/bootstrap/javascript.html#modals
@@ -297,174 +429,4 @@ e.type){var d=c(window).width();if(d===n)return;n=d}a?-1===f&&(f=setTimeout(func
  */
 (function(){!function(e){"use strict";e.fn.paperCollapse=function(o){var a;return a=e.extend({},e.fn.paperCollapse.defaults,o),e(this).find(".collapse-card__heading").add(a.closeHandler).click(function(){e(this).closest(".collapse-card").hasClass("active")?(a.onHide.call(this),e(this).closest(".collapse-card").removeClass("active"),e(this).closest(".collapse-card").find(".collapse-card__body").slideUp(a.animationDuration,a.onHideComplete)):(a.onShow.call(this),e(this).closest(".collapse-card").addClass("active"),e(this).closest(".collapse-card").find(".collapse-card__body").slideDown(a.animationDuration,a.onShowComplete))}),this},e.fn.paperCollapse.defaults={animationDuration:400,easing:"swing",closeHandler:".collapse-card__close_handler",onShow:function(){},onHide:function(){},onShowComplete:function(){},onHideComplete:function(){}}}(jQuery)}).call(this);
 /*! svg4everybody v1.0.0 | github.com/jonathantneal/svg4everybody */
-(function (document, uses, requestAnimationFrame, CACHE, IE9TO11) {
-	function embed(svg, g) {
-		if (g) {
-			var
-			viewBox = g.getAttribute('viewBox'),
-			fragment = document.createDocumentFragment(),
-			clone = g.cloneNode(true);
-
-			if (viewBox) {
-				svg.setAttribute('viewBox', viewBox);
-			}
-
-			while (clone.childNodes.length) {
-				fragment.appendChild(clone.childNodes[0]);
-			}
-
-			svg.appendChild(fragment);
-		}
-	}
-
-	function onload() {
-		var xhr = this, x = document.createElement('x'), s = xhr.s;
-
-		x.innerHTML = xhr.responseText;
-
-		xhr.onload = function () {
-			s.splice(0).map(function (array) {
-				embed(array[0], x.querySelector('#' + array[1].replace(/(\W)/g, '\\$1')));
-			});
-		};
-
-		xhr.onload();
-	}
-
-	function onframe() {
-		var use;
-
-		while ((use = uses[0])) {
-			var
-			svg = use.parentNode,
-			url = use.getAttribute('xlink:href').split('#'),
-			url_root = url[0],
-			url_hash = url[1];
-
-			svg.removeChild(use);
-
-			if (url_root.length) {
-				var xhr = CACHE[url_root] = CACHE[url_root] || new XMLHttpRequest();
-
-				if (!xhr.s) {
-					xhr.s = [];
-
-					xhr.open('GET', url_root);
-
-					xhr.onload = onload;
-
-					xhr.send();
-				}
-
-				xhr.s.push([svg, url_hash]);
-
-				if (xhr.readyState === 4) {
-					xhr.onload();
-				}
-
-			} else {
-				embed(svg, document.getElementById(url_hash));
-			}
-		}
-
-		requestAnimationFrame(onframe);
-	}
-
-	if (IE9TO11) {
-		onframe();
-	}
-})(
-	document,
-	document.getElementsByTagName('use'),
-	window.requestAnimationFrame || window.setTimeout,
-	{},
-	/Trident\/[567]\b/.test(navigator.userAgent) || /Edge\/12/.test(navigator.userAgent) || (navigator.userAgent.match(/AppleWebKit\/(\d+)/) || [])[1] < 538
-);
-
-/*! svg4everybody v1.0.0 | github.com/jonathantneal/svg4everybody */
 (function(e,t,n,r,i){function s(t,n){if(n){var r=n.getAttribute("viewBox"),i=e.createDocumentFragment(),s=n.cloneNode(true);if(r){t.setAttribute("viewBox",r)}while(s.childNodes.length){i.appendChild(s.childNodes[0])}t.appendChild(i)}}function o(){var t=this,n=e.createElement("x"),r=t.s;n.innerHTML=t.responseText;t.onload=function(){r.splice(0).map(function(e){s(e[0],n.querySelector("#"+e[1].replace(/(\W)/g,"\\$1")))})};t.onload()}function u(){var i;while(i=t[0]){var a=i.parentNode,f=i.getAttribute("xlink:href").split("#"),l=f[0],c=f[1];a.removeChild(i);if(l.length){var h=r[l]=r[l]||new XMLHttpRequest;if(!h.s){h.s=[];h.open("GET",l);h.onload=o;h.send()}h.s.push([a,c]);if(h.readyState===4){h.onload()}}else{s(a,e.getElementById(c))}}n(u)}if(i){u()}})(document,document.getElementsByTagName("use"),window.requestAnimationFrame||window.setTimeout,{},/Trident\/[567]\b/.test(navigator.userAgent))
-
-//////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////// Your scripts live here
-//////////////////////////////////////////////////////////////////////////////
-
-var elem = document.querySelector("header");
-// construct an instance of Headroom, passing the element
-var headroom = new Headroom(elem, {
-  "offset": 205,
-  "tolerance": 5,
-  "classes": {
-    "initial": "animated",
-    "pinned": "slideDown",
-    "unpinned": "slideUp"
-  }
-});
-headroom.init();
-
-window.viewportUnitsBuggyfill.init();
-
-var menuOpen = false;
-$(".menu-btn").on("click", function(){
-  if(menuOpen){
-    $(document.body).removeClass("show-menu");
-  }
-  else{
-    $(document.body).addClass("show-menu");  
-  }
-  menuOpen = !menuOpen;
-});
-
-var hasDropdown = $('.nav li:has(ul)');
-hasDropdown.addClass('parent');
-$(".nav li.parent > a").click(function(e){
-    e.preventDefault();
-});
-
-var menuDown = false;
-$(".mobile-menu .menu>li.parent").click(function(e){
-  if(menuDown){
-    $(this).toggleClass('open');
-  }
-  else{
-    $(this).toggleClass('open');
-  }
-  menuDown = !menuDown;
-});
-
-$('.popup-youtube, .popup-vimeo').magnificPopup({
-  disableOn: 0,
-  type: 'iframe',
-  mainClass: 'mfp-fade',
-  removalDelay: 160,
-  preloader: false,
-  fixedContentPos: false
-});
-
-$(function() {
-    $('.package-item__info,.feature-item, .costBox').matchHeight();
-  	$('.collapse-card').paperCollapse()
-});
-$(document).ready(function(){
-    $(".testimonial-carousel").owlCarousel({
-        items:1,
-        loop:true,
-        margin:10,
-        autoplay:true,
-        autoplayTimeout:5000,
-        autoplayHoverPause:true
-    });
-
-	$('.project-item, .package-item, .process, .colour-blocks, .footer, .seo-reporting').viewportChecker({
-		offset: 1
-	});
-	  $('.cms-video').viewportChecker({
-	offset: 20
-	});
-
-	var login = $(".menu>li:last-child a");
-	login.removeAttr("href");
-	login.attr("data-target","#myModal");
-	login.attr("data-toggle","modal");
-
-  $(".project-link, split-image, .imgliquid").imgLiquid();
-});

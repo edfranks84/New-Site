@@ -1,0 +1,113 @@
+@keyframes numbers-in{
+	0%{
+		// transform: rotate3d(1,0,0,54deg);
+		transform: rotateX(94deg);
+		opacity: 0;
+		letter-spacing: 10px;
+	}
+	10%{
+		transform: rotateX(82deg);
+		opacity: 1;
+	}
+	100%{
+		// transform: rotate3d(1,0,0,0deg);
+		transform: rotateX(0deg);
+		letter-spacing: -1px;
+		// opacity: 1;
+	}
+}
+
+.cms-stat{
+	&__wrap{
+	    width: 92%;
+	    max-width: 90em;
+	    margin: auto;
+	}
+	&__item{
+		//margin-bottom: 1em;
+		-webkit-perspective: 1000px;
+		perspective: 1000px;
+		-webkit-perspective-origin: 50% 50%;
+		perspective-origin: 50% 50%;
+		&:last-child{
+			margin-bottom: 0;
+			.stat-wrap{
+				border-bottom: none;
+			}
+		}
+		@include respond-to(700to1250){
+			width: 32%;
+			display: inline-block;
+			margin-bottom: 0;
+			&:nth-child(1){
+				display: block;
+				width: 100%;
+			}
+			&:nth-child(3),&:nth-child(4){
+				border-left: 1px solid rgba(255,255,255,0.5);
+			}
+		}
+		@include respond-to(1250){
+			margin-bottom: 0;
+			width: 24%;
+			display: inline-block;
+			vertical-align: middle;
+		}
+		.title{
+			text-align: center;
+			margin-bottom: 2.5em;
+			h2{
+				padding-top: 0;
+			}
+			@include respond-to(1250){
+				text-align: left;
+				margin-bottom: 0;
+				.divider{
+					&:after{
+						margin: 0.4em 0;
+					}
+				}
+			}
+		}
+		.stat-wrap{
+			text-align: center;
+			
+			//border-bottom: 1px solid rgba(255,255,255,0.5);
+			padding-bottom: 2em;
+			@include respond-to(700){
+				border-bottom: none;
+				padding-bottom: 0;
+			}
+			@include respond-to(1250){
+				border-left: 1px solid rgba(255,255,255,0.5);
+			}
+			.visible &{
+				//animation: numbers-in 500ms cubic-bezier(.17,.67,.54,1.59) both 300ms;
+				//animation: number-in 500ms linear both 500ms;
+			}
+		}
+		.stat-number{
+			font-size: ms(12);
+			font-family: $heading-font-black;
+			color: #fff;
+			text-shadow: 0 6px 15px rgba(0,0,0,0.2);
+			transform-style: preserve-3d;
+			@include respond-to(700){
+				font-size: ms(9);
+			}
+			@include respond-to(920){
+				font-size: ms(12);
+			}
+			.visible &{
+				//animation: numbers-in 1600ms cubic-bezier(.17,.67,.54,1.59) both;
+				animation: numbers-in 1500ms linear both 100ms;
+			}
+		}
+		p{
+			font-size: 15px;
+			text-transform: uppercase;
+			line-height: 1.1;
+			margin-bottom: 0;
+		}
+	}
+}

@@ -81,4 +81,8 @@ $(document).ready(function(){
 	login.attr("data-toggle","modal");
 
   $(".project-link, split-image, .imgliquid").imgLiquid();
+
+  
+
+
 });

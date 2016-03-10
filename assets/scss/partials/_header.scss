@@ -346,6 +346,43 @@ Mobile Nav
 
 }
 
+.mobile-login-button{
+	display: none;
+    position: absolute;
+    top: 1.4em;
+    right: 7em;
+    transition: all 200ms ease;
+    opacity: 1;
+    @include respond-to(400){
+    	display: inline-block;
+    }
+    @include respond-to(480){
+    	top: 0.75em;
+    }
+    @include respond-to(1060){
+    	display: none;
+    }
+	a{
+		line-height: 1.5;
+		padding: 0.45em 2em;
+		color: #fff;
+		background-color: $base-color-light;
+		text-align: center;
+		text-transform: uppercase;
+		font-family: $heading-font;
+		@include respond-to(480){
+			display: inline-block;
+			margin-left: 0.95em;
+		}
+		&:hover{
+			background-color: lighten(saturate($base-color-light, 10%),5%);
+		}
+	}
+	.show-menu &{
+		opacity: 0;
+	}
+}
+
 
 /***************************************
 

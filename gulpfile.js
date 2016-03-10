@@ -18,8 +18,45 @@ var gulp = require('gulp'),
     svgmin = require('gulp-svgmin'),
     svgo = require('gulp-svgo'),
     svgstore = require('gulp-svgstore'),
+    gutil = require('gulp-util'),
+    scsslint = require('gulp-scss-lint'),
     pkg = require('./package.json');
  
+
+
+var reportError = function (error) {
+    var lineNumber = (error.lineNumber) ? 'LINE ' + error.lineNumber + ' -- ' : '';
+
+    notify({
+        title: 'Task Failed [' + error.plugin + ']',
+        message: lineNumber + 'See console.',
+        sound: 'Sosumi' // See: https://github.com/mikaelbr/node-notifier#all-notification-options-with-their-defaults
+    }).write(error);
+
+    gutil.beep(); // Beep 'sosumi' again
+
+    // Inspect the error object
+    //console.log(error);
+
+    // Easy error reporting
+    //console.log(error.toString());
+
+    // Pretty error reporting
+    var report = '';
+    var chalk = gutil.colors.white.bgRed;
+
+    report += chalk('TASK:') + ' [' + error.plugin + ']\n';
+    report += chalk('PROB:') + ' ' + error.message + '\n';
+    if (error.lineNumber) { report += chalk('LINE:') + ' ' + error.lineNumber + '\n'; }
+    if (error.fileName)   { report += chalk('FILE:') + ' ' + error.fileName + '\n'; }
+    console.error(report);
+
+    // Prevent the 'watch' task from stopping
+    this.emit('end');
+}
+
+
+
 gulp.task('connect', function() {
   connect.server({
     root: './index-case-studies.html',
@@ -34,12 +71,20 @@ gulp.task('html', function () {
 
 gulp.task('sass', function() {
     gulp.src('assets/scss/**/*.scss')
+    .pipe(plumber({
+        errorHandler: reportError
+    }))
     .pipe(sass({style: 'expanded', includePaths: [ './assets/scss/partials', './assets/scss/modules', './assets/scss/helpers' ], errLogToConsole: true }))
     .pipe(autoprefixer('last 2 version'))
     .pipe(rename(pkg.name + '.css'))
     .pipe(gulp.dest('assets/css'))
     // .pipe(reload({stream: true}))
     .pipe(notify({message: 'SCSS processed!'}));
+});
+
+gulp.task('scss-lint', function() {
+  return gulp.src('assets/scss/**/*.scss')
+    .pipe(scsslint());
 });
 
 gulp.task('svgstore', function () {
@@ -65,8 +110,11 @@ gulp.task('svgo', function() {
 });
 
 gulp.task('scripts', function() {
-  return gulp.src(['assets/js/plugins/*.js', 'assets/js/src/*.js'])
-    .pipe(plumber())
+  //return gulp.src(['assets/js/plugins/*.js', 'assets/js/src/*.js'])
+  return gulp.src('assets/js/plugins/*.js')
+    .pipe(plumber({
+        errorHandler: reportError
+    }))
     .pipe(concat(pkg.name + '.js'))
     .pipe(gulp.dest('assets/js'))
     .pipe(rename(pkg.name + '.min.js'))

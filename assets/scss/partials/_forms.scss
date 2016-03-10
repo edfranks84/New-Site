@@ -119,7 +119,7 @@ textarea{
 .signup-wrap{
 	padding: 1.5em 0.25em;
 }
-.signup-form{
+.signup-form, .quote-form{
     max-width: 50em;
 	margin: auto;
 	h2{
@@ -147,7 +147,7 @@ textarea{
 }
 
 
-.signUpSection {
+.signUpSection, .quote-form{
 	@include clearfix;
 	padding: 2em 1.5em;
 	margin-bottom: 3em;
@@ -160,7 +160,7 @@ textarea{
     }
 }
 
-.signUpSection1{
+.signUpSection1, .quote-form{
 	
 	@include respond-to(1060){
 		margin-top: -5em;
@@ -323,5 +323,30 @@ textarea{
 	@include span(4 of 12 last);
 	input{
 		height: 55px;
+	}
+}
+
+.quote-form{
+	.inputset{
+		width: 100%;
+		@include clearfix;
+	}
+	.inline{
+		margin: 1em 0em;
+		input{
+			float: left;
+			width: auto;
+			margin-right: 5px;
+			margin-top: 0;
+			@include respond-to(400){
+				margin-top: 1px;
+			}
+		}
+	}
+	.inputsetItem6{
+		margin: 1em 0;
+		label:first-child{
+			margin-bottom: 1em;
+		}
 	}
 }
